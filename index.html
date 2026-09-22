@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="bn" class="scroll-smooth overflow-x-hidden">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Landing Page Dev | ০ টাকায় ল্যান্ডিং পেজ তৈরি করুন</title>
+  <meta name="description" content="কোনো অগ্রিম ছাড়াই আপনার পণ্যের জন্য প্রিমিয়াম সেলস ফানেল তৈরি করে নিন। সম্পূর্ণ কাজ পছন্দ হওয়ার পর মাত্র ৳৯৯৯ পরিশোধ করবেন।" />
+  <meta name="theme-color" content="#f8fafc" />
+
+  <!-- Google Font: Hind Siliguri -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { bangla: ['"Hind Siliguri"', 'sans-serif'] },
+          colors: {
+            emerald: {
+              50: '#ecfdf5', 100: '#d1fae5', 500: '#10b981', 600: '#059669', 700: '#047857',
+            }
+          },
+          boxShadow: {
+            liquidGlow: '0 20px 40px -15px rgba(16, 185, 129, 0.2)',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    html, body {
+      font-family: 'Hind Siliguri', sans-serif;
+      overflow-x: hidden;
+      width: 100%;
+      background-color: #f8fafc;
+      color: #0f172a;
+      touch-action: pan-y;
+      -webkit-text-size-adjust: 100%;
+    }
+    ::selection { background: #10b981; color: #ffffff; }
+
+    .hero-liquid-bg {
+      background: 
+        radial-gradient(circle at 10% 20%, rgba(16, 185, 129, 0.12) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(52, 211, 153, 0.1) 0%, transparent 40%),
+        linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
+    }
+
+    .grid-pattern {
+      background-image: 
+        linear-gradient(rgba(16, 185, 129, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(16, 185, 129, 0.05) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+
+    @keyframes ctaPulse {
+      0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.6); }
+      70% { box-shadow: 0 0 0 16px rgba(16, 185, 129, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+    }
+    .cta-pulse { animation: ctaPulse 2.2s infinite; }
+
+    .shimmer-text {
+      background: linear-gradient(90deg, #047857 0%, #10b981 35%, #059669 70%, #047857 100%);
+      background-size: 200% auto; -webkit-background-clip: text; background-clip: text; color: transparent;
+      animation: shimmer 5s linear infinite;
+    }
+    @keyframes shimmer { 0% { background-position: -200% 0 } 100% { background-position: 200% 0 } }
+
+    .glass-card {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(16, 185, 129, 0.15);
+      box-shadow: 0 10px 30px -5px rgba(16, 185, 129, 0.05);
+      transition: all .3s cubic-bezier(.2,.8,.2,1);
+    }
+    .glass-card:hover {
+      border-color: rgba(16, 185, 129, 0.4);
+      transform: translateY(-4px);
+    }
+
+    .modal { opacity: 0; pointer-events: none; transition: opacity 0.25s ease-in-out; }
+    .modal.open { opacity: 1; pointer-events: auto; }
+    .modal-card { transform: translateY(100%); transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1); }
+    @media (min-width: 640px) {
+      .modal-card { transform: scale(0.95) translateY(15px); }
+      .modal.open .modal-card { transform: scale(1) translateY(0); }
+    }
+    @media (max-width: 639px) {
+      .modal.open .modal-card { transform: translateY(0); }
+    }
+
+    .field {
+      width: 100%;
+      border: 1.5px solid #cbd5e1;
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 11px 14px;
+      font-size: 16px !important;
+      color: #0f172a;
+      outline: none;
+      transition: all .2s;
+    }
+    .field:focus { border-color: #10b981; box-shadow: 0 0 0 3px rgba(16,185,129,0.15); }
+    .field.error { border-color: #ef4444 !important; background: #fef2f2 !important; }
+    .field-error { display: none; color: #ef4444; font-size: 12px; margin-top: 4px; }
+    .field-error.show { display: block !important; }
+
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .spinner { width: 18px; height: 18px; border: 2px solid rgba(255,255,255,.3); border-top-color: #ffffff; border-radius: 50%; animation: spin .8s linear infinite; display: inline-block; }
+  </style>
+</head>
+
+<body class="font-bangla antialiased pb-24 md:pb-0">
+
+  <!-- TOP BANNER -->
+  <div class="bg-emerald-900 text-emerald-50 py-2.5 px-3 text-center text-xs sm:text-sm font-medium shadow-inner">
+    🔥 কোনো অগ্রিম পেমেন্ট নেই! সম্পূর্ণ কাজ পছন্দ হলে ও ডেলিভারির পর পেমেন্ট করবেন।
+  </div>
+
+  <!-- NAVBAR -->
+  <header class="sticky top-0 z-40 bg-white/80 backdrop-blur-md border-b border-slate-200/80 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <a href="#home" class="flex items-center gap-2.5">
+        <span class="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-600 to-teal-400 text-white flex items-center justify-center text-xl font-black shadow-lg shadow-emerald-500/20">
+          <i class="fa-solid fa-rocket"></i>
+        </span>
+        <span class="text-xl md:text-2xl font-black text-slate-900 tracking-tight">LandingPage<span class="text-emerald-600">.Dev</span></span>
+      </a>
+
+      <button data-open-order class="hidden sm:inline-flex items-center gap-2 bg-gradient-to-r from-emerald-600 to-teal-500 text-white font-extrabold px-6 py-2.5 rounded-full text-sm shadow-lg shadow-emerald-500/25 hover:scale-105 transition-transform">
+        <i class="fa-solid fa-bolt"></i> ০ টাকায় অর্ডার করুন
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section id="home" class="hero-liquid-bg relative overflow-hidden pt-12 pb-16 md:pt-20 md:pb-24 px-4">
+      <div class="absolute inset-0 grid-pattern"></div>
+      <div class="relative max-w-5xl mx-auto text-center z-10">
+        <span class="inline-flex items-center gap-2 bg-emerald-50 border border-emerald-500/30 text-emerald-700 text-xs sm:text-sm font-bold px-4 py-1.5 rounded-full mb-6 shadow-sm">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+          ১০০% রিস্ক-ফ্রি অফার — আগে কাজ বুঝবেন, পরে পেমেন্ট!
+        </span>
+
+        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-slate-900 leading-tight tracking-tight">
+          আপনার প্রোডাক্টের জন্য বানিয়ে নিন<br />
+          <span class="shimmer-text">আল্ট্রা হাই-কনভার্টিং ল্যান্ডিং পেজ!</span> 🚀
+        </h1>
+
+        <p class="mt-5 text-sm sm:text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto">
+          ফেসবুক বিজ্ঞাপনে অ্যাড খরচ কমিয়ে সেলস দ্বিগুণ করার চূড়ান্ত সমাধান। আমরা আপনার প্রোডাক্টের ধরণ অনুযায়ী সেরা সেলস ফানেল ডিজাইন করে দেবো।
+        </p>
+
+        <!-- Zero Taka Box -->
+        <div class="mt-8 p-5 rounded-2xl bg-white border border-emerald-500/25 shadow-liquidGlow max-w-lg mx-auto text-left flex items-center justify-between gap-4">
+          <div>
+            <div class="text-xs text-emerald-600 font-bold uppercase tracking-wider">অগ্রিম পেমেন্ট লাগবে না</div>
+            <div class="text-2xl font-black text-slate-900 mt-0.5">এখনই অর্ডার ফি: <span class="text-emerald-600">৳০</span></div>
+            <div class="text-xs text-slate-500 mt-0.5">সম্পূর্ণ কাজ পছন্দ হওয়ার পর পরিশোধ করবেন ৳৯৯৯</div>
+          </div>
+          <button data-open-order class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-5 py-3 rounded-xl shadow text-sm shrink-0">
+            অর্ডার করুন
+          </button>
+        </div>
+
+        <div class="mt-8">
+          <button data-open-order class="cta-pulse w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-gradient-to-r from-emerald-600 to-teal-500 text-white font-black text-base px-8 py-4 rounded-full shadow-xl shadow-emerald-600/25">
+            <i class="fa-solid fa-bolt"></i> ০ টাকায় পেজ অর্ডার করুন 🚀
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- MOBILE BOTTOM BAR -->
+  <div class="fixed bottom-0 inset-x-0 bg-white/95 backdrop-blur-md border-t border-slate-200 p-3 flex items-center justify-between md:hidden z-30 shadow-lg">
+    <div>
+      <span class="text-[11px] text-slate-500 block leading-tight">অগ্রিম পেমেন্ট</span>
+      <span class="text-lg font-bold text-emerald-600 leading-none">৳০ (ফ্রি বুকিং)</span>
+    </div>
+    <button data-open-order class="cta-pulse bg-gradient-to-r from-emerald-600 to-teal-500 text-white font-black text-sm px-6 py-2.5 rounded-full shadow-md">
+      অর্ডার করুন 🚀
+    </button>
+  </div>
+
+  <!-- ORDER MODAL -->
+  <div id="orderModal" class="modal fixed inset-0 z-50 flex items-end sm:items-center justify-center p-0 sm:p-4">
+    <div id="modalBackdrop" class="absolute inset-0 bg-slate-900/60 backdrop-blur-sm"></div>
+
+    <div class="modal-card relative w-full sm:max-w-md bg-white border border-slate-200 rounded-t-3xl sm:rounded-2xl shadow-2xl overflow-hidden max-h-[92vh] flex flex-col z-10">
+      
+      <!-- Modal Header -->
+      <div class="bg-emerald-800 text-white px-5 py-3.5 flex justify-between items-center shrink-0">
+        <div>
+          <h3 class="font-bold text-base">ল্যান্ডিং পেজ অর্ডার ফর্ম</h3>
+          <p class="text-[11px] text-emerald-200">অগ্রিম ৳০ • কাজ শেষে পেমেন্ট করবেন</p>
+        </div>
+        <button id="modalClose" class="text-white hover:text-rose-300 text-lg w-8 h-8 flex items-center justify-center"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+
+      <!-- Form Body -->
+      <div class="p-5 overflow-y-auto overscroll-contain">
+        <form id="orderForm" class="space-y-3.5" novalidate>
+          <div>
+            <label class="block text-xs font-bold text-slate-700 mb-1">আপনার নাম <span class="text-rose-500">*</span></label>
+            <input type="text" id="customerName" placeholder="উদাঃ মোঃ সাকিব আহমেদ" class="field" required />
+            <p class="field-error" data-error-for="customerName">নাম লিখুন</p>
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold text-slate-700 mb-1">WhatsApp নাম্বার <span class="text-rose-500">*</span></label>
+            <input type="tel" id="phone" placeholder="01XXXXXXXXX" maxlength="11" class="field" required />
+            <p class="field-error" data-error-for="phone">সঠিক ১১ ডিজিটের মোবাইল নাম্বার দিন</p>
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold text-slate-700 mb-1">প্রোডাক্টের নাম <span class="text-rose-500">*</span></label>
+            <input type="text" id="productName" placeholder="যেমন: K12 Bluetooth Speaker" class="field" required />
+            <p class="field-error" data-error-for="productName">প্রোডাক্টের নাম লিখুন</p>
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold text-slate-700 mb-1">ফেসবুক পেজ / শপ লিংক <span class="text-rose-500">*</span></label>
+            <input type="text" id="pageLink" placeholder="যেমন: facebook.com/yourbrand" class="field" required />
+            <p class="field-error" data-error-for="pageLink">পেজ বা স্টোর লিংক দিন</p>
+          </div>
+
+          <!-- MULTI IMAGE UPLOAD -->
+          <div>
+            <div class="flex items-center justify-between mb-1">
+              <label class="block text-xs font-bold text-slate-700">প্রোডাক্টের ছবিসমূহ (একাধিক ছবি দিতে পারবেন)</label>
+              <span id="imgCounter" class="text-[11px] text-emerald-600 font-semibold hidden">০টি ছবি নির্বাচিত</span>
+            </div>
+            <input type="file" id="productImagesInput" accept="image/*" multiple class="hidden" />
+            <button type="button" id="uploadBtn" class="w-full border-2 border-dashed border-emerald-400 bg-emerald-50/50 hover:bg-emerald-50 rounded-xl p-3 text-center text-xs text-slate-600 flex items-center justify-center gap-2 transition">
+              <i class="fa-solid fa-images text-emerald-600 text-base"></i>
+              <span id="uploadBtnText">গ্যালারি থেকে এক বা একাধিক ছবি সিলেক্ট করুন</span>
+            </button>
+            <div id="imagePreviewGrid" class="hidden mt-2 grid grid-cols-4 gap-2 max-h-40 overflow-y-auto p-2 bg-slate-50 border rounded-xl"></div>
+          </div>
+
+          <div class="bg-slate-50 p-3 rounded-xl border text-xs space-y-1">
+            <div class="flex justify-between text-slate-600"><span>প্যাকেজ ফি:</span><span class="font-bold text-slate-900">৳৯৯৯</span></div>
+            <div class="flex justify-between text-emerald-600 font-bold"><span>এখন পরিশোধ:</span><span>৳০ (সম্পূর্ণ ফ্রি)</span></div>
+          </div>
+
+          <button type="submit" id="submitBtn" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3.5 rounded-xl shadow-lg text-sm transition">
+            <span class="btn-text">অর্ডার প্লেস করুন (৳০) 🚀</span>
+            <span class="btn-loading hidden items-center justify-center gap-2"><span class="spinner"></span> ছবি আপلود ও প্রসেসিং হচ্ছে...</span>
+          </button>
+        </form>
+
+        <div id="successView" class="hidden text-center py-6">
+          <div class="w-12 h-12 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center text-2xl mx-auto mb-2"><i class="fa-solid fa-check"></i></div>
+          <h3 class="text-lg font-bold text-slate-900">অর্ডার সফলভাবে জমা হয়েছে! 🎉</h3>
+          <p class="text-xs text-slate-600 mt-1">আমাদের টিম শীঘ্রই আপনার WhatsApp নম্বরে পেজের ডেমো পাঠাবে।</p>
+          <button id="successClose" class="mt-4 bg-emerald-600 text-white text-xs font-bold px-6 py-2 rounded-xl">ঠিক আছে</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCRIPT -->
+  <script>
+    const CONFIG = {
+      WORKER_URL: 'https://steep-rain-e346.azwadahshafhossain.workers.dev', 
+      STORE_CODE: 'LP',
+      STORE_NAME: 'Landing Page Development'
+    };
+
+    const $ = (s, r = document) => r.querySelector(s);     const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
+
+    const modal = $('#orderModal'), form = $('#orderForm'), submitBtn = $('#submitBtn');     let uploadedImages = [];      function openModal() { modal.classList.add('open'); document.body.style.overflow = 'hidden'; }     function closeModal() { modal.classList.remove('open'); document.body.style.overflow = ''; }      $$('[data-open-order]').forEach(b => b.addEventListener('click', (e) => { e.preventDefault(); openModal(); }));$('#modalClose').addEventListener('click', closeModal);
+    $('#modalBackdrop').addEventListener('click', closeModal);
+
+    $('#uploadBtn').addEventListener('click', () => $('#productImagesInput').click());
+
+    // Multi-Image Handler with Compression
+    $('#productImagesInput').addEventListener('change', async (e) => {
+      const files = Array.from(e.target.files);
+      for (const file of files) {
+        const base64 = await compressImage(file);
+        uploadedImages.push(base64);
+      }
+      fileInputClear();
+      renderPreviews();
+    });
+
+    function fileInputClear() { $('#productImagesInput').value = ''; }
+
+    function compressImage(file) {
+      return new Promise((resolve) => {
+        const reader = new FileReader();
+        reader.onload = (event) => {
+          const img = new Image();
+          img.src = event.target.result;
+          img.onload = () => {
+            const canvas = document.createElement('canvas');
+            const max = 800;
+            let w = img.width, h = img.height;
+            if (w > h && w > max) { h = Math.round((h * max) / w); w = max; }
+            else if (h > max) { w = Math.round((w * max) / h); h = max; }
+            canvas.width = w; canvas.height = h;
+            canvas.getContext('2d').drawImage(img, 0, 0, w, h);
+            resolve(canvas.toDataURL('image/jpeg', 0.65));
+          };
+        };
+        reader.readAsDataURL(file);
+      });
+    }
+
+    function renderPreviews() {
+      const grid = $('#imagePreviewGrid');
+      const counter = $('#imgCounter');
+      grid.innerHTML = '';
+      if (!uploadedImages.length) {
+        grid.classList.add('hidden');
+        counter.classList.add('hidden');
+        $('#uploadBtnText').textContent = 'গ্যালারি থেকে ছবি সিলেক্ট করুন';
+        return;
+      }
+      grid.classList.remove('hidden');
+      counter.classList.remove('hidden');
+      counter.textContent = `${uploadedImages.length}টি ছবি নির্বাচিত`;
+      $('#uploadBtnText').textContent = '+ আরও ছবি যোগ করুন';
+
+      uploadedImages.forEach((imgSrc, idx) => {
+        const div = document.createElement('div');
+        div.className = 'relative aspect-square rounded-lg overflow-hidden border bg-white';
+        div.innerHTML = `<img src="${imgSrc}" class="w-full h-full object-cover" /><button type="button" onclick="removeImg(${idx})" class="absolute top-1 right-1 bg-rose-600 text-white rounded-full w-4 h-4 text-[10px] flex items-center justify-center"><i class="fa-solid fa-xmark"></i></button>`;
+        grid.appendChild(div);
+      });
+    }
+
+    window.removeImg = (idx) => { uploadedImages.splice(idx, 1); renderPreviews(); };
+
+    $$('.field', form).forEach(f => f.addEventListener('input', () => {
+      f.classList.remove('error');
+      $(`[data-error-for="${f.id}"]`)?.classList.remove('show');
+    }));
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const name = $('#customerName').value.trim();
+      const phone = $('#phone').value.trim();
+      const product = $('#productName').value.trim();
+      const pageLink = $('#pageLink').value.trim();
+
+      let valid = true;
+      if (name.length < 2) { $('#customerName').classList.add('error'); $('[data-error-for="customerName"]').classList.add('show'); valid = false; }
+      if (!/^01[3-9]\d{8}$/.test(phone)) { $('#phone').classList.add('error'); $('[data-error-for="phone"]').classList.add('show'); valid = false; }
+      if (product.length < 2) { $('#productName').classList.add('error'); $('[data-error-for="productName"]').classList.add('show'); valid = false; }
+      if (pageLink.length < 3) { $('#pageLink').classList.add('error'); $('[data-error-for="pageLink"]').classList.add('show'); valid = false; }
+      if (!valid) return;
+
+      submitBtn.disabled = true;
+      $('.btn-text', submitBtn).classList.add('hidden');
+      const loadingEl = $('.btn-loading', submitBtn);
+      loadingEl.classList.remove('hidden');
+      loadingEl.classList.add('inline-flex');
+
+      const payload = {
+        store_code: CONFIG.STORE_CODE,
+        store_name: CONFIG.STORE_NAME,
+        name,
+        phone,
+        product,
+        pageLink,
+        images: uploadedImages, 
+        total: '৳০ (বাকি ৳৯৯৯ কাজ শেষে)',
+        time: new Date().toLocaleString('bn-BD', { timeZone: 'Asia/Dhaka' })
+      };
+
+      try {
+        await fetch(`${CONFIG.WORKER_URL}/order`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+      } catch(e) {
+        console.warn('Worker Request Error:', e);
+      }
+
+      form.classList.add('hidden');
+      $('#successView').classList.remove('hidden');
+    });
+
+    $('#successClose').addEventListener('click', () => {
+      closeModal();
+      setTimeout(() => {
+        form.reset();
+        uploadedImages = [];
+        renderPreviews();
+        form.classList.remove('hidden');
+        $('#successView').classList.add('hidden');
+        submitBtn.disabled = false;
+        $('.btn-text', submitBtn).classList.remove('hidden');$('.btn-loading', submitBtn).classList.add('hidden');
+      }, 300);
+    });
+  </script>
+</body>
+</html>
