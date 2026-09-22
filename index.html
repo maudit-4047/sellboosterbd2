@@ -1,27 +1,21 @@
 <!DOCTYPE html>
-<html lang="bn" class="scroll-smooth">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <title>Omor Fresh | রিচার্জেবল পোর্টেবল মিনি ব্লেন্ডার ও জুসার (USB Rechargeable Blender)</title>
-  <meta name="description" content="ওমর রিচার্জেবল পোর্টেবল মিনি ব্লেন্ডার — জিম, অফিস বা ভ্রমণের জন্য ইনস্ট্যান্ট ফ্রেশ জুস ও প্রোটিন স্মুদি মেকার। ৬-ব্লেড SUS304 স্টেইনলেস স্টিল ও ইউএসবি চার্জিং। ক্যাশ অন ডেলিভারিতে অর্ডার করুন।" />
+  <title>AuraFlame™ | Ultrasonic LED Flame Aroma Diffuser & Humidifier — Luxury Living Co.</title>
+  <meta name="description" content="Experience the soothing ambiance of the AuraFlame™ Ultrasonic Flame Diffuser. Featuring cool-to-touch LED flame mist, whisper-quiet ultrasonic operation, and pure aromatherapy." />
 
   <!-- Favicon -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🥤</text></svg>">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔥</text></svg>">
 
   <!-- Multi-Tenant Store Identity Configuration -->
   <script>
     const isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
     window.STORE_CONFIG = {
-      STORE_ID: 'OMOR12',
+      STORE_ID: 'AURA01',
       API_URL: isLocalhost ? '' : 'https://proud-smoke-56cf.azwadhossain128.workers.dev'
     };
-
-    function toBengaliNum(num) {
-      if (num === null || num === undefined) return '';
-      const bnDigits = ['০', '১', '২', '৩', '৪', '৫', '৬', '৭', '৮', '৯'];
-      return String(num).replace(/[0-9]/g, d => bnDigits[Number(d)]);
-    }
 
     function safeSetText(id, newText) {
       const el = document.getElementById(id);
@@ -31,10 +25,10 @@
     }
   </script>
 
-  <!-- Google Fonts: Hind Siliguri (Bengali) + Outfit (English Numbers & Accents) -->
+  <!-- Google Fonts: Plus Jakarta Sans & Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800;900&display=swap" rel="stylesheet">
 
   <!-- Font Awesome 6 Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
@@ -46,24 +40,22 @@
       theme: {
         extend: {
           fontFamily: {
-            bangla: ['"Hind Siliguri"', 'sans-serif'],
-            display: ['"Outfit"', 'sans-serif'],
-            sans: ['"Hind Siliguri"', '"Outfit"', 'sans-serif']
+            sans: ['"Inter"', 'sans-serif'],
+            display: ['"Plus Jakarta Sans"', 'sans-serif'],
           },
           colors: {
             brand: {
-              50: '#ecfdf5',
-              100: '#d1fae5',
-              500: '#10b981',
-              600: '#059669',
-              700: '#047857',
-              800: '#065f46',
-              900: '#064e3b'
+              50: '#fffbeb',
+              100: '#fef3c7',
+              500: '#f59e0b',
+              600: '#d97706',
+              700: '#b45309',
+              900: '#78350f'
             },
-            accent: {
-              500: '#f97316',
-              600: '#ea580c',
-              700: '#c2410c'
+            dark: {
+              800: '#18181b',
+              900: '#09090b',
+              950: '#040405'
             }
           }
         }
@@ -73,186 +65,362 @@
 
   <style>
     body {
-      font-family: 'Hind Siliguri', sans-serif;
-      background-color: #f8fafc;
-      color: #0f172a;
+      font-family: 'Inter', sans-serif;
+      background-color: #fafafa;
+      color: #09090b;
     }
-    .font-eng {
-      font-family: 'Outfit', sans-serif;
+    .font-heading {
+      font-family: 'Plus Jakarta Sans', sans-serif;
     }
-    .pulse-glow {
-      box-shadow: 0 0 0 0 rgba(5, 150, 105, 0.6);
-      animation: pulseGlow 2s infinite;
+    .bundle-radio:checked + div {
+      border-color: #09090b;
+      background-color: #ffffff;
+      box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.08);
     }
-    @keyframes pulseGlow {
-      0% { box-shadow: 0 0 0 0 rgba(5, 150, 105, 0.6); }
-      70% { box-shadow: 0 0 0 14px rgba(5, 150, 105, 0); }
-      100% { box-shadow: 0 0 0 0 rgba(5, 150, 105, 0); }
+    .bundle-radio:checked + div .check-circle {
+      border-color: #09090b;
+      background-color: #09090b;
     }
-    .pkg-radio:checked + div {
-      border-color: #059669;
-      background-color: #f0fdf4;
-    }
-    .pkg-radio:checked + div .check-indicator {
-      background-color: #059669;
-      border-color: #059669;
-    }
-    .pkg-radio:checked + div .check-indicator i {
+    .bundle-radio:checked + div .check-circle i {
       display: block;
+    }
+    .pulse-subtle {
+      animation: pulseSubtle 2.5s infinite;
+    }
+    @keyframes pulseSubtle {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.015); }
     }
   </style>
 
   <!-- __PAGE_CONFIG_INJECTION__ -->
   <!-- __FB_PIXEL_CODE__ -->
 </head>
-<body class="selection:bg-emerald-500/20 selection:text-emerald-900 antialiased pb-24 sm:pb-0">
+<body class="selection:bg-amber-500/20 selection:text-amber-950 antialiased pb-24 sm:pb-0">
 
   <!-- 1. Top Urgency Announcement Bar -->
-  <div class="bg-slate-900 text-white text-xs sm:text-sm py-2.5 px-4 text-center font-medium border-b border-emerald-800/40 shadow-sm">
-    <div class="max-w-6xl mx-auto flex items-center justify-center gap-2 flex-wrap">
-      <span class="bg-emerald-500/20 text-emerald-400 text-[10px] font-extrabold px-2 py-0.5 rounded-full uppercase tracking-wider font-eng border border-emerald-500/30">
-        🔥 মেগা অফার
+  <div class="bg-dark-900 text-white text-[11px] sm:text-xs py-2 px-4 text-center font-medium tracking-wide">
+    <div class="max-w-7xl mx-auto flex items-center justify-center gap-2 flex-wrap">
+      <span class="bg-amber-500/20 text-amber-400 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider border border-amber-500/30">
+        Flash Sale
       </span>
-      <span>আজকের অর্ডারে <strong>২ পিস ফ্যামিলি কম্বোতে ৫০০ টাকা অতিরিক্ত ছাড়!</strong> পণ্য হাতে পেয়ে চেক করে পেমেন্ট করুন।</span>
-      <span class="text-slate-500 hidden sm:inline">|</span>
-      <a href="tel:01700000000" class="text-emerald-300 hover:text-white font-eng font-bold flex items-center gap-1 transition">
-        <i class="fa-solid fa-phone text-[10px]"></i> <span class="store-phone-display">01700000000</span>
-      </a>
+      <span>✦ <strong>Free Express 2-3 Day Delivery</strong> on all orders today • 30-Night Risk-Free Trial</span>
+      <span class="text-zinc-500 hidden sm:inline">•</span>
+      <span class="text-zinc-400 hidden sm:inline">Pay with Cash on Delivery (COD)</span>
     </div>
   </div>
 
-  <!-- 2. Header & Brand Navigation -->
-  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200/80 shadow-xs">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
-      <div class="flex items-center gap-2.5">
-        <div class="w-10 h-10 rounded-2xl bg-gradient-to-tr from-emerald-600 to-teal-500 flex items-center justify-center text-white text-xl shadow-md shadow-emerald-600/25">
-          <i class="fa-solid fa-blender text-lg"></i>
+  <!-- 2. Clean Shopify DTC Navigation -->
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-zinc-200/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8 py-3.5 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="#" class="flex items-center gap-2">
+        <div class="w-8 h-8 rounded-xl bg-dark-900 text-amber-400 flex items-center justify-center text-sm shadow-sm">
+          <i class="fa-solid fa-fire-flame-curved"></i>
         </div>
-        <div>
-          <span class="font-display font-black text-xl tracking-tight text-slate-900 flex items-center gap-1">
-            OMOR <span class="text-emerald-600">FRESH</span>
-          </span>
-          <span class="text-[10px] text-emerald-600 font-bold block uppercase tracking-wider -mt-1 font-eng">Portable USB Blender</span>
-        </div>
-      </div>
+        <span class="font-heading font-black text-xl tracking-tight text-dark-900 uppercase">
+          Aura<span class="text-amber-600">Flame</span>
+        </span>
+      </a>
 
+      <!-- Quick Nav Links (Desktop) -->
+      <nav class="hidden md:flex items-center gap-8 text-xs font-semibold text-zinc-600 tracking-wide">
+        <a href="#overview" class="hover:text-dark-900 transition">Overview</a>
+        <a href="#benefits" class="hover:text-dark-900 transition">Benefits</a>
+        <a href="#lifestyle" class="hover:text-dark-900 transition">Experience</a>
+        <a href="#reviews" class="hover:text-dark-900 transition">Reviews (1,840+)</a>
+        <a href="#faq" class="hover:text-dark-900 transition">FAQ</a>
+      </nav>
+
+      <!-- Cart / Buy CTA -->
       <div class="flex items-center gap-3">
-        <a href="https://wa.me/8801700000000?text=Hello%20Omor%20Support" target="_blank"
-           id="headerWaBtn"
-           class="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs font-bold hover:bg-emerald-100 transition">
-          <i class="fa-brands fa-whatsapp text-sm text-emerald-600"></i>
-          <span class="store-phone-display font-eng">01700000000</span>
-        </a>
-
-        <a href="#checkoutSection"
-           class="px-4 py-2 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 text-white text-xs sm:text-sm font-bold shadow-md shadow-emerald-600/25 hover:from-emerald-500 hover:to-teal-500 transition active:scale-95 flex items-center gap-1.5">
-          <i class="fa-solid fa-cart-shopping text-xs"></i>
-          <span>অর্ডার করুন</span>
+        <div class="hidden sm:flex items-center gap-1.5 text-xs font-bold text-zinc-500">
+          <i class="fa-solid fa-shield-halved text-emerald-600 text-xs"></i>
+          <span>Official Store</span>
+        </div>
+        <a href="#orderSection"
+           class="px-4 py-2 rounded-xl bg-dark-900 text-white text-xs font-bold shadow-sm hover:bg-zinc-800 transition active:scale-95 flex items-center gap-2">
+          <span>Order Now</span>
+          <i class="fa-solid fa-arrow-right text-[10px]"></i>
         </a>
       </div>
+
     </div>
   </header>
 
-  <!-- 3. HERO SECTION -->
-  <section class="bg-gradient-to-b from-emerald-50/70 via-white to-slate-50 pt-6 pb-12 sm:pt-10 sm:pb-16 border-b border-slate-200/80">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+  <!-- 3. HERO PRODUCT BUY-BOX SECTION (Shopify Split Layout) -->
+  <section id="overview" class="pt-6 pb-12 sm:pt-10 sm:pb-16 bg-white border-b border-zinc-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8">
       
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
         
-        <!-- Left: High Converting Bengali Sales Copy (7 Cols) -->
-        <div class="lg:col-span-7 space-y-4 sm:space-y-5 text-left">
+        <!-- Left: Interactive Gallery (7 Cols) -->
+        <div class="lg:col-span-7 space-y-4 lg:sticky lg:top-24">
           
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 border border-emerald-300 text-xs font-bold shadow-xs">
-            <span class="w-2 h-2 rounded-full bg-emerald-600 animate-ping"></span>
-            <span>১০০% ফুড-গ্রেড ও শক্তিশালী ইউএসবি রিচার্জেবল মোটর</span>
-          </div>
-
-          <h1 class="text-2xl sm:text-4xl lg:text-[42px] font-black text-slate-900 leading-tight">
-            মুহূর্তেই ফ্রেশ ফ্রুট জুস ও প্রোটিন স্মুদি তৈরি করুন — <span class="text-emerald-600 underline decoration-emerald-400 decoration-wavy">ঘরে, জিমে কিংবা অফিসের ডেস্কে!</span>
-          </h1>
-
-          <p class="text-sm sm:text-base text-slate-600 leading-relaxed">
-            ভারী ইলেকট্রিক ব্লেন্ডার আর তারের ঝামেলা ভুলে যান! <strong>ওমর পোর্টেবল মিনি ব্লেন্ডার</strong>-এর শার্প <strong>৬-ব্লেড 3D স্টেইনলেস স্টিল কাটার</strong> দিয়ে মাত্র ৩০ সেকেন্ডেই বানিয়ে ফেলুন যেকোনো তাজা ফলের জুস, মিল্কশেক বা জিমের প্রোটিন ড্রিংকস।
-          </p>
-
-          <!-- 4 Core Trust Highlight Pills -->
-          <div class="grid grid-cols-2 gap-2.5 pt-1 text-xs sm:text-sm text-slate-700 font-semibold">
-            <div class="flex items-center gap-2 p-2.5 bg-white rounded-xl border border-slate-200/80 shadow-xs hover:border-emerald-300 transition">
-              <i class="fa-solid fa-gear text-emerald-600 text-sm"></i>
-              <span>৬-ব্লেড SUS304 কাটার (অতি দ্রুত ব্লেন্ডিং)</span>
+          <!-- Main Display Image Container -->
+          <div class="relative rounded-3xl overflow-hidden bg-zinc-100 border border-zinc-200 aspect-square shadow-sm">
+            <img id="mainProductImg" src="/images/aura-hero.jpg" onerror="this.src='images/hero_opt.jpg'" alt="AuraFlame Ultrasonic Aroma Diffuser"
+                 class="w-full h-full object-cover transition-all duration-300" />
+            
+            <div class="absolute top-4 left-4 bg-dark-900/90 backdrop-blur-md text-white px-3 py-1 rounded-full text-[11px] font-bold tracking-wider uppercase font-heading border border-white/10">
+              Best Seller • 2026 Edition
             </div>
-            <div class="flex items-center gap-2 p-2.5 bg-white rounded-xl border border-slate-200/80 shadow-xs hover:border-emerald-300 transition">
-              <i class="fa-solid fa-bolt text-emerald-600 text-sm"></i>
-              <span>USB Type-C ইউনিভার্সাল ফাস্ট চার্জ</span>
-            </div>
-            <div class="flex items-center gap-2 p-2.5 bg-white rounded-xl border border-slate-200/80 shadow-xs hover:border-emerald-300 transition">
-              <i class="fa-solid fa-shield-halved text-emerald-600 text-sm"></i>
-              <span>১০০% BPA-ফ্রি বেবি ফুড গ্রেড উপাদান</span>
-            </div>
-            <div class="flex items-center gap-2 p-2.5 bg-white rounded-xl border border-slate-200/80 shadow-xs hover:border-emerald-300 transition">
-              <i class="fa-solid fa-battery-full text-emerald-600 text-sm"></i>
-              <span>এক চার্জে ১০-১৫ গ্লাস ফ্রেশ জুস</span>
+            
+            <div class="absolute bottom-4 left-4 bg-white/90 backdrop-blur-md text-dark-900 px-3 py-1.5 rounded-xl text-xs font-bold shadow-md border border-zinc-200 flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+              <span>100% Cool-to-Touch Mist</span>
             </div>
           </div>
 
-          <!-- Pricing & Direct CTA Card -->
-          <div class="p-4 sm:p-5 rounded-2xl bg-white border-2 border-emerald-500/40 shadow-xl shadow-emerald-500/10 space-y-3">
-            <div class="flex items-baseline gap-3 flex-wrap">
-              <span class="text-3xl sm:text-4xl font-black text-emerald-700 font-eng" id="heroPriceDisplay">৳১,১৫০</span>
-              <span class="text-sm sm:text-base text-slate-400 line-through font-eng" id="heroRegDisplay">৳১,৬৫০</span>
-              <span class="px-2.5 py-1 rounded-md bg-accent-500/10 text-accent-600 border border-accent-500/20 text-xs font-black" id="heroDiscountBadge">
-                ৫০০৳ ছাড় (আজকের স্পেশাল)
-              </span>
-            </div>
-            <div class="text-xs text-emerald-700 font-bold flex items-center gap-1.5">
-              <i class="fa-solid fa-truck-fast text-emerald-600"></i>
-              <span>পণ্য হাতে পেয়ে চেক করে মূল্য পরিশোধের সুযোগ (১০০% ক্যাশ অন ডেলিভারি)</span>
-            </div>
+          <!-- Thumbnails Strip -->
+          <div class="grid grid-cols-4 gap-3">
+            <button onclick="setMainImage('/images/aura-hero.jpg', this)"
+                    class="thumb-btn rounded-2xl overflow-hidden border-2 border-dark-900 aspect-square bg-zinc-50 transition hover:opacity-90">
+              <img src="/images/aura-hero.jpg" onerror="this.src='images/hero_opt.jpg'" class="w-full h-full object-cover" />
+            </button>
+            <button onclick="setMainImage('/images/aura-bedroom.jpg', this)"
+                    class="thumb-btn rounded-2xl overflow-hidden border-2 border-transparent hover:border-zinc-300 aspect-square bg-zinc-50 transition">
+              <img src="/images/aura-bedroom.jpg" onerror="this.src='images/bedroom_opt.jpg'" class="w-full h-full object-cover" />
+            </button>
+            <button onclick="setMainImage('/images/aura-features.jpg', this)"
+                    class="thumb-btn rounded-2xl overflow-hidden border-2 border-transparent hover:border-zinc-300 aspect-square bg-zinc-50 transition">
+              <img src="/images/aura-features.jpg" onerror="this.src='images/features_opt.jpg'" class="w-full h-full object-cover" />
+            </button>
+            <button onclick="setMainImage('/images/aura-bundle.jpg', this)"
+                    class="thumb-btn rounded-2xl overflow-hidden border-2 border-transparent hover:border-zinc-300 aspect-square bg-zinc-50 transition">
+              <img src="/images/aura-bundle.jpg" onerror="this.src='images/bundle_opt.jpg'" class="w-full h-full object-cover" />
+            </button>
+          </div>
 
-            <div class="pt-1 flex flex-col sm:flex-row gap-3">
-              <a href="#checkoutSection"
-                 class="w-full py-3.5 px-6 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-extrabold text-sm sm:text-base text-center shadow-lg shadow-emerald-600/30 transition transform active:scale-[0.99] pulse-glow flex items-center justify-center gap-2">
-                <i class="fa-solid fa-hand-point-right"></i>
-                <span>ক্যাশ অন ডেলিভারিতে অর্ডার করুন</span>
-              </a>
-              <a href="tel:01700000000"
-                 class="py-3 px-4 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold text-xs sm:text-sm text-center transition flex items-center justify-center gap-1.5 border border-slate-300 shrink-0">
-                <i class="fa-solid fa-phone text-emerald-700"></i>
-                <span class="store-phone-display font-eng">01700000000</span>
-              </a>
+          <!-- 4 Core Trust Micro-Pills -->
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-2 text-center text-xs font-semibold text-zinc-600">
+            <div class="p-2.5 rounded-xl bg-zinc-50 border border-zinc-200/80">
+              <i class="fa-solid fa-volume-xmark text-amber-600 mb-1 block text-sm"></i>
+              <span>&lt;24dB Ultra Quiet</span>
+            </div>
+            <div class="p-2.5 rounded-xl bg-zinc-50 border border-zinc-200/80">
+              <i class="fa-solid fa-power-off text-amber-600 mb-1 block text-sm"></i>
+              <span>Auto-Off Safety</span>
+            </div>
+            <div class="p-2.5 rounded-xl bg-zinc-50 border border-zinc-200/80">
+              <i class="fa-solid fa-spa text-amber-600 mb-1 block text-sm"></i>
+              <span>Aromatherapy</span>
+            </div>
+            <div class="p-2.5 rounded-xl bg-zinc-50 border border-zinc-200/80">
+              <i class="fa-solid fa-truck-fast text-amber-600 mb-1 block text-sm"></i>
+              <span>Free Delivery</span>
             </div>
           </div>
 
         </div>
 
-        <!-- Right: Real Product Images Gallery (5 Cols) -->
-        <div class="lg:col-span-5 space-y-3">
-          <!-- Main Display Image -->
-          <div class="relative rounded-3xl overflow-hidden border-4 border-white shadow-2xl aspect-square bg-slate-100">
-            <img id="mainProductImg" src="/images/omor-hero.jpg" onerror="this.src='images/hero_opt.jpg'" alt="Omor Portable USB Juicer Blender" class="w-full h-full object-cover transition duration-300" />
-            <div class="absolute top-3 left-3 bg-slate-950/85 backdrop-blur-md text-white px-3 py-1 rounded-full text-[11px] font-bold font-eng border border-white/20">
-              SUS304 6-Blade Cutter
+        <!-- Right: Shopify DTC Product Buy Box (5 Cols) -->
+        <div class="lg:col-span-5 space-y-5 text-left">
+          
+          <!-- Star Rating & Review Hook -->
+          <div class="flex items-center gap-2">
+            <div class="flex text-amber-400 text-xs">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
             </div>
-            <div class="absolute bottom-3 right-3 bg-emerald-600 text-white px-3 py-1 rounded-xl text-xs font-bold shadow-md">
-              ক্যাশ অন ডেলিভারি
-            </div>
+            <a href="#reviews" class="text-xs font-semibold text-zinc-600 hover:text-dark-900 underline underline-offset-2">
+              4.9/5.0 (1,840+ Reviews)
+            </a>
+            <span class="text-xs text-emerald-600 font-bold bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200">
+              Verified Buyer Choice
+            </span>
           </div>
 
-          <!-- Thumbnails Selector -->
-          <div class="grid grid-cols-4 gap-2">
-            <button onclick="setMainImage('/images/omor-hero.jpg', this)" class="thumb-btn rounded-xl overflow-hidden border-2 border-emerald-600 aspect-square shadow-sm transition">
-              <img src="/images/omor-hero.jpg" onerror="this.src='images/hero_opt.jpg'" class="w-full h-full object-cover" />
-            </button>
-            <button onclick="setMainImage('/images/omor-combo.jpg', this)" class="thumb-btn rounded-xl overflow-hidden border-2 border-transparent hover:border-emerald-400 aspect-square shadow-sm transition">
-              <img src="/images/omor-combo.jpg" onerror="this.src='images/combo_opt.jpg'" class="w-full h-full object-cover" />
-            </button>
-            <button onclick="setMainImage('/images/omor-lifestyle.jpg', this)" class="thumb-btn rounded-xl overflow-hidden border-2 border-transparent hover:border-emerald-400 aspect-square shadow-sm transition">
-              <img src="/images/omor-lifestyle.jpg" onerror="this.src='images/lifestyle_opt.jpg'" class="w-full h-full object-cover" />
-            </button>
-            <button onclick="setMainImage('/images/omor-blades.jpg', this)" class="thumb-btn rounded-xl overflow-hidden border-2 border-transparent hover:border-emerald-400 aspect-square shadow-sm transition">
-              <img src="/images/omor-blades.jpg" onerror="this.src='images/blades_opt.jpg'" class="w-full h-full object-cover" />
-            </button>
+          <!-- Product Title & Hook -->
+          <div>
+            <h1 class="font-heading font-black text-2xl sm:text-3xl text-dark-900 tracking-tight leading-tight">
+              AuraFlame™ Ultrasonic LED Flame Aroma Diffuser
+            </h1>
+            <p class="text-xs sm:text-sm text-zinc-500 mt-2 leading-relaxed">
+              Transform any room into a tranquil luxury sanctuary. Featuring realistic glowing ambient flame mist, whisper-quiet ultrasonic technology, and pure organic aromatherapy.
+            </p>
           </div>
+
+          <!-- Pricing Banner -->
+          <div class="p-4 rounded-2xl bg-zinc-50 border border-zinc-200 flex items-baseline justify-between">
+            <div class="flex items-baseline gap-2.5">
+              <span class="font-heading font-black text-3xl text-dark-900" id="heroPriceDisplay">৳1,450</span>
+              <span class="text-sm text-zinc-400 line-through" id="heroRegDisplay">৳2,250</span>
+            </div>
+            <span class="px-2.5 py-1 rounded-lg bg-amber-500/10 text-amber-800 text-xs font-extrabold uppercase border border-amber-500/20" id="heroDiscountBadge">
+              Save 35% Today
+            </span>
+          </div>
+
+          <!-- Order Form / Bundle Selector -->
+          <form id="orderSection" onsubmit="submitAuraOrder(event)" class="space-y-4 pt-1">
+            
+            <!-- Step 1: Select Bundle (Shopify Style) -->
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-xs font-bold uppercase tracking-wider text-zinc-500">Select Your Bundle</span>
+                <span class="text-[11px] font-bold text-amber-700">★ Free Shipping Included</span>
+              </div>
+
+              <div class="space-y-2.5">
+                
+                <!-- Bundle 1: Single Unit -->
+                <label class="relative cursor-pointer block select-none">
+                  <input type="radio" name="bundleOption" id="bundle1" value="pkg1"
+                         data-price="1450" data-regular="2250" data-title="1x AuraFlame™ Diffuser (Single Unit)"
+                         class="bundle-radio sr-only" onchange="calculateAuraTotal()" />
+                  <div class="p-3.5 rounded-2xl border-2 border-zinc-200 bg-white transition hover:border-zinc-400 flex items-center justify-between">
+                    <div class="flex items-center gap-3">
+                      <div class="check-circle w-5 h-5 rounded-full border-2 border-zinc-300 flex items-center justify-center text-white text-[9px]">
+                        <i class="fa-solid fa-check hidden"></i>
+                      </div>
+                      <div>
+                        <span class="font-heading font-bold text-sm text-dark-900 block" id="pkgTitle1Display">1x AuraFlame™ Diffuser</span>
+                        <span class="text-[11px] text-zinc-500" id="pkgSub1Display">Essential Single Unit (Matte Finish)</span>
+                      </div>
+                    </div>
+                    <div class="text-right">
+                      <span class="font-heading font-black text-sm text-dark-900 block" id="pkgPrice1Display">৳1,450</span>
+                      <span class="text-[10px] text-zinc-400 line-through" id="pkgReg1Display">৳2,250</span>
+                    </div>
+                  </div>
+                </label>
+
+                <!-- Bundle 2: Duo Pack (Most Popular) - DEFAULT -->
+                <label class="relative cursor-pointer block select-none">
+                  <input type="radio" name="bundleOption" id="bundle2" value="pkg2" checked
+                         data-price="2650" data-regular="4500" data-title="2x AuraFlame™ Duo Set (1x Black + 1x White)"
+                         class="bundle-radio sr-only" onchange="calculateAuraTotal()" />
+                  <div class="p-3.5 rounded-2xl border-2 border-dark-900 bg-white shadow-sm flex items-center justify-between relative">
+                    <span class="absolute -top-2.5 right-4 px-2 py-0.5 rounded-full bg-dark-900 text-white font-extrabold text-[9px] uppercase tracking-wider shadow-xs">
+                      Best Value • Save ৳500 Extra
+                    </span>
+                    <div class="flex items-center gap-3">
+                      <div class="check-circle w-5 h-5 rounded-full border-2 border-dark-900 bg-dark-900 flex items-center justify-center text-white text-[9px]">
+                        <i class="fa-solid fa-check"></i>
+                      </div>
+                      <div>
+                        <span class="font-heading font-bold text-sm text-dark-900 block" id="pkgTitle2Display">2x AuraFlame™ Duo Pack</span>
+                        <span class="text-[11px] text-zinc-500" id="pkgSub2Display">1x Matte Black + 1x Pure White Set</span>
+                      </div>
+                    </div>
+                    <div class="text-right">
+                      <span class="font-heading font-black text-sm text-dark-900 block" id="pkgPrice2Display">৳2,650</span>
+                      <span class="text-[10px] text-zinc-400 line-through" id="pkgReg2Display">৳4,500</span>
+                    </div>
+                  </div>
+                </label>
+
+                <!-- Bundle 3: VIP Aromatherapy Kit -->
+                <label class="relative cursor-pointer block select-none">
+                  <input type="radio" name="bundleOption" id="bundle3" value="pkg3"
+                         data-price="1850" data-regular="2750" data-title="1x AuraFlame™ + 3x Organic Essential Oils Kit"
+                         class="bundle-radio sr-only" onchange="calculateAuraTotal()" />
+                  <div class="p-3.5 rounded-2xl border-2 border-zinc-200 bg-white transition hover:border-zinc-400 flex items-center justify-between">
+                    <div class="flex items-center gap-3">
+                      <div class="check-circle w-5 h-5 rounded-full border-2 border-zinc-300 flex items-center justify-center text-white text-[9px]">
+                        <i class="fa-solid fa-check hidden"></i>
+                      </div>
+                      <div>
+                        <span class="font-heading font-bold text-sm text-dark-900 block" id="pkgTitle3Display">1x Diffuser + 3x Essential Oils</span>
+                        <span class="text-[11px] text-zinc-500" id="pkgSub3Display">Lavender, Citrus & Eucalyptus Oils</span>
+                      </div>
+                    </div>
+                    <div class="text-right">
+                      <span class="font-heading font-black text-sm text-dark-900 block" id="pkgPrice3Display">৳1,850</span>
+                      <span class="text-[10px] text-zinc-400 line-through" id="pkgReg3Display">৳2,750</span>
+                    </div>
+                  </div>
+                </label>
+
+              </div>
+            </div>
+
+            <!-- Step 2: Delivery Area Selector -->
+            <div>
+              <span class="text-xs font-bold uppercase tracking-wider text-zinc-500 block mb-2">Shipping Destination</span>
+              <div class="grid grid-cols-2 gap-2.5">
+                <label class="cursor-pointer block select-none">
+                  <input type="radio" name="deliveryArea" id="deliveryInside" value="inside" data-cost="0" checked
+                         class="bundle-radio sr-only" onchange="calculateAuraTotal()" />
+                  <div class="p-3 rounded-xl border-2 border-dark-900 bg-white flex items-center justify-between">
+                    <div>
+                      <span class="font-bold text-xs text-dark-900 block" id="deliveryInsideLabelDisplay">Inside Dhaka</span>
+                      <span class="text-[10px] text-zinc-500">24-48 Hours</span>
+                    </div>
+                    <span class="text-xs font-extrabold text-emerald-600" id="deliveryFeeInsideDisplay">FREE</span>
+                  </div>
+                </label>
+                <label class="cursor-pointer block select-none">
+                  <input type="radio" name="deliveryArea" id="deliveryOutside" value="outside" data-cost="0"
+                         class="bundle-radio sr-only" onchange="calculateAuraTotal()" />
+                  <div class="p-3 rounded-xl border-2 border-zinc-200 bg-white flex items-center justify-between">
+                    <div>
+                      <span class="font-bold text-xs text-dark-900 block" id="deliveryOutsideLabelDisplay">Outside Dhaka</span>
+                      <span class="text-[10px] text-zinc-500">All Bangladesh</span>
+                    </div>
+                    <span class="text-xs font-extrabold text-emerald-600" id="deliveryFeeOutsideDisplay">FREE</span>
+                  </div>
+                </label>
+              </div>
+            </div>
+
+            <!-- Step 3: Express Checkout Inputs -->
+            <div class="p-4 rounded-2xl bg-zinc-50 border border-zinc-200 space-y-3">
+              <span class="text-xs font-bold uppercase tracking-wider text-zinc-600 block">Shipping & Contact Details</span>
+
+              <div>
+                <label class="block text-[11px] font-bold text-zinc-700 mb-1">Full Name *</label>
+                <input type="text" id="custName" required placeholder="e.g. Alex Morgan"
+                       class="w-full px-3.5 py-2.5 rounded-xl border border-zinc-300 text-xs sm:text-sm focus:outline-none focus:border-dark-900 focus:ring-1 focus:ring-dark-900 bg-white" />
+              </div>
+
+              <div>
+                <label class="block text-[11px] font-bold text-zinc-700 mb-1">Mobile Number (11-Digits) *</label>
+                <input type="tel" id="custPhone" required maxlength="11" placeholder="e.g. 017XXXXXXXX"
+                       class="w-full px-3.5 py-2.5 rounded-xl border border-zinc-300 text-xs sm:text-sm font-mono focus:outline-none focus:border-dark-900 focus:ring-1 focus:ring-dark-900 bg-white" />
+              </div>
+
+              <div>
+                <label class="block text-[11px] font-bold text-zinc-700 mb-1">Full Delivery Address *</label>
+                <textarea id="custAddress" required rows="2" placeholder="House/Apartment #, Road, Area, City"
+                          class="w-full px-3.5 py-2.5 rounded-xl border border-zinc-300 text-xs sm:text-sm focus:outline-none focus:border-dark-900 focus:ring-1 focus:ring-dark-900 bg-white"></textarea>
+              </div>
+            </div>
+
+            <!-- Order Total Summary -->
+            <div class="p-4 rounded-2xl bg-zinc-100/80 border border-zinc-200/80 space-y-2 text-xs">
+              <div class="flex justify-between text-zinc-600">
+                <span>Selected:</span>
+                <span class="font-bold text-dark-900" id="billPkgTitle">2x AuraFlame™ Duo Set</span>
+              </div>
+              <div class="flex justify-between text-zinc-600">
+                <span>Shipping:</span>
+                <span class="font-bold text-emerald-600" id="billDeliveryFee">FREE (৳0)</span>
+              </div>
+              <div class="border-t border-zinc-200 pt-2 flex justify-between items-center text-dark-900 font-heading font-black text-base">
+                <span>Total Due (Cash on Delivery):</span>
+                <span class="text-dark-900 text-lg" id="billTotal">৳2,650</span>
+              </div>
+            </div>
+
+            <!-- Submit Button (DTC High-Converting) -->
+            <div>
+              <button type="submit" id="btnSubmitOrder"
+                      class="w-full py-4 px-6 rounded-2xl bg-dark-900 hover:bg-zinc-800 text-white font-heading font-black text-sm sm:text-base tracking-wide shadow-xl transition transform active:scale-[0.99] pulse-subtle flex items-center justify-center gap-2">
+                <i class="fa-solid fa-bag-shopping text-xs text-amber-400"></i>
+                <span id="btnSubmitText">Place Order — Cash On Delivery</span>
+              </button>
+              
+              <div class="flex items-center justify-center gap-4 text-[10px] text-zinc-500 font-medium mt-3">
+                <span class="flex items-center gap-1"><i class="fa-solid fa-lock text-emerald-600"></i> 256-Bit SSL</span>
+                <span class="flex items-center gap-1"><i class="fa-solid fa-rotate-left text-amber-600"></i> 30-Day Returns</span>
+                <span class="flex items-center gap-1"><i class="fa-solid fa-box-open text-blue-600"></i> Open Box Inspection</span>
+              </div>
+            </div>
+
+          </form>
+
         </div>
 
       </div>
@@ -260,146 +428,67 @@
     </div>
   </section>
 
-  <!-- 4. COMPARISON: সাধারণ ব্লেন্ডার বনাম ওমর পোর্টেবল ব্লেন্ডার -->
-  <section class="py-12 sm:py-16 bg-white border-b border-slate-200/80">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 text-center">
-      
-      <span class="text-xs font-bold uppercase tracking-wider text-emerald-600 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200 font-eng">
-        Smart Lifestyle Upgrade
+  <!-- 4. SOCIAL PROOF: AS SEEN ON -->
+  <section class="py-8 bg-zinc-50 border-b border-zinc-200/80">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+      <span class="text-[10px] font-bold uppercase tracking-widest text-zinc-400 block mb-4">
+        Featured In & Endorsed By Leading Lifestyle Media
       </span>
-      <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mt-2 mb-3">
-        কেন সাধারণ ভারী ব্লেন্ডারের বদলে এটি আপনার জন্য সেরা?
-      </h2>
-      <p class="text-sm text-slate-600 max-w-2xl mx-auto mb-10">
-        প্রতিদিনের ব্যস্ত জীবনে সহজে পুষ্টিকর তাজা জুস ও প্রোটিন শেক তৈরির জন্য এটি একটি যুগান্তকারী গ্যাজেট।
-      </p>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
-        <!-- Negative Card -->
-        <div class="p-6 rounded-2xl bg-rose-50/60 border border-rose-200 space-y-4">
-          <div class="flex items-center gap-3">
-            <div class="w-10 h-10 rounded-xl bg-rose-100 text-rose-600 flex items-center justify-center font-bold text-lg">
-              <i class="fa-solid fa-xmark"></i>
-            </div>
-            <div>
-              <h3 class="font-black text-base text-rose-900">সাধারণ ইলেকট্রিক ব্লেন্ডার</h3>
-              <p class="text-xs text-rose-600">ঝামেলাপূর্ণ ও সীমাবদ্ধ</p>
-            </div>
-          </div>
-          <ul class="space-y-2.5 text-xs sm:text-sm text-slate-700">
-            <li class="flex items-start gap-2">
-              <i class="fa-solid fa-circle-xmark text-rose-500 mt-1 shrink-0"></i>
-              <span>ভারী ও বড় সাইজ, রান্নাঘরের বাইরে বহন করা অসম্ভব।</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <i class="fa-solid fa-circle-xmark text-rose-500 mt-1 shrink-0"></i>
-              <span>বিদ্যুৎ বা সকেট ছাড়া এক মুহূর্তও কাজ করে না। লোডশেডিংয়ে অচল।</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <i class="fa-solid fa-circle-xmark text-rose-500 mt-1 shrink-0"></i>
-              <span>আলাদা জগে ঢেলে ধোয়া-মোছার দীর্ঘ ক্লান্তিকর ঝামেলা।</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <i class="fa-solid fa-circle-xmark text-rose-500 mt-1 shrink-0"></i>
-              <span>জিম বা অফিসে নিয়ে ফ্রেশ জুস খাওয়ার কোনো সুযোগ নেই।</span>
-            </li>
-          </ul>
-        </div>
-
-        <!-- Positive Card -->
-        <div class="p-6 rounded-2xl bg-emerald-50/80 border-2 border-emerald-500/50 shadow-md shadow-emerald-500/10 space-y-4">
-          <div class="flex items-center gap-3">
-            <div class="w-10 h-10 rounded-xl bg-emerald-600 text-white flex items-center justify-center font-bold text-lg shadow-sm">
-              <i class="fa-solid fa-check"></i>
-            </div>
-            <div>
-              <h3 class="font-black text-base text-emerald-950">ওমর রিচার্জেবল পোর্টেবল ব্লেন্ডার</h3>
-              <p class="text-xs text-emerald-700 font-bold">স্মার্ট, পোর্টেবল ও ক্যাশ অন ডেলিভারি</p>
-            </div>
-          </div>
-          <ul class="space-y-2.5 text-xs sm:text-sm text-slate-800 font-medium">
-            <li class="flex items-start gap-2">
-              <i class="fa-solid fa-circle-check text-emerald-600 mt-1 shrink-0"></i>
-              <span>কম্প্যাক্ট বোতল সাইজ — জিম ব্যাগ বা ব্যাকপ্যাকে সহজে নেওয়া যায়।</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <i class="fa-solid fa-circle-check text-emerald-600 mt-1 shrink-0"></i>
-              <span>পাওয়ার ব্যাংক, ল্যাপটপ কিংবা গাড়িতেও USB চার্জ দিয়ে চালানো যায়।</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <i class="fa-solid fa-circle-check text-emerald-600 mt-1 shrink-0"></i>
-              <span>ব্লেন্ডিং শেষে সরাসরি এই বোতল থেকেই খাওয়ার সুবিধা।</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <i class="fa-solid fa-circle-check text-emerald-600 mt-1 shrink-0"></i>
-              <span>সেলফ-ক্লিনিং সুবিধা: পানি দিয়ে সুইচ চাপলেই মাত্র ১০ সেকেন্ডে পরিষ্কার!</span>
-            </li>
-          </ul>
-        </div>
+      <div class="flex items-center justify-center gap-8 sm:gap-16 opacity-60 grayscale flex-wrap font-heading font-black text-base sm:text-xl tracking-tighter text-zinc-800">
+        <span>FORBES</span>
+        <span>GQ MAGAZINE</span>
+        <span>WIRED</span>
+        <span>ARCHITECTURAL DIGEST</span>
+        <span>BLOOMBERG</span>
       </div>
-
     </div>
   </section>
 
-  <!-- 5. 4 CORE PILLARS & VISUAL DETAIL -->
-  <section class="py-12 sm:py-16 bg-slate-50 border-b border-slate-200/80">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+  <!-- 5. THREE CORE VALUE PILLARS (Shopify Minimalist Grid) -->
+  <section id="benefits" class="py-16 sm:py-20 bg-white border-b border-zinc-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8">
       
-      <div class="text-center max-w-3xl mx-auto mb-12">
-        <span class="text-xs font-bold uppercase tracking-wider text-emerald-600 bg-emerald-100/80 px-3 py-1 rounded-full border border-emerald-300 font-eng">
-          High Performance Tech
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <span class="text-xs font-bold uppercase tracking-widest text-amber-600 bg-amber-50 px-3 py-1 rounded-full border border-amber-200 font-heading">
+          Engineering & Design
         </span>
-        <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mt-2 mb-3">
-          পোর্টেবল ব্লেন্ডারের প্রতিটি স্পেসিফিকেশন নিখুঁত মানের
+        <h2 class="font-heading font-black text-2xl sm:text-4xl text-dark-900 tracking-tight mt-3 mb-3">
+          Designed for Deep Rest and Aesthetic Tranquility
         </h2>
-        <p class="text-sm text-slate-600">
-          প্রিমিয়াম ফুড-গ্রেড কোয়ালিটি ও আধুনিক প্রযুক্তির সমন্বয়ে তৈরি যা দীর্ঘদিন বিশ্বস্ততার সাথে সেবা দেবে।
+        <p class="text-xs sm:text-sm text-zinc-500">
+          The perfect harmony of ultra-fine ultrasonic misting and optical illusion technology.
         </p>
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         
-        <!-- Feature 1 -->
-        <div class="bg-white p-5 rounded-2xl border border-slate-200/90 shadow-sm hover:shadow-md transition">
-          <div class="w-12 h-12 rounded-2xl bg-emerald-100 text-emerald-700 flex items-center justify-center text-xl mb-4">
-            <i class="fa-solid fa-fan"></i>
+        <div class="p-6 rounded-3xl bg-zinc-50 border border-zinc-200/80 space-y-4">
+          <div class="w-12 h-12 rounded-2xl bg-dark-900 text-amber-400 flex items-center justify-center text-lg">
+            <i class="fa-solid fa-fire"></i>
           </div>
-          <h3 class="font-black text-base text-slate-900 mb-1">৬-ব্লেড 3D স্টেইনলেস স্টিল</h3>
-          <p class="text-xs text-slate-600 leading-relaxed">
-            SUS304 ফুড-গ্রেড ব্লেড যা ২০,০০০+ আরপিএম গতিতে ঘুরে আপেল, গাজর, কমলা ও নরম বরফ দ্রুত গুঁড়ো করে ফেলে।
+          <h3 class="font-heading font-black text-lg text-dark-900">100% Safe Flame Illusion</h3>
+          <p class="text-xs sm:text-sm text-zinc-500 leading-relaxed">
+            Combines intelligent LED illumination with high-frequency ultrasonic cool mist. It looks like an authentic dancing flame, yet is completely cold and safe for kids and pets.
           </p>
         </div>
 
-        <!-- Feature 2 -->
-        <div class="bg-white p-5 rounded-2xl border border-slate-200/90 shadow-sm hover:shadow-md transition">
-          <div class="w-12 h-12 rounded-2xl bg-teal-100 text-teal-700 flex items-center justify-center text-xl mb-4">
-            <i class="fa-solid fa-bolt-lightning"></i>
+        <div class="p-6 rounded-3xl bg-zinc-50 border border-zinc-200/80 space-y-4">
+          <div class="w-12 h-12 rounded-2xl bg-dark-900 text-amber-400 flex items-center justify-center text-lg">
+            <i class="fa-solid fa-moon"></i>
           </div>
-          <h3 class="font-black text-base text-slate-900 mb-1">USB Type-C ফাস্ট চার্জ</h3>
-          <p class="text-xs text-slate-600 leading-relaxed">
-            স্মার্টফোনের সাধারণ চার্জার বা পাওয়ার ব্যাংকেই চার্জ করা সম্ভব। এক ফুল চার্জে ১৫ বারের বেশি ব্লেন্ড করা যায়।
+          <h3 class="font-heading font-black text-lg text-dark-900">Ultra-Quiet Sleep Mode</h3>
+          <p class="text-xs sm:text-sm text-zinc-500 leading-relaxed">
+            Operates at an whisper-quiet sound level below 24 decibels. No buzzing, no motor whine—just soothing ambient mist that helps relieve sinus congestion and stress.
           </p>
         </div>
 
-        <!-- Feature 3 -->
-        <div class="bg-white p-5 rounded-2xl border border-slate-200/90 shadow-sm hover:shadow-md transition">
-          <div class="w-12 h-12 rounded-2xl bg-amber-100 text-amber-700 flex items-center justify-center text-xl mb-4">
-            <i class="fa-solid fa-baby"></i>
-          </div>
-          <h3 class="font-black text-base text-slate-900 mb-1">১০০% BPA-ফ্রি ফুড গ্রেড</h3>
-          <p class="text-xs text-slate-600 leading-relaxed">
-            উন্নত মানের ইকো-ফ্রেন্ডলি উপাদান যা সম্পূর্ণ ক্ষতিকারক কেমিক্যালমুক্ত। বাচ্চাদের ফ্রুট পিউরি তৈরিতেও নিশ্চিন্তে ব্যবহারযোগ্য।
-          </p>
-        </div>
-
-        <!-- Feature 4 -->
-        <div class="bg-white p-5 rounded-2xl border border-slate-200/90 shadow-sm hover:shadow-md transition">
-          <div class="w-12 h-12 rounded-2xl bg-sky-100 text-sky-700 flex items-center justify-center text-xl mb-4">
+        <div class="p-6 rounded-3xl bg-zinc-50 border border-zinc-200/80 space-y-4">
+          <div class="w-12 h-12 rounded-2xl bg-dark-900 text-amber-400 flex items-center justify-center text-lg">
             <i class="fa-solid fa-droplet"></i>
           </div>
-          <h3 class="font-black text-base text-slate-900 mb-1">ওয়ান-টাচ সেলফ ক্লিনিং</h3>
-          <p class="text-xs text-slate-600 leading-relaxed">
-            হাত কেটে যাওয়ার কোনো ভয় নেই! শুধু কিছুটা পানি দিয়ে সুইচ চেপে ধরলেই স্বয়ংক্রিয়ভাবে নিজের ভেতর পরিষ্কার করে নেয়।
+          <h3 class="font-heading font-black text-lg text-dark-900">Pure Essential Oil Diffuser</h3>
+          <p class="text-xs sm:text-sm text-zinc-500 leading-relaxed">
+            Add 2-3 drops of your favorite lavender, eucalyptus, or citrus essential oil directly into the water reservoir to fill up to 300 sq. ft. with therapeutic natural fragrance.
           </p>
         </div>
 
@@ -408,54 +497,48 @@
     </div>
   </section>
 
-  <!-- 6. TARGET AUDIENCE SHOWCASE -->
-  <section class="py-12 sm:py-16 bg-white border-b border-slate-200/80">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+  <!-- 6. EDITORIAL LIFESTYLE SHOWCASE -->
+  <section id="lifestyle" class="py-16 sm:py-20 bg-zinc-50 border-b border-zinc-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8">
       
-      <div class="text-center max-w-2xl mx-auto mb-10">
-        <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mb-2">
-          যাঁদের দৈনন্দিন জীবনের জন্য এটি পারফেক্ট
-        </h2>
-        <p class="text-sm text-slate-600">
-          সুস্থ ও ফিট থাকার সহজ সঙ্গী ওমর পোর্টেবল মিনি ব্লেন্ডার।
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         
-        <div class="rounded-2xl border border-slate-200 overflow-hidden bg-slate-50 hover:shadow-md transition">
-          <div class="h-44 overflow-hidden relative">
-            <img src="/images/omor-lifestyle.jpg" onerror="this.src='images/lifestyle_opt.jpg'" alt="Gym fitness smoothie" class="w-full h-full object-cover" />
-            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 to-transparent flex items-end p-4">
-              <span class="text-white font-black text-base">🏋️ জিম ও ফিটনেসপ্রেমী</span>
-            </div>
-          </div>
-          <div class="p-4 text-xs sm:text-sm text-slate-600">
-            ওয়ার্কআউটের ঠিক পরেই তাজা প্রোটিন শেক বা ফ্রুট স্মুদি খাওয়ার জন্য জিমে সাথে নিয়ে যান অনায়াসে।
-          </div>
+        <div class="lg:col-span-6 rounded-3xl overflow-hidden shadow-2xl border border-zinc-200 aspect-square">
+          <img src="/images/aura-bedroom.jpg" onerror="this.src='images/bedroom_opt.jpg'" alt="AuraFlame on Nightstand" class="w-full h-full object-cover" />
         </div>
 
-        <div class="rounded-2xl border border-slate-200 overflow-hidden bg-slate-50 hover:shadow-md transition">
-          <div class="h-44 overflow-hidden relative">
-            <img src="/images/omor-hero.jpg" onerror="this.src='images/hero_opt.jpg'" alt="Office juice blender" class="w-full h-full object-cover" />
-            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 to-transparent flex items-end p-4">
-              <span class="text-white font-black text-base">💼 অফিস ও কর্মব্যস্ত জীবন</span>
-            </div>
-          </div>
-          <div class="p-4 text-xs sm:text-sm text-slate-600">
-            অফিসের কাজের ফাঁকে চিনিযুক্ত অস্বাস্থ্যকর জুস না খেয়ে নিজের টেবিলেই ব্লেন্ড করুন টাটকা ফলের ফ্রেশ জুস।
-          </div>
-        </div>
+        <div class="lg:col-span-6 space-y-6 text-left">
+          <span class="text-xs font-bold uppercase tracking-widest text-amber-600 bg-amber-100/60 px-3 py-1 rounded-full font-heading">
+            Elevate Your Space
+          </span>
+          <h2 class="font-heading font-black text-2xl sm:text-4xl text-dark-900 tracking-tight leading-tight">
+            The Ultimate Bedside Companion for Restorative Sleep
+          </h2>
+          <p class="text-xs sm:text-sm text-zinc-600 leading-relaxed">
+            Dry indoor air caused by AC or seasonal changes can trigger dry coughs, irritated sinuses, and restless sleep. AuraFlame continuously balances room humidity while releasing calming botanical scents.
+          </p>
 
-        <div class="rounded-2xl border border-slate-200 overflow-hidden bg-slate-50 hover:shadow-md transition">
-          <div class="h-44 overflow-hidden relative">
-            <img src="/images/omor-combo.jpg" onerror="this.src='images/combo_opt.jpg'" alt="Family combo set" class="w-full h-full object-cover" />
-            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 to-transparent flex items-end p-4">
-              <span class="text-white font-black text-base">🍼 পরিবার ও শিশু খাদ্য</span>
+          <div class="space-y-3 pt-2 text-xs sm:text-sm text-zinc-700 font-semibold">
+            <div class="flex items-center gap-3">
+              <i class="fa-solid fa-circle-check text-dark-900 text-base"></i>
+              <span>Up to 10-12 hours of continuous soothing mist</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <i class="fa-solid fa-circle-check text-dark-900 text-base"></i>
+              <span>Smart auto-shutoff when water runs out</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <i class="fa-solid fa-circle-check text-dark-900 text-base"></i>
+              <span>Dual brightness modes: Realistic Flame & Soft Nightlight</span>
             </div>
           </div>
-          <div class="p-4 text-xs sm:text-sm text-slate-600">
-            শিশুর জন্য সহজে ও ঝটপট কলা, আপেল বা পেঁপের পিউরি এবং পুষ্টিকর ফুড পেস্ট তৈরির সবচেয়ে নিরাপদ গ্যাজেট।
+
+          <div class="pt-2">
+            <a href="#overview"
+               class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-dark-900 hover:bg-zinc-800 text-white font-heading font-bold text-xs sm:text-sm transition">
+              <span>Get Yours with Cash on Delivery</span>
+              <i class="fa-solid fa-arrow-right text-xs"></i>
+            </a>
           </div>
         </div>
 
@@ -464,428 +547,269 @@
     </div>
   </section>
 
-  <!-- 7. REAL CUSTOMER REVIEWS -->
-  <section class="py-12 sm:py-16 bg-slate-50 border-b border-slate-200/80">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6">
-      <div class="text-center mb-10">
-        <div class="flex items-center justify-center gap-1 text-amber-400 text-lg mb-1">
+  <!-- 7. CUSTOMER REVIEWS (Shopify Loox / Judge.me Style) -->
+  <section id="reviews" class="py-16 sm:py-20 bg-white border-b border-zinc-200">
+    <div class="max-w-6xl mx-auto px-4 sm:px-8">
+      
+      <!-- Reviews Header & Breakdown -->
+      <div class="text-center max-w-xl mx-auto mb-12">
+        <div class="flex items-center justify-center gap-1 text-amber-400 text-lg mb-2">
           <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
         </div>
-        <h2 class="text-2xl sm:text-3xl font-black text-slate-900">সম্মানিত গ্রাহকদের বাস্তব অভিজ্ঞতা</h2>
-        <p class="text-xs sm:text-sm text-slate-600 mt-1">সারা বাংলাদেশ থেকে শত শত সন্তুষ্ট ক্রেতার প্রশংসিত পছন্দ</p>
-      </div>
-
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
-        
-        <div class="bg-white p-5 rounded-2xl border border-slate-200/80 shadow-xs space-y-3">
-          <div class="flex items-center justify-between">
-            <div class="flex items-center gap-2">
-              <div class="w-8 h-8 rounded-full bg-emerald-100 text-emerald-700 font-bold flex items-center justify-center text-xs">
-                তানভীর
-              </div>
-              <div>
-                <h4 class="font-bold text-xs text-slate-900">তানভীর আহমেদ</h4>
-                <p class="text-[10px] text-slate-400">উত্তরা, ঢাকা (Verified Buyer)</p>
-              </div>
-            </div>
-            <span class="text-amber-400 text-xs"><i class="fa-solid fa-star"></i> 5.0</span>
-          </div>
-          <p class="text-xs text-slate-600 leading-relaxed">
-            "জিমে নেওয়ার জন্য নিয়েছিলাম। সত্যি বলতে এটার মোটর স্পিড অসাধারণ! কলা আর দুধ দিয়ে ৩০ সেকেন্ডেই প্রোটিন শেক তৈরি হয়ে যায়। ব্যাটারি ব্যাকআপ দারুণ।"
-          </p>
-        </div>
-
-        <div class="bg-white p-5 rounded-2xl border border-slate-200/80 shadow-xs space-y-3">
-          <div class="flex items-center justify-between">
-            <div class="flex items-center gap-2">
-              <div class="w-8 h-8 rounded-full bg-emerald-100 text-emerald-700 font-bold flex items-center justify-center text-xs">
-                নুসরাত
-              </div>
-              <div>
-                <h4 class="font-bold text-xs text-slate-900">নুসরাত জাহান</h4>
-                <p class="text-[10px] text-slate-400">ধানমন্ডি, ঢাকা (Verified Buyer)</p>
-              </div>
-            </div>
-            <span class="text-amber-400 text-xs"><i class="fa-solid fa-star"></i> 5.0</span>
-          </div>
-          <p class="text-xs text-slate-600 leading-relaxed">
-            "আমার ১ বছরের বাচ্চার ফ্রুট পিউরি বানানোর জন্য খুব কাজে দিচ্ছে। সবচেয়ে ভালো লাগে ওয়াশ করা খুব ইজি, আর বিপিএ ফ্রি হওয়ায় কোনো দুর্গন্ধ বা ক্ষতিকারক ভয় নেই।"
-          </p>
-        </div>
-
-        <div class="bg-white p-5 rounded-2xl border border-slate-200/80 shadow-xs space-y-3">
-          <div class="flex items-center justify-between">
-            <div class="flex items-center gap-2">
-              <div class="w-8 h-8 rounded-full bg-emerald-100 text-emerald-700 font-bold flex items-center justify-center text-xs">
-                ইমরান
-              </div>
-              <div>
-                <h4 class="font-bold text-xs text-slate-900">ইমরান হোসেন</h4>
-                <p class="text-[10px] text-slate-400">চট্টগ্রাম (Verified Buyer)</p>
-              </div>
-            </div>
-            <span class="text-amber-400 text-xs"><i class="fa-solid fa-star"></i> 5.0</span>
-          </div>
-          <p class="text-xs text-slate-600 leading-relaxed">
-            "অফিসের জন্য ২ পিস কম্বো নিয়েছিলাম। ডেলিভারি ম্যানের সামনে খুলে চেক করে টাকা দিয়েছি। ৬ ব্লেডের কাটিং পাওয়ার জাস্ট জোস! ১০০% রেকমেন্ডেড।"
-          </p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- 8. CHECKOUT SECTION & DYNAMIC PACKAGES -->
-  <section id="checkoutSection" class="py-12 sm:py-16 bg-white border-t border-slate-200">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6">
-      
-      <div class="text-center mb-8 sm:mb-10">
-        <span class="text-xs font-bold uppercase tracking-wider text-emerald-600 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200 font-eng">
-          Cash On Delivery Checkout
-        </span>
-        <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mt-2">
-          অর্ডার করতে নিচের ফর্মটি সঠিকভাবে পূরণ করুন
+        <h2 class="font-heading font-black text-2xl sm:text-3xl text-dark-900">
+          Loved by Over 1,800+ Customers Worldwide
         </h2>
-        <p class="text-xs sm:text-sm text-slate-600 mt-1">
-          কোনো অগ্রিম পেমেন্টের প্রয়োজন নেই। পণ্য হাতে পেয়ে সম্পূর্ণ মূল্য পরিশোধ করবেন।
+        <p class="text-xs sm:text-sm text-zinc-500 mt-1">
+          Real feedback from verified purchasers who upgraded their home ambiance.
         </p>
       </div>
 
-      <form id="orderForm" onsubmit="submitOmorOrder(event)" class="space-y-8">
-
-        <!-- Step 1: Select Package -->
-        <div class="space-y-3">
-          <label class="block font-black text-base text-slate-900 flex items-center gap-2">
-            <span class="w-6 h-6 rounded-full bg-emerald-600 text-white flex items-center justify-center text-xs font-bold font-eng">১</span>
-            <span>পছন্দের প্যাকেজটি নির্বাচন করুন:</span>
-          </label>
-
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
-            
-            <!-- Package 1: Single Pack -->
-            <label class="relative cursor-pointer block select-none">
-              <input type="radio" name="pkgOption" id="pkgRadio1" value="pkg1"
-                     data-price="1150" data-regular="1650" data-title="১ পিস পোর্টেবল ব্লেন্ডার"
-                     class="pkg-radio sr-only" onchange="calculateOrderTotal()" />
-              <div class="p-4 rounded-2xl border-2 border-slate-200 bg-white transition hover:border-emerald-300 h-full flex flex-col justify-between">
-                <div>
-                  <div class="flex items-center justify-between mb-2">
-                    <span class="text-xs font-bold px-2 py-0.5 rounded bg-slate-100 text-slate-700">সিঙ্গেল প্যাক</span>
-                    <div class="check-indicator w-5 h-5 rounded-full border-2 border-slate-300 flex items-center justify-center text-white text-[10px]">
-                      <i class="fa-solid fa-check hidden"></i>
-                    </div>
-                  </div>
-                  <h4 class="font-black text-slate-900 text-sm" id="pkgTitle1Display">১ পিস পোর্টেবল ব্লেন্ডার</h4>
-                  <p class="text-[11px] text-slate-500 mt-0.5" id="pkgSub1Display">স্ট্যান্ডার্ড সিঙ্গেল সেট</p>
-                </div>
-                <div class="pt-3 border-t border-slate-100 mt-3 flex items-baseline gap-2">
-                  <span class="font-black text-lg text-emerald-700 font-eng" id="pkgPrice1Display">৳১,১৫০</span>
-                  <span class="text-xs text-slate-400 line-through font-eng" id="pkgReg1Display">৳১,৬৫০</span>
-                </div>
-              </div>
-            </label>
-
-            <!-- Package 2: Family Combo (500 TK OFF) - DEFAULT CHECKED -->
-            <label class="relative cursor-pointer block select-none">
-              <input type="radio" name="pkgOption" id="pkgRadio2" value="pkg2" checked
-                     data-price="2150" data-regular="3300" data-title="২ পিস ফ্যামিলি কম্বো (৫০০ টাকা ছাড়!)"
-                     class="pkg-radio sr-only" onchange="calculateOrderTotal()" />
-              <div class="p-4 rounded-2xl border-2 border-emerald-500 bg-emerald-50/50 transition hover:border-emerald-600 h-full flex flex-col justify-between relative shadow-sm">
-                <span class="absolute -top-3 right-4 px-2 py-0.5 rounded-full bg-accent-500 text-white font-extrabold text-[10px] tracking-wide shadow-xs">
-                  সেরা অফার (৫০০৳ ছাড়)
-                </span>
-                <div>
-                  <div class="flex items-center justify-between mb-2">
-                    <span class="text-xs font-bold px-2 py-0.5 rounded bg-emerald-100 text-emerald-800">ফ্যামিলি কম্বো</span>
-                    <div class="check-indicator w-5 h-5 rounded-full border-2 border-emerald-600 bg-emerald-600 flex items-center justify-center text-white text-[10px]">
-                      <i class="fa-solid fa-check"></i>
-                    </div>
-                  </div>
-                  <h4 class="font-black text-slate-900 text-sm" id="pkgTitle2Display">২ পিস ফ্যামিলি কম্বো</h4>
-                  <p class="text-[11px] text-slate-600 mt-0.5" id="pkgSub2Display">২টি ব্লেন্ডার বোতল একসাথে</p>
-                </div>
-                <div class="pt-3 border-t border-emerald-200 mt-3 flex items-baseline gap-2">
-                  <span class="font-black text-lg text-emerald-800 font-eng" id="pkgPrice2Display">৳২,১৫০</span>
-                  <span class="text-xs text-slate-400 line-through font-eng" id="pkgReg2Display">৳৩,৩০০</span>
-                </div>
-              </div>
-            </label>
-
-            <!-- Package 3: Blender + Travel Jar VIP -->
-            <label class="relative cursor-pointer block select-none">
-              <input type="radio" name="pkgOption" id="pkgRadio3" value="pkg3"
-                     data-price="1450" data-regular="1950" data-title="১ পিস ব্লেন্ডার + এক্সট্রা ট্রাভেল জার"
-                     class="pkg-radio sr-only" onchange="calculateOrderTotal()" />
-              <div class="p-4 rounded-2xl border-2 border-slate-200 bg-white transition hover:border-emerald-300 h-full flex flex-col justify-between">
-                <div>
-                  <div class="flex items-center justify-between mb-2">
-                    <span class="text-xs font-bold px-2 py-0.5 rounded bg-teal-100 text-teal-800">ভিআইপি সেট</span>
-                    <div class="check-indicator w-5 h-5 rounded-full border-2 border-slate-300 flex items-center justify-center text-white text-[10px]">
-                      <i class="fa-solid fa-check hidden"></i>
-                    </div>
-                  </div>
-                  <h4 class="font-black text-slate-900 text-sm" id="pkgTitle3Display">ব্লেন্ডার + ট্রাভেল জার</h4>
-                  <p class="text-[11px] text-slate-500 mt-0.5" id="pkgSub3Display">১ ব্লেন্ডার + ১ স্পোর্টস জার</p>
-                </div>
-                <div class="pt-3 border-t border-slate-100 mt-3 flex items-baseline gap-2">
-                  <span class="font-black text-lg text-emerald-700 font-eng" id="pkgPrice3Display">৳১,৪৫০</span>
-                  <span class="text-xs text-slate-400 line-through font-eng" id="pkgReg3Display">৳১,৯৫০</span>
-                </div>
-              </div>
-            </label>
-
-          </div>
-        </div>
-
-        <!-- Step 2: Delivery Area Selection -->
-        <div class="space-y-3">
-          <label class="block font-black text-base text-slate-900 flex items-center gap-2">
-            <span class="w-6 h-6 rounded-full bg-emerald-600 text-white flex items-center justify-center text-xs font-bold font-eng">২</span>
-            <span>ডেলিভারি এরিয়া নির্বাচন করুন:</span>
-          </label>
-
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            <label class="cursor-pointer block select-none">
-              <input type="radio" name="deliveryArea" id="deliveryRadioInside" value="inside" data-cost="60" checked
-                     class="pkg-radio sr-only" onchange="calculateOrderTotal()" />
-              <div class="p-3.5 rounded-xl border-2 border-emerald-500 bg-emerald-50/40 flex items-center justify-between">
-                <div class="flex items-center gap-2.5">
-                  <i class="fa-solid fa-city text-emerald-600 text-base"></i>
-                  <div>
-                    <span class="font-bold text-xs sm:text-sm text-slate-900 block" id="deliveryInsideLabelDisplay">ঢাকার ভিতরে</span>
-                    <span class="text-[11px] text-slate-500">হোম ডেলিভারি</span>
-                  </div>
-                </div>
-                <span class="font-black text-emerald-700 font-eng text-sm" id="deliveryFeeInsideDisplay">৳৬০</span>
-              </div>
-            </label>
-
-            <label class="cursor-pointer block select-none">
-              <input type="radio" name="deliveryArea" id="deliveryRadioOutside" value="outside" data-cost="120"
-                     class="pkg-radio sr-only" onchange="calculateOrderTotal()" />
-              <div class="p-3.5 rounded-xl border-2 border-slate-200 bg-white flex items-center justify-between">
-                <div class="flex items-center gap-2.5">
-                  <i class="fa-solid fa-map-location-dot text-emerald-600 text-base"></i>
-                  <div>
-                    <span class="font-bold text-xs sm:text-sm text-slate-900 block" id="deliveryOutsideLabelDisplay">ঢাকার বাইরে</span>
-                    <span class="text-[11px] text-slate-500">সারা বাংলাদেশ হোম ডেলিভারি</span>
-                  </div>
-                </div>
-                <span class="font-black text-emerald-700 font-eng text-sm" id="deliveryFeeOutsideDisplay">৳১২০</span>
-              </div>
-            </label>
-          </div>
-        </div>
-
-        <!-- Step 3: Customer Information -->
-        <div class="space-y-4 bg-slate-50 p-5 sm:p-6 rounded-2xl border border-slate-200/90">
-          <label class="block font-black text-base text-slate-900 flex items-center gap-2">
-            <span class="w-6 h-6 rounded-full bg-emerald-600 text-white flex items-center justify-center text-xs font-bold font-eng">৩</span>
-            <span>আপনার ডেলিভারি তথ্য লিখুন:</span>
-          </label>
-
-          <div class="space-y-3">
-            <div>
-              <label for="custName" class="block text-xs font-bold text-slate-700 mb-1">আপনার পূর্ণ নাম *</label>
-              <input type="text" id="custName" required placeholder="যেমন: মো: রফিকুল ইসলাম"
-                     class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20 bg-white" />
+      <!-- Review Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <div class="p-6 rounded-3xl bg-zinc-50 border border-zinc-200 space-y-3 text-left">
+          <div class="flex items-center justify-between">
+            <div class="flex text-amber-400 text-xs">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
             </div>
-
-            <div>
-              <label for="custPhone" class="block text-xs font-bold text-slate-700 mb-1">১১ ডিজিটের মোবাইল নম্বর *</label>
-              <input type="tel" id="custPhone" required placeholder="যেমন: 017XXXXXXXX" maxlength="11"
-                     class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm font-eng focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20 bg-white" />
-              <p class="text-[11px] text-slate-500 mt-1">অর্ডার নিশ্চিত করতে এই নম্বরে কল করা হতে পারে।</p>
-            </div>
-
-            <div>
-              <label for="custAddress" class="block text-xs font-bold text-slate-700 mb-1">পূর্ণ ঠিকানা (বাসা/রোড/এলাকা/জেলা) *</label>
-              <textarea id="custAddress" required rows="2" placeholder="যেমন: বাসা # ১২, রোড # ৪, সেক্টর # ৭, উত্তরা, ঢাকা"
-                        class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20 bg-white"></textarea>
-            </div>
-
-            <div>
-              <label for="custNotes" class="block text-xs font-bold text-slate-700 mb-1">কোনো বিশেষ নির্দেশনা (ঐচ্ছিক)</label>
-              <input type="text" id="custNotes" placeholder="যেমন: পছন্দের রঙ বা ডেলিভারির সুবিধাজনক সময়"
-                     class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20 bg-white" />
-            </div>
+            <span class="text-[10px] text-zinc-400 font-mono">2 days ago</span>
+          </div>
+          <h4 class="font-heading font-bold text-sm text-dark-900">"Looks even better in person!"</h4>
+          <p class="text-xs text-zinc-600 leading-relaxed">
+            "The flame effect is stunning, especially in the dark. It genuinely looks like a miniature fireplace on my nightstand. Added 3 drops of lavender and fell asleep in minutes."
+          </p>
+          <div class="pt-2 border-t border-zinc-200 flex items-center justify-between text-xs">
+            <span class="font-bold text-dark-900">Daniel M.</span>
+            <span class="text-[10px] text-emerald-700 font-bold flex items-center gap-1">
+              <i class="fa-solid fa-circle-check"></i> Verified Buyer
+            </span>
           </div>
         </div>
 
-        <!-- Order Summary & Total -->
-        <div class="bg-emerald-50/60 p-5 rounded-2xl border-2 border-emerald-500/30 space-y-2.5 text-xs sm:text-sm">
-          <div class="flex justify-between text-slate-600">
-            <span>নির্বাচিত প্যাকেজ:</span>
-            <span class="font-bold text-slate-800" id="billPkgTitle">২ পিস ফ্যামিলি কম্বো</span>
+        <div class="p-6 rounded-3xl bg-zinc-50 border border-zinc-200 space-y-3 text-left">
+          <div class="flex items-center justify-between">
+            <div class="flex text-amber-400 text-xs">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <span class="text-[10px] text-zinc-400 font-mono">1 week ago</span>
           </div>
-          <div class="flex justify-between text-slate-600">
-            <span>প্যাকেজ মূল্য:</span>
-            <span class="font-bold text-slate-800 font-eng" id="billPkgPrice">৳২,১৫০</span>
-          </div>
-          <div class="flex justify-between text-slate-600">
-            <span>ডেলিভারি চার্জ:</span>
-            <span class="font-bold text-slate-800 font-eng" id="billDeliveryFee">৳৬০</span>
-          </div>
-          <div class="border-t border-emerald-200 pt-2 flex justify-between items-center text-slate-900 font-black text-base sm:text-lg">
-            <span>সর্বমোট প্রদেয় বিল:</span>
-            <span class="text-emerald-700 font-eng" id="billTotal">৳২,২১০</span>
-          </div>
-        </div>
-
-        <!-- Submit Button -->
-        <div>
-          <button type="submit" id="btnSubmitOrder"
-                  class="w-full py-4 px-6 rounded-2xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-black text-base sm:text-lg shadow-xl shadow-emerald-600/30 transition transform active:scale-[0.99] pulse-glow flex items-center justify-center gap-2">
-            <i class="fa-solid fa-lock text-sm"></i>
-            <span id="btnSubmitText">অর্ডার নিশ্চিত করুন (ক্যাশ অন ডেলিভারি)</span>
-          </button>
-          <div class="text-center mt-2.5 text-xs text-slate-500 flex items-center justify-center gap-2">
-            <i class="fa-solid fa-shield-check text-emerald-600"></i>
-            <span>১০০% নিরাপদ ডেলিভারি • কোনো অগ্রিম টাকা লাগবে না</span>
+          <h4 class="font-heading font-bold text-sm text-dark-900">"Whisper quiet and completely safe."</h4>
+          <p class="text-xs text-zinc-600 leading-relaxed">
+            "I was worried my cat might try to touch the flame, but since it's just cold ultrasonic mist, it's 100% safe. Auto shutoff works perfectly once empty. Highly recommend the 2-pack!"
+          </p>
+          <div class="pt-2 border-t border-zinc-200 flex items-center justify-between text-xs">
+            <span class="font-bold text-dark-900">Sarah Jenkins</span>
+            <span class="text-[10px] text-emerald-700 font-bold flex items-center gap-1">
+              <i class="fa-solid fa-circle-check"></i> Verified Buyer
+            </span>
           </div>
         </div>
 
-      </form>
+        <div class="p-6 rounded-3xl bg-zinc-50 border border-zinc-200 space-y-3 text-left">
+          <div class="flex items-center justify-between">
+            <div class="flex text-amber-400 text-xs">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <span class="text-[10px] text-zinc-400 font-mono">2 weeks ago</span>
+          </div>
+          <h4 class="font-heading font-bold text-sm text-dark-900">"Great build quality & fast delivery."</h4>
+          <p class="text-xs text-zinc-600 leading-relaxed">
+            "Delivered via Cash on Delivery within 48 hours. The matte black finish has a soft-touch luxury feel that matches my desk setup perfectly. Premium experience all around."
+          </p>
+          <div class="pt-2 border-t border-zinc-200 flex items-center justify-between text-xs">
+            <span class="font-bold text-dark-900">Marcus Vance</span>
+            <span class="text-[10px] text-emerald-700 font-bold flex items-center gap-1">
+              <i class="fa-solid fa-circle-check"></i> Verified Buyer
+            </span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 8. FREQUENTLY ASKED QUESTIONS ACCORDION -->
+  <section id="faq" class="py-16 sm:py-20 bg-zinc-50 border-b border-zinc-200">
+    <div class="max-w-4xl mx-auto px-4 sm:px-8">
+      
+      <div class="text-center mb-12">
+        <h2 class="font-heading font-black text-2xl sm:text-3xl text-dark-900">Frequently Asked Questions</h2>
+        <p class="text-xs sm:text-sm text-zinc-500 mt-1">Everything you need to know about AuraFlame™.</p>
+      </div>
+
+      <div class="space-y-3 text-left">
+        
+        <details class="group bg-white p-5 rounded-2xl border border-zinc-200 [&_summary::-webkit-details-marker]:hidden cursor-pointer">
+          <summary class="flex items-center justify-between font-heading font-bold text-sm text-dark-900">
+            <span>Is the flame effect hot or dangerous for children/pets?</span>
+            <i class="fa-solid fa-chevron-down text-xs text-zinc-400 group-open:rotate-180 transition"></i>
+          </summary>
+          <p class="text-xs sm:text-sm text-zinc-600 mt-3 leading-relaxed">
+            Not at all! The flame effect is an optical illusion created by warm LED lighting through microscopic cool ultrasonic water mist. It is 100% cool to the touch and safe around curious children and pets.
+          </p>
+        </details>
+
+        <details class="group bg-white p-5 rounded-2xl border border-zinc-200 [&_summary::-webkit-details-marker]:hidden cursor-pointer">
+          <summary class="flex items-center justify-between font-heading font-bold text-sm text-dark-900">
+            <span>Can I use any essential oil with AuraFlame™?</span>
+            <i class="fa-solid fa-chevron-down text-xs text-zinc-400 group-open:rotate-180 transition"></i>
+          </summary>
+          <p class="text-xs sm:text-sm text-zinc-600 mt-3 leading-relaxed">
+            Yes! AuraFlame is crafted from corrosion-resistant food-grade PP polymer. Simply add 2-3 drops of any pure water-soluble essential oil (e.g. lavender, peppermint, eucalyptus) into the water tank.
+          </p>
+        </details>
+
+        <details class="group bg-white p-5 rounded-2xl border border-zinc-200 [&_summary::-webkit-details-marker]:hidden cursor-pointer">
+          <summary class="flex items-center justify-between font-heading font-bold text-sm text-dark-900">
+            <span>Does it automatically turn off when water runs out?</span>
+            <i class="fa-solid fa-chevron-down text-xs text-zinc-400 group-open:rotate-180 transition"></i>
+          </summary>
+          <p class="text-xs sm:text-sm text-zinc-600 mt-3 leading-relaxed">
+            Yes, it features a built-in smart water level sensor. When the water level drops below the minimum threshold, it automatically shuts off to protect the ultrasonic atomization plate.
+          </p>
+        </details>
+
+      </div>
 
     </div>
   </section>
 
   <!-- 9. FOOTER -->
-  <footer class="bg-slate-950 text-white py-8 border-t border-slate-800 text-center text-xs space-y-3">
-    <div class="max-w-6xl mx-auto px-4">
-      <div class="flex items-center justify-center gap-2 font-display font-black text-lg text-emerald-400">
-        <i class="fa-solid fa-blender"></i> OMOR FRESH
+  <footer class="bg-dark-950 text-white py-12 border-t border-zinc-800 text-center text-xs space-y-4">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="flex items-center justify-center gap-2 font-heading font-black text-lg text-amber-400 tracking-tight">
+        <i class="fa-solid fa-fire-flame-curved"></i> AURAFLAME LIVING
       </div>
-      <p class="text-slate-400 max-w-md mx-auto text-[11px]">
-        স্বাস্থ্যসম্মত ফ্রেশ লাইফস্টাইলের জন্য আধুনিক রিচার্জেবল ব্লেন্ডার সল্যুশন।
+      <p class="text-zinc-500 max-w-md mx-auto text-[11px]">
+        Luxury wellness and ultrasonic aromatherapy engineered for tranquil modern interiors.
       </p>
-      <div class="text-slate-500 text-[10px] pt-2">
-        © 2026 Omor Fresh Juicer. All Rights Reserved. Store ID: OMOR12.
+      <div class="text-zinc-600 text-[10px] pt-3 border-t border-zinc-900">
+        © 2026 AuraFlame Living Co. All Rights Reserved. Store ID: AURA01.
       </div>
     </div>
   </footer>
 
-  <!-- 10. MOBILE STICKY BOTTOM BAR -->
-  <div class="fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-slate-200 px-4 py-2.5 sm:hidden shadow-lg flex items-center justify-between">
-    <div>
-      <span class="text-[10px] text-slate-500 block">মোট বিল (COD)</span>
-      <span class="font-black text-emerald-700 font-eng text-lg" id="mobileBarPrice">৳২,২১০</span>
+  <!-- 10. SHOPIFY MOBILE STICKY BUY BAR -->
+  <div class="fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-zinc-200 px-4 py-3 sm:hidden shadow-lg flex items-center justify-between">
+    <div class="flex items-center gap-2.5">
+      <img src="/images/aura-hero.jpg" onerror="this.src='images/hero_opt.jpg'" class="w-10 h-10 rounded-xl object-cover border border-zinc-200" />
+      <div>
+        <span class="text-[10px] text-zinc-500 block uppercase font-bold tracking-wider">AuraFlame™</span>
+        <span class="font-heading font-black text-dark-900 text-base" id="mobileBarPrice">৳2,650</span>
+      </div>
     </div>
-    <a href="#checkoutSection"
-       class="py-2.5 px-6 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 text-white font-black text-xs shadow-md shadow-emerald-600/25 flex items-center gap-1.5">
-      <i class="fa-solid fa-cart-shopping text-xs"></i>
-      <span>অর্ডার করুন</span>
+    <a href="#overview"
+       class="py-2.5 px-5 rounded-xl bg-dark-900 text-white font-heading font-black text-xs shadow-md active:scale-95 flex items-center gap-1.5">
+      <span>Order COD</span>
+      <i class="fa-solid fa-arrow-right text-[10px]"></i>
     </a>
   </div>
 
   <!-- 11. ORDER SUCCESS MODAL -->
-  <div id="orderSuccessModal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-slate-950/70 backdrop-blur-xs p-4">
-    <div class="bg-white rounded-3xl p-6 sm:p-8 max-w-md w-full text-center space-y-4 shadow-2xl border border-slate-100 animate-in fade-in zoom-in duration-200">
-      <div class="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto text-2xl shadow-inner">
-        <i class="fa-solid fa-circle-check"></i>
+  <div id="orderSuccessModal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-xs p-4">
+    <div class="bg-white rounded-3xl p-6 sm:p-8 max-w-md w-full text-center space-y-4 shadow-2xl border border-zinc-100">
+      <div class="w-14 h-14 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto text-xl shadow-inner">
+        <i class="fa-solid fa-check"></i>
       </div>
-      <h3 class="text-xl sm:text-2xl font-black text-slate-900">অভিনন্দন! আপনার অর্ডারটি গৃহীত হয়েছে</h3>
-      <p class="text-xs sm:text-sm text-slate-600">
-        আমাদের কাস্টমার কেয়ার টিম দ্রুতই আপনার সাথে ফোনে যোগাযোগ করে অর্ডার কনফার্ম করবে।
+      <h3 class="font-heading font-black text-xl text-dark-900">Order Confirmed!</h3>
+      <p class="text-xs text-zinc-500">
+        Thank you for your order. Our fulfillment team is preparing your package for express dispatch.
       </p>
 
-      <div class="bg-slate-50 rounded-2xl p-4 border border-slate-200/80 text-left space-y-2 text-xs">
+      <div class="bg-zinc-50 rounded-2xl p-4 border border-zinc-200 text-left space-y-2 text-xs">
         <div class="flex justify-between">
-          <span class="text-slate-500">অর্ডার আইডি:</span>
-          <span class="font-black text-slate-900 font-eng" id="succOrderId">OMOR12-000001</span>
+          <span class="text-zinc-500">Order Reference:</span>
+          <span class="font-mono font-bold text-dark-900" id="succOrderId">AURA01-000001</span>
         </div>
         <div class="flex justify-between">
-          <span class="text-slate-500">প্যাকেজ:</span>
-          <span class="font-bold text-slate-800" id="succPkgTitle">২ পিস ফ্যামিলি কম্বো</span>
+          <span class="text-zinc-500">Package:</span>
+          <span class="font-bold text-dark-900" id="succPkgTitle">2x AuraFlame™ Duo Set</span>
         </div>
         <div class="flex justify-between">
-          <span class="text-slate-500">মোট মূল্য:</span>
-          <span class="font-black text-emerald-700 font-eng" id="succTotal">৳২,২১০</span>
+          <span class="text-zinc-500">Total (Cash on Delivery):</span>
+          <span class="font-heading font-black text-dark-900" id="succTotal">৳2,650</span>
         </div>
       </div>
 
       <div class="space-y-2 pt-2">
         <a id="succWaBtn" href="#" target="_blank"
-           class="w-full py-3 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs sm:text-sm flex items-center justify-center gap-2 shadow-md transition">
+           class="w-full py-3 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-heading font-bold text-xs sm:text-sm flex items-center justify-center gap-2 shadow-sm transition">
           <i class="fa-brands fa-whatsapp text-base"></i>
-          <span>হোয়াটসঅ্যাপে যোগাযোগ করুন</span>
+          <span>Track Order on WhatsApp</span>
         </a>
         <button onclick="document.getElementById('orderSuccessModal').classList.add('hidden')"
-                class="w-full py-2.5 px-4 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs transition">
-          বন্ধ করুন
+                class="w-full py-2.5 px-4 rounded-xl bg-zinc-100 hover:bg-zinc-200 text-zinc-700 font-bold text-xs transition">
+          Close
         </button>
       </div>
     </div>
   </div>
 
-  <!-- 12. CLIENT ENGINE SCRIPT: Calculations, Hydration & Submission -->
+  <!-- 12. CLIENT-SIDE ENGINE SCRIPT -->
   <script>
     function setMainImage(src, btnEl) {
       const img = document.getElementById('mainProductImg');
       if (img) img.src = src;
       document.querySelectorAll('.thumb-btn').forEach(b => {
-        b.classList.remove('border-emerald-600');
+        b.classList.remove('border-dark-900');
         b.classList.add('border-transparent');
       });
       if (btnEl) {
-        btnEl.classList.add('border-emerald-600');
+        btnEl.classList.add('border-dark-900');
         btnEl.classList.remove('border-transparent');
       }
     }
 
-    function calculateOrderTotal() {
-      const pkgRadio = document.querySelector('input[name="pkgOption"]:checked');
-      if (!pkgRadio) return;
+    function calculateAuraTotal() {
+      const bundleRadio = document.querySelector('input[name="bundleOption"]:checked');
+      if (!bundleRadio) return;
 
-      const price = parseInt(pkgRadio.getAttribute('data-price'), 10) || 1150;
-      const title = pkgRadio.getAttribute('data-title') || '১ পিস পোর্টেবল ব্লেন্ডার';
+      const price = parseInt(bundleRadio.getAttribute('data-price'), 10) || 1450;
+      const title = bundleRadio.getAttribute('data-title') || '1x AuraFlame™ Diffuser';
 
       const areaRadio = document.querySelector('input[name="deliveryArea"]:checked');
-      const deliveryCost = areaRadio ? (parseInt(areaRadio.getAttribute('data-cost'), 10) || 0) : 60;
+      const deliveryCost = areaRadio ? (parseInt(areaRadio.getAttribute('data-cost'), 10) || 0) : 0;
       const grandTotal = price + deliveryCost;
 
       safeSetText('billPkgTitle', title);
-      safeSetText('billPkgPrice', '৳' + toBengaliNum(price));
-      safeSetText('billDeliveryFee', deliveryCost > 0 ? ('৳' + toBengaliNum(deliveryCost)) : 'ফ্রি (৳০)');
-      safeSetText('billTotal', '৳' + toBengaliNum(grandTotal));
-      safeSetText('mobileBarPrice', '৳' + toBengaliNum(grandTotal));
+      safeSetText('billDeliveryFee', deliveryCost > 0 ? ('৳' + deliveryCost) : 'FREE (৳0)');
+      safeSetText('billTotal', '৳' + grandTotal);
+      safeSetText('mobileBarPrice', '৳' + grandTotal);
     }
 
-    async function submitOmorOrder(e) {
+    async function submitAuraOrder(e) {
       e.preventDefault();
 
       const name = document.getElementById('custName').value.trim();
       const phone = document.getElementById('custPhone').value.trim();
       const address = document.getElementById('custAddress').value.trim();
-      const notes = document.getElementById('custNotes').value.trim();
 
       if (!name || !phone || !address) {
-        alert('দয়া করে আপনার নাম, মোবাইল নম্বর এবং পূর্ণ ঠিকানা দিন।');
+        alert('Please fill in your name, mobile number, and delivery address.');
         return;
       }
 
       if (phone.length !== 11 || !phone.startsWith('01')) {
-        alert('অনুগ্রহ করে সঠিক ১১ ডিজিটের মোবাইল নম্বর লিখুন (যেমন: 01XXXXXXXXX)।');
+        alert('Please enter a valid 11-digit mobile number (e.g. 017XXXXXXXX).');
         return;
       }
 
-      const pkgRadio = document.querySelector('input[name="pkgOption"]:checked');
+      const bundleRadio = document.querySelector('input[name="bundleOption"]:checked');
       const areaRadio = document.querySelector('input[name="deliveryArea"]:checked');
 
-      const pkgTitle = pkgRadio.getAttribute('data-title') || 'পোর্টেবল ব্লেন্ডার';
-      const pkgPrice = parseInt(pkgRadio.getAttribute('data-price'), 10) || 1150;
-      const deliveryCost = areaRadio ? (parseInt(areaRadio.getAttribute('data-cost'), 10) || 0) : 60;
+      const pkgTitle = bundleRadio.getAttribute('data-title') || 'AuraFlame™ Diffuser';
+      const pkgPrice = parseInt(bundleRadio.getAttribute('data-price'), 10) || 1450;
+      const deliveryCost = areaRadio ? (parseInt(areaRadio.getAttribute('data-cost'), 10) || 0) : 0;
       const grandTotal = pkgPrice + deliveryCost;
-      const deliveryAreaName = areaRadio.value === 'inside'
-        ? ('ঢাকার ভিতরে' + (deliveryCost > 0 ? ` (৳${toBengaliNum(deliveryCost)})` : ' (ফ্রি)'))
-        : ('ঢাকার বাইরে' + (deliveryCost > 0 ? ` (৳${toBengaliNum(deliveryCost)})` : ' (ফ্রি)'));
+      const deliveryAreaName = areaRadio.value === 'inside' ? 'Inside Dhaka (Free)' : 'Outside Dhaka (Free)';
 
       const btn = document.getElementById('btnSubmitOrder');
       const btnText = document.getElementById('btnSubmitText');
       btn.disabled = true;
-      btnText.innerText = 'অর্ডার প্রসেস হচ্ছে...';
+      btnText.innerText = 'Processing Order...';
 
-      const storeId = (window.STORE_CONFIG && window.STORE_CONFIG.STORE_ID) ? window.STORE_CONFIG.STORE_ID : 'OMOR12';
+      const storeId = (window.STORE_CONFIG && window.STORE_CONFIG.STORE_ID) ? window.STORE_CONFIG.STORE_ID : 'AURA01';
       let apiUrl = (window.STORE_CONFIG && window.STORE_CONFIG.API_URL !== undefined) ? window.STORE_CONFIG.API_URL : '';
       if (!apiUrl && window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1' && !window.location.hostname.includes('proud-smoke-56cf')) {
         apiUrl = 'https://proud-smoke-56cf.azwadhossain128.workers.dev';
@@ -896,7 +820,7 @@
         name: name,
         phone: phone,
         address: address,
-        notes: notes,
+        notes: 'AuraFlame DTC Order',
         packageTitle: pkgTitle,
         packagePrice: pkgPrice,
         deliveryArea: deliveryAreaName,
@@ -913,12 +837,12 @@
 
         if (!response.ok) {
           const errText = await response.text();
-          let errMsg = `সার্ভার সমস্যা (${response.status})`;
+          let errMsg = `Server response error (${response.status})`;
           try {
             const errJson = JSON.parse(errText);
             if (errJson && errJson.message) errMsg = errJson.message;
           } catch(e) {}
-          alert('অর্ডার সম্পন্ন করা যায়নি: ' + errMsg);
+          alert('Could not complete order: ' + errMsg);
           return;
         }
 
@@ -927,28 +851,28 @@
         if (result.success) {
           safeSetText('succOrderId', result.orderId);
           safeSetText('succPkgTitle', pkgTitle);
-          safeSetText('succTotal', '৳' + toBengaliNum(grandTotal));
+          safeSetText('succTotal', '৳' + grandTotal);
 
           const waNumber = (window.PAGE_CONFIG && window.PAGE_CONFIG.brand && window.PAGE_CONFIG.brand.whatsapp) ? window.PAGE_CONFIG.brand.whatsapp : '01700000000';
           const waClean = waNumber.replace(/^0/, '880');
-          const waText = encodeURIComponent(`আসসালামু আলাইকুম Omor Support,\nআমি রিচার্জেবল পোর্টেবল ব্লেন্ডার অর্ডার করেছি।\nঅর্ডার আইডি: ${result.orderId}\nপ্যাকেজ: ${pkgTitle}\nমোট প্রদেয় বিল: ৳${grandTotal}`);
+          const waText = encodeURIComponent(`Hello AuraFlame Support,\nI just placed an order for AuraFlame.\nOrder Reference: ${result.orderId}\nBundle: ${pkgTitle}\nTotal (COD): ৳${grandTotal}`);
           document.getElementById('succWaBtn').href = `https://wa.me/${waClean}?text=${waText}`;
 
           document.getElementById('orderSuccessModal').classList.remove('hidden');
         } else {
-          alert('অর্ডার সম্পন্ন করা যায়নি: ' + (result.message || 'দয়া করে আবার চেষ্টা করুন।'));
+          alert('Could not complete order: ' + (result.message || 'Please try again.'));
         }
       } catch (err) {
-        alert('সার্ভারের সাথে যোগাযোগ করা যায়নি। আপনার ইন্টারনেট কানেকশন চেক করুন।');
+        alert('Could not connect to order server. Please check your internet connection.');
       } finally {
         btn.disabled = false;
-        btnText.innerText = 'অর্ডার নিশ্চিত করুন (ক্যাশ অন ডেলিভারি)';
+        btnText.innerText = 'Place Order — Cash On Delivery';
       }
     }
 
     // Dynamic Live Store Pricing Hydration
     async function loadLivePricing() {
-      const storeId = (window.STORE_CONFIG && window.STORE_CONFIG.STORE_ID) ? window.STORE_CONFIG.STORE_ID : 'OMOR12';
+      const storeId = (window.STORE_CONFIG && window.STORE_CONFIG.STORE_ID) ? window.STORE_CONFIG.STORE_ID : 'AURA01';
       let apiUrl = (window.STORE_CONFIG && window.STORE_CONFIG.API_URL !== undefined) ? window.STORE_CONFIG.API_URL : '';
       if (!apiUrl && window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1' && !window.location.hostname.includes('proud-smoke-56cf')) {
         apiUrl = 'https://proud-smoke-56cf.azwadhossain128.workers.dev';
@@ -961,88 +885,77 @@
         if (!data || !data.config || !data.config.pricing) return;
         applyPricingConfig(data.config);
       } catch (err) {
-        console.warn('Live pricing hydration note:', err);
+        console.warn('Live pricing note:', err);
       }
     }
 
     function applyPricingConfig(cfg) {
       if (!cfg || !cfg.pricing) return;
       const p = cfg.pricing;
-      const storeId = (window.STORE_CONFIG && window.STORE_CONFIG.STORE_ID) ? window.STORE_CONFIG.STORE_ID : 'OMOR12';
+      const storeId = (window.STORE_CONFIG && window.STORE_CONFIG.STORE_ID) ? window.STORE_CONFIG.STORE_ID : 'AURA01';
       try {
-        localStorage.setItem('omor_store_cfg_' + storeId, JSON.stringify(cfg));
+        localStorage.setItem('aura_store_cfg_' + storeId, JSON.stringify(cfg));
       } catch(e) {}
 
       // Pkg 1
       const p1 = p.pkg1 || p.pkg10;
       if (p1 && p1.price !== undefined) {
-        const r1 = document.getElementById('pkgRadio1');
+        const r1 = document.getElementById('bundle1');
         if (r1) {
           r1.setAttribute('data-price', p1.price);
           if (p1.title) r1.setAttribute('data-title', p1.title);
         }
         if (p1.title) safeSetText('pkgTitle1Display', p1.title);
-        safeSetText('pkgPrice1Display', '৳' + toBengaliNum(p1.price));
-        if (p1.regular) safeSetText('pkgReg1Display', '৳' + toBengaliNum(p1.regular));
+        safeSetText('pkgPrice1Display', '৳' + p1.price);
+        if (p1.regular) safeSetText('pkgReg1Display', '৳' + p1.regular);
         if (p1.subtitle) safeSetText('pkgSub1Display', p1.subtitle);
       }
 
       // Pkg 2
       const p2 = p.pkg2 || p.pkg20;
       if (p2 && p2.price !== undefined) {
-        const r2 = document.getElementById('pkgRadio2');
+        const r2 = document.getElementById('bundle2');
         if (r2) {
           r2.setAttribute('data-price', p2.price);
           if (p2.title) r2.setAttribute('data-title', p2.title);
         }
         if (p2.title) safeSetText('pkgTitle2Display', p2.title);
-        safeSetText('pkgPrice2Display', '৳' + toBengaliNum(p2.price));
-        if (p2.regular) safeSetText('pkgReg2Display', '৳' + toBengaliNum(p2.regular));
+        safeSetText('pkgPrice2Display', '৳' + p2.price);
+        if (p2.regular) safeSetText('pkgReg2Display', '৳' + p2.regular);
         if (p2.subtitle) safeSetText('pkgSub2Display', p2.subtitle);
-        safeSetText('heroPriceDisplay', '৳' + toBengaliNum(p2.price));
-        if (p2.regular) safeSetText('heroRegDisplay', '৳' + toBengaliNum(p2.regular));
+        safeSetText('heroPriceDisplay', '৳' + p2.price);
+        if (p2.regular) safeSetText('heroRegDisplay', '৳' + p2.regular);
       }
 
       // Pkg 3
       const p3 = p.pkg3 || p.pkg30;
       if (p3 && p3.price !== undefined) {
-        const r3 = document.getElementById('pkgRadio3');
+        const r3 = document.getElementById('bundle3');
         if (r3) {
           r3.setAttribute('data-price', p3.price);
           if (p3.title) r3.setAttribute('data-title', p3.title);
         }
         if (p3.title) safeSetText('pkgTitle3Display', p3.title);
-        safeSetText('pkgPrice3Display', '৳' + toBengaliNum(p3.price));
-        if (p3.regular) safeSetText('pkgReg3Display', '৳' + toBengaliNum(p3.regular));
+        safeSetText('pkgPrice3Display', '৳' + p3.price);
+        if (p3.regular) safeSetText('pkgReg3Display', '৳' + p3.regular);
         if (p3.subtitle) safeSetText('pkgSub3Display', p3.subtitle);
       }
 
       // Delivery Charges
       if (p.deliveryInside !== undefined) {
-        const dIn = document.getElementById('deliveryRadioInside');
+        const dIn = document.getElementById('deliveryInside');
         if (dIn) dIn.setAttribute('data-cost', p.deliveryInside);
-        safeSetText('deliveryFeeInsideDisplay', p.deliveryInside > 0 ? ('৳' + toBengaliNum(p.deliveryInside)) : 'ফ্রি');
-        if (p.deliveryInsideLabel) {
-          safeSetText('deliveryInsideLabelDisplay', p.deliveryInsideLabel);
-        }
+        safeSetText('deliveryFeeInsideDisplay', p.deliveryInside > 0 ? ('৳' + p.deliveryInside) : 'FREE');
+        if (p.deliveryInsideLabel) safeSetText('deliveryInsideLabelDisplay', p.deliveryInsideLabel);
       }
       if (p.deliveryOutside !== undefined) {
-        const dOut = document.getElementById('deliveryRadioOutside');
+        const dOut = document.getElementById('deliveryOutside');
         if (dOut) dOut.setAttribute('data-cost', p.deliveryOutside);
-        safeSetText('deliveryFeeOutsideDisplay', p.deliveryOutside > 0 ? ('৳' + toBengaliNum(p.deliveryOutside)) : 'ফ্রি');
-        if (p.deliveryOutsideLabel) {
-          safeSetText('deliveryOutsideLabelDisplay', p.deliveryOutsideLabel);
-        }
+        safeSetText('deliveryFeeOutsideDisplay', p.deliveryOutside > 0 ? ('৳' + p.deliveryOutside) : 'FREE');
+        if (p.deliveryOutsideLabel) safeSetText('deliveryOutsideLabelDisplay', p.deliveryOutsideLabel);
       }
 
-      // Brand / Phone / WhatsApp
-      if (cfg.brand && cfg.brand.phone) {
-        document.querySelectorAll('.store-phone-display').forEach(el => {
-          if (el.innerText !== cfg.brand.phone) el.innerText = cfg.brand.phone;
-        });
-      }
-
-      calculateOrderTotal();
+      calculateAuraTotal();
     }
 
     // Real-Time Live Message Listener for Admin Iframe Preview
@@ -1053,20 +966,19 @@
     });
 
     document.addEventListener('DOMContentLoaded', () => {
-      // 1. Immediately hydrate from server-injected config or warm local cache with zero flicker
       try {
-        const storeId = (window.STORE_CONFIG && window.STORE_CONFIG.STORE_ID) ? window.STORE_CONFIG.STORE_ID : 'OMOR12';
+        const storeId = (window.STORE_CONFIG && window.STORE_CONFIG.STORE_ID) ? window.STORE_CONFIG.STORE_ID : 'AURA01';
         if (window.PAGE_CONFIG && window.PAGE_CONFIG.pricing) {
           applyPricingConfig(window.PAGE_CONFIG);
         } else {
-          const cached = localStorage.getItem('omor_store_cfg_' + storeId) || localStorage.getItem('store_cache_' + storeId);
+          const cached = localStorage.getItem('aura_store_cfg_' + storeId) || localStorage.getItem('store_cache_' + storeId);
           if (cached) {
             applyPricingConfig(JSON.parse(cached));
           }
         }
       } catch(e) {}
 
-      calculateOrderTotal();
+      calculateAuraTotal();
       loadLivePricing();
     });
   </script>
