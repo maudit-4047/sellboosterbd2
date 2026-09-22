@@ -11,9 +11,10 @@
 
   <!-- Multi-Tenant Store Identity Configuration -->
   <script>
+    const isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
     window.STORE_CONFIG = {
       STORE_ID: 'OMOR12',
-      API_URL: ''
+      API_URL: isLocalhost ? '' : 'https://proud-smoke-56cf.azwadhossain128.workers.dev'
     };
 
     function toBengaliNum(num) {
@@ -885,7 +886,10 @@
       btnText.innerText = 'অর্ডার প্রসেস হচ্ছে...';
 
       const storeId = (window.STORE_CONFIG && window.STORE_CONFIG.STORE_ID) ? window.STORE_CONFIG.STORE_ID : 'OMOR12';
-      const apiUrl = (window.STORE_CONFIG && window.STORE_CONFIG.API_URL) ? window.STORE_CONFIG.API_URL : '';
+      let apiUrl = (window.STORE_CONFIG && window.STORE_CONFIG.API_URL !== undefined) ? window.STORE_CONFIG.API_URL : '';
+      if (!apiUrl && window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1' && !window.location.hostname.includes('proud-smoke-56cf')) {
+        apiUrl = 'https://proud-smoke-56cf.azwadhossain128.workers.dev';
+      }
 
       const orderPayload = {
         storeId: storeId,
@@ -906,6 +910,17 @@
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(orderPayload)
         });
+
+        if (!response.ok) {
+          const errText = await response.text();
+          let errMsg = `সার্ভার সমস্যা (${response.status})`;
+          try {
+            const errJson = JSON.parse(errText);
+            if (errJson && errJson.message) errMsg = errJson.message;
+          } catch(e) {}
+          alert('অর্ডার সম্পন্ন করা যায়নি: ' + errMsg);
+          return;
+        }
 
         const result = await response.json();
 
@@ -934,8 +949,10 @@
     // Dynamic Live Store Pricing Hydration
     async function loadLivePricing() {
       const storeId = (window.STORE_CONFIG && window.STORE_CONFIG.STORE_ID) ? window.STORE_CONFIG.STORE_ID : 'OMOR12';
-      const apiUrl = (window.STORE_CONFIG && window.STORE_CONFIG.API_URL) ? window.STORE_CONFIG.API_URL : '';
-      if (!apiUrl) return;
+      let apiUrl = (window.STORE_CONFIG && window.STORE_CONFIG.API_URL !== undefined) ? window.STORE_CONFIG.API_URL : '';
+      if (!apiUrl && window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1' && !window.location.hostname.includes('proud-smoke-56cf')) {
+        apiUrl = 'https://proud-smoke-56cf.azwadhossain128.workers.dev';
+      }
 
       try {
         const res = await fetch(`${apiUrl}/api/store-config?store_id=${encodeURIComponent(storeId)}`);
