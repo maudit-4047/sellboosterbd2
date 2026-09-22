@@ -1,18 +1,41 @@
 <!DOCTYPE html>
-<html lang="bn" class="scroll-smooth overflow-x-hidden">
+<html lang="bn" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <title>Landing Page Dev | ০ টাকায় ল্যান্ডিং পেজ তৈরি করুন</title>
-  <meta name="description" content="কোনো অগ্রিম ছাড়াই আপনার পণ্যের জন্য প্রিমিয়াম সেলস ফানেল তৈরি করে নিন। সম্পূর্ণ কাজ পছন্দ হওয়ার পর মাত্র ৳৯৯৯ পরিশোধ করবেন।" />
-  <meta name="theme-color" content="#f8fafc" />
+  <title>Omor Fresh | রিচার্জেবল পোর্টেবল মিনি ব্লেন্ডার ও জুসার (USB Rechargeable Blender)</title>
+  <meta name="description" content="ওমর রিচার্জেবল পোর্টেবল মিনি ব্লেন্ডার — জিম, অফিস বা ভ্রমণের জন্য ইনস্ট্যান্ট ফ্রেশ জুস ও প্রোটিন স্মুদি মেকার। ৬-ব্লেড SUS304 স্টেইনলেস স্টিল ও ইউএসবি চার্জিং। ক্যাশ অন ডেলিভারিতে অর্ডার করুন।" />
 
-  <!-- Google Font: Hind Siliguri -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🥤</text></svg>">
 
-  <!-- Font Awesome -->
+  <!-- Multi-Tenant Store Identity Configuration -->
+  <script>
+    window.STORE_CONFIG = {
+      STORE_ID: 'OMOR12',
+      API_URL: ''
+    };
+
+    function toBengaliNum(num) {
+      if (num === null || num === undefined) return '';
+      const bnDigits = ['০', '১', '২', '৩', '৪', '৫', '৬', '৭', '৮', '৯'];
+      return String(num).replace(/[0-9]/g, d => bnDigits[Number(d)]);
+    }
+
+    function safeSetText(id, newText) {
+      const el = document.getElementById(id);
+      if (el && el.innerText !== newText) {
+        el.innerText = newText;
+      }
+    }
+  </script>
+
+  <!-- Google Fonts: Hind Siliguri (Bengali) + Outfit (English Numbers & Accents) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome 6 Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
 
   <!-- Tailwind CSS CDN -->
@@ -21,14 +44,26 @@
     tailwind.config = {
       theme: {
         extend: {
-          fontFamily: { bangla: ['"Hind Siliguri"', 'sans-serif'] },
-          colors: {
-            emerald: {
-              50: '#ecfdf5', 100: '#d1fae5', 500: '#10b981', 600: '#059669', 700: '#047857',
-            }
+          fontFamily: {
+            bangla: ['"Hind Siliguri"', 'sans-serif'],
+            display: ['"Outfit"', 'sans-serif'],
+            sans: ['"Hind Siliguri"', '"Outfit"', 'sans-serif']
           },
-          boxShadow: {
-            liquidGlow: '0 20px 40px -15px rgba(16, 185, 129, 0.2)',
+          colors: {
+            brand: {
+              50: '#ecfdf5',
+              100: '#d1fae5',
+              500: '#10b981',
+              600: '#059669',
+              700: '#047857',
+              800: '#065f46',
+              900: '#064e3b'
+            },
+            accent: {
+              500: '#f97316',
+              600: '#ea580c',
+              700: '#c2410c'
+            }
           }
         }
       }
@@ -36,377 +71,988 @@
   </script>
 
   <style>
-    html, body {
+    body {
       font-family: 'Hind Siliguri', sans-serif;
-      overflow-x: hidden;
-      width: 100%;
       background-color: #f8fafc;
       color: #0f172a;
-      touch-action: pan-y;
-      -webkit-text-size-adjust: 100%;
     }
-    ::selection { background: #10b981; color: #ffffff; }
-
-    .hero-liquid-bg {
-      background: 
-        radial-gradient(circle at 10% 20%, rgba(16, 185, 129, 0.12) 0%, transparent 40%),
-        radial-gradient(circle at 90% 80%, rgba(52, 211, 153, 0.1) 0%, transparent 40%),
-        linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
+    .font-eng {
+      font-family: 'Outfit', sans-serif;
     }
-
-    .grid-pattern {
-      background-image: 
-        linear-gradient(rgba(16, 185, 129, 0.05) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(16, 185, 129, 0.05) 1px, transparent 1px);
-      background-size: 40px 40px;
+    .pulse-glow {
+      box-shadow: 0 0 0 0 rgba(5, 150, 105, 0.6);
+      animation: pulseGlow 2s infinite;
     }
-
-    @keyframes ctaPulse {
-      0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.6); }
-      70% { box-shadow: 0 0 0 16px rgba(16, 185, 129, 0); }
-      100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+    @keyframes pulseGlow {
+      0% { box-shadow: 0 0 0 0 rgba(5, 150, 105, 0.6); }
+      70% { box-shadow: 0 0 0 14px rgba(5, 150, 105, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(5, 150, 105, 0); }
     }
-    .cta-pulse { animation: ctaPulse 2.2s infinite; }
-
-    .shimmer-text {
-      background: linear-gradient(90deg, #047857 0%, #10b981 35%, #059669 70%, #047857 100%);
-      background-size: 200% auto; -webkit-background-clip: text; background-clip: text; color: transparent;
-      animation: shimmer 5s linear infinite;
+    .pkg-radio:checked + div {
+      border-color: #059669;
+      background-color: #f0fdf4;
     }
-    @keyframes shimmer { 0% { background-position: -200% 0 } 100% { background-position: 200% 0 } }
-
-    .glass-card {
-      background: rgba(255, 255, 255, 0.85);
-      backdrop-filter: blur(12px);
-      border: 1px solid rgba(16, 185, 129, 0.15);
-      box-shadow: 0 10px 30px -5px rgba(16, 185, 129, 0.05);
-      transition: all .3s cubic-bezier(.2,.8,.2,1);
+    .pkg-radio:checked + div .check-indicator {
+      background-color: #059669;
+      border-color: #059669;
     }
-    .glass-card:hover {
-      border-color: rgba(16, 185, 129, 0.4);
-      transform: translateY(-4px);
+    .pkg-radio:checked + div .check-indicator i {
+      display: block;
     }
-
-    .modal { opacity: 0; pointer-events: none; transition: opacity 0.25s ease-in-out; }
-    .modal.open { opacity: 1; pointer-events: auto; }
-    .modal-card { transform: translateY(100%); transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1); }
-    @media (min-width: 640px) {
-      .modal-card { transform: scale(0.95) translateY(15px); }
-      .modal.open .modal-card { transform: scale(1) translateY(0); }
-    }
-    @media (max-width: 639px) {
-      .modal.open .modal-card { transform: translateY(0); }
-    }
-
-    .field {
-      width: 100%;
-      border: 1.5px solid #cbd5e1;
-      background: #ffffff;
-      border-radius: 12px;
-      padding: 11px 14px;
-      font-size: 16px !important;
-      color: #0f172a;
-      outline: none;
-      transition: all .2s;
-    }
-    .field:focus { border-color: #10b981; box-shadow: 0 0 0 3px rgba(16,185,129,0.15); }
-    .field.error { border-color: #ef4444 !important; background: #fef2f2 !important; }
-    .field-error { display: none; color: #ef4444; font-size: 12px; margin-top: 4px; }
-    .field-error.show { display: block !important; }
-
-    @keyframes spin { to { transform: rotate(360deg); } }
-    .spinner { width: 18px; height: 18px; border: 2px solid rgba(255,255,255,.3); border-top-color: #ffffff; border-radius: 50%; animation: spin .8s linear infinite; display: inline-block; }
   </style>
+
+  <!-- __PAGE_CONFIG_INJECTION__ -->
+  <!-- __FB_PIXEL_CODE__ -->
 </head>
+<body class="selection:bg-emerald-500/20 selection:text-emerald-900 antialiased pb-24 sm:pb-0">
 
-<body class="font-bangla antialiased pb-24 md:pb-0">
-
-  <!-- TOP BANNER -->
-  <div class="bg-emerald-900 text-emerald-50 py-2.5 px-3 text-center text-xs sm:text-sm font-medium shadow-inner">
-    🔥 কোনো অগ্রিম পেমেন্ট নেই! সম্পূর্ণ কাজ পছন্দ হলে ও ডেলিভারির পর পেমেন্ট করবেন।
+  <!-- 1. Top Urgency Announcement Bar -->
+  <div class="bg-slate-900 text-white text-xs sm:text-sm py-2.5 px-4 text-center font-medium border-b border-emerald-800/40 shadow-sm">
+    <div class="max-w-6xl mx-auto flex items-center justify-center gap-2 flex-wrap">
+      <span class="bg-emerald-500/20 text-emerald-400 text-[10px] font-extrabold px-2 py-0.5 rounded-full uppercase tracking-wider font-eng border border-emerald-500/30">
+        🔥 মেগা অফার
+      </span>
+      <span>আজকের অর্ডারে <strong>২ পিস ফ্যামিলি কম্বোতে ৫০০ টাকা অতিরিক্ত ছাড়!</strong> পণ্য হাতে পেয়ে চেক করে পেমেন্ট করুন।</span>
+      <span class="text-slate-500 hidden sm:inline">|</span>
+      <a href="tel:01700000000" class="text-emerald-300 hover:text-white font-eng font-bold flex items-center gap-1 transition">
+        <i class="fa-solid fa-phone text-[10px]"></i> <span class="store-phone-display">01700000000</span>
+      </a>
+    </div>
   </div>
 
-  <!-- NAVBAR -->
-  <header class="sticky top-0 z-40 bg-white/80 backdrop-blur-md border-b border-slate-200/80 shadow-sm">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-      <a href="#home" class="flex items-center gap-2.5">
-        <span class="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-600 to-teal-400 text-white flex items-center justify-center text-xl font-black shadow-lg shadow-emerald-500/20">
-          <i class="fa-solid fa-rocket"></i>
-        </span>
-        <span class="text-xl md:text-2xl font-black text-slate-900 tracking-tight">LandingPage<span class="text-emerald-600">.Dev</span></span>
-      </a>
+  <!-- 2. Header & Brand Navigation -->
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200/80 shadow-xs">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
+      <div class="flex items-center gap-2.5">
+        <div class="w-10 h-10 rounded-2xl bg-gradient-to-tr from-emerald-600 to-teal-500 flex items-center justify-center text-white text-xl shadow-md shadow-emerald-600/25">
+          <i class="fa-solid fa-blender text-lg"></i>
+        </div>
+        <div>
+          <span class="font-display font-black text-xl tracking-tight text-slate-900 flex items-center gap-1">
+            OMOR <span class="text-emerald-600">FRESH</span>
+          </span>
+          <span class="text-[10px] text-emerald-600 font-bold block uppercase tracking-wider -mt-1 font-eng">Portable USB Blender</span>
+        </div>
+      </div>
 
-      <button data-open-order class="hidden sm:inline-flex items-center gap-2 bg-gradient-to-r from-emerald-600 to-teal-500 text-white font-extrabold px-6 py-2.5 rounded-full text-sm shadow-lg shadow-emerald-500/25 hover:scale-105 transition-transform">
-        <i class="fa-solid fa-bolt"></i> ০ টাকায় অর্ডার করুন
-      </button>
+      <div class="flex items-center gap-3">
+        <a href="https://wa.me/8801700000000?text=Hello%20Omor%20Support" target="_blank"
+           id="headerWaBtn"
+           class="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs font-bold hover:bg-emerald-100 transition">
+          <i class="fa-brands fa-whatsapp text-sm text-emerald-600"></i>
+          <span class="store-phone-display font-eng">01700000000</span>
+        </a>
+
+        <a href="#checkoutSection"
+           class="px-4 py-2 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 text-white text-xs sm:text-sm font-bold shadow-md shadow-emerald-600/25 hover:from-emerald-500 hover:to-teal-500 transition active:scale-95 flex items-center gap-1.5">
+          <i class="fa-solid fa-cart-shopping text-xs"></i>
+          <span>অর্ডার করুন</span>
+        </a>
+      </div>
     </div>
   </header>
 
-  <main>
-    <!-- HERO SECTION -->
-    <section id="home" class="hero-liquid-bg relative overflow-hidden pt-12 pb-16 md:pt-20 md:pb-24 px-4">
-      <div class="absolute inset-0 grid-pattern"></div>
-      <div class="relative max-w-5xl mx-auto text-center z-10">
-        <span class="inline-flex items-center gap-2 bg-emerald-50 border border-emerald-500/30 text-emerald-700 text-xs sm:text-sm font-bold px-4 py-1.5 rounded-full mb-6 shadow-sm">
-          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-          ১০০% রিস্ক-ফ্রি অফার — আগে কাজ বুঝবেন, পরে পেমেন্ট!
-        </span>
-
-        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-slate-900 leading-tight tracking-tight">
-          আপনার প্রোডাক্টের জন্য বানিয়ে নিন<br />
-          <span class="shimmer-text">আল্ট্রা হাই-কনভার্টিং ল্যান্ডিং পেজ!</span> 🚀
-        </h1>
-
-        <p class="mt-5 text-sm sm:text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto">
-          ফেসবুক বিজ্ঞাপনে অ্যাড খরচ কমিয়ে সেলস দ্বিগুণ করার চূড়ান্ত সমাধান। আমরা আপনার প্রোডাক্টের ধরণ অনুযায়ী সেরা সেলস ফানেল ডিজাইন করে দেবো।
-        </p>
-
-        <!-- Zero Taka Box -->
-        <div class="mt-8 p-5 rounded-2xl bg-white border border-emerald-500/25 shadow-liquidGlow max-w-lg mx-auto text-left flex items-center justify-between gap-4">
-          <div>
-            <div class="text-xs text-emerald-600 font-bold uppercase tracking-wider">অগ্রিম পেমেন্ট লাগবে না</div>
-            <div class="text-2xl font-black text-slate-900 mt-0.5">এখনই অর্ডার ফি: <span class="text-emerald-600">৳০</span></div>
-            <div class="text-xs text-slate-500 mt-0.5">সম্পূর্ণ কাজ পছন্দ হওয়ার পর পরিশোধ করবেন ৳৯৯৯</div>
-          </div>
-          <button data-open-order class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-5 py-3 rounded-xl shadow text-sm shrink-0">
-            অর্ডার করুন
-          </button>
-        </div>
-
-        <div class="mt-8">
-          <button data-open-order class="cta-pulse w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-gradient-to-r from-emerald-600 to-teal-500 text-white font-black text-base px-8 py-4 rounded-full shadow-xl shadow-emerald-600/25">
-            <i class="fa-solid fa-bolt"></i> ০ টাকায় পেজ অর্ডার করুন 🚀
-          </button>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- MOBILE BOTTOM BAR -->
-  <div class="fixed bottom-0 inset-x-0 bg-white/95 backdrop-blur-md border-t border-slate-200 p-3 flex items-center justify-between md:hidden z-30 shadow-lg">
-    <div>
-      <span class="text-[11px] text-slate-500 block leading-tight">অগ্রিম পেমেন্ট</span>
-      <span class="text-lg font-bold text-emerald-600 leading-none">৳০ (ফ্রি বুকিং)</span>
-    </div>
-    <button data-open-order class="cta-pulse bg-gradient-to-r from-emerald-600 to-teal-500 text-white font-black text-sm px-6 py-2.5 rounded-full shadow-md">
-      অর্ডার করুন 🚀
-    </button>
-  </div>
-
-  <!-- ORDER MODAL -->
-  <div id="orderModal" class="modal fixed inset-0 z-50 flex items-end sm:items-center justify-center p-0 sm:p-4">
-    <div id="modalBackdrop" class="absolute inset-0 bg-slate-900/60 backdrop-blur-sm"></div>
-
-    <div class="modal-card relative w-full sm:max-w-md bg-white border border-slate-200 rounded-t-3xl sm:rounded-2xl shadow-2xl overflow-hidden max-h-[92vh] flex flex-col z-10">
+  <!-- 3. HERO SECTION -->
+  <section class="bg-gradient-to-b from-emerald-50/70 via-white to-slate-50 pt-6 pb-12 sm:pt-10 sm:pb-16 border-b border-slate-200/80">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
       
-      <!-- Modal Header -->
-      <div class="bg-emerald-800 text-white px-5 py-3.5 flex justify-between items-center shrink-0">
-        <div>
-          <h3 class="font-bold text-base">ল্যান্ডিং পেজ অর্ডার ফর্ম</h3>
-          <p class="text-[11px] text-emerald-200">অগ্রিম ৳০ • কাজ শেষে পেমেন্ট করবেন</p>
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        
+        <!-- Left: High Converting Bengali Sales Copy (7 Cols) -->
+        <div class="lg:col-span-7 space-y-4 sm:space-y-5 text-left">
+          
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 border border-emerald-300 text-xs font-bold shadow-xs">
+            <span class="w-2 h-2 rounded-full bg-emerald-600 animate-ping"></span>
+            <span>১০০% ফুড-গ্রেড ও শক্তিশালী ইউএসবি রিচার্জেবল মোটর</span>
+          </div>
+
+          <h1 class="text-2xl sm:text-4xl lg:text-[42px] font-black text-slate-900 leading-tight">
+            মুহূর্তেই ফ্রেশ ফ্রুট জুস ও প্রোটিন স্মুদি তৈরি করুন — <span class="text-emerald-600 underline decoration-emerald-400 decoration-wavy">ঘরে, জিমে কিংবা অফিসের ডেস্কে!</span>
+          </h1>
+
+          <p class="text-sm sm:text-base text-slate-600 leading-relaxed">
+            ভারী ইলেকট্রিক ব্লেন্ডার আর তারের ঝামেলা ভুলে যান! <strong>ওমর পোর্টেবল মিনি ব্লেন্ডার</strong>-এর শার্প <strong>৬-ব্লেড 3D স্টেইনলেস স্টিল কাটার</strong> দিয়ে মাত্র ৩০ সেকেন্ডেই বানিয়ে ফেলুন যেকোনো তাজা ফলের জুস, মিল্কশেক বা জিমের প্রোটিন ড্রিংকস।
+          </p>
+
+          <!-- 4 Core Trust Highlight Pills -->
+          <div class="grid grid-cols-2 gap-2.5 pt-1 text-xs sm:text-sm text-slate-700 font-semibold">
+            <div class="flex items-center gap-2 p-2.5 bg-white rounded-xl border border-slate-200/80 shadow-xs hover:border-emerald-300 transition">
+              <i class="fa-solid fa-gear text-emerald-600 text-sm"></i>
+              <span>৬-ব্লেড SUS304 কাটার (অতি দ্রুত ব্লেন্ডিং)</span>
+            </div>
+            <div class="flex items-center gap-2 p-2.5 bg-white rounded-xl border border-slate-200/80 shadow-xs hover:border-emerald-300 transition">
+              <i class="fa-solid fa-bolt text-emerald-600 text-sm"></i>
+              <span>USB Type-C ইউনিভার্সাল ফাস্ট চার্জ</span>
+            </div>
+            <div class="flex items-center gap-2 p-2.5 bg-white rounded-xl border border-slate-200/80 shadow-xs hover:border-emerald-300 transition">
+              <i class="fa-solid fa-shield-halved text-emerald-600 text-sm"></i>
+              <span>১০০% BPA-ফ্রি বেবি ফুড গ্রেড উপাদান</span>
+            </div>
+            <div class="flex items-center gap-2 p-2.5 bg-white rounded-xl border border-slate-200/80 shadow-xs hover:border-emerald-300 transition">
+              <i class="fa-solid fa-battery-full text-emerald-600 text-sm"></i>
+              <span>এক চার্জে ১০-১৫ গ্লাস ফ্রেশ জুস</span>
+            </div>
+          </div>
+
+          <!-- Pricing & Direct CTA Card -->
+          <div class="p-4 sm:p-5 rounded-2xl bg-white border-2 border-emerald-500/40 shadow-xl shadow-emerald-500/10 space-y-3">
+            <div class="flex items-baseline gap-3 flex-wrap">
+              <span class="text-3xl sm:text-4xl font-black text-emerald-700 font-eng" id="heroPriceDisplay">৳১,১৫০</span>
+              <span class="text-sm sm:text-base text-slate-400 line-through font-eng" id="heroRegDisplay">৳১,৬৫০</span>
+              <span class="px-2.5 py-1 rounded-md bg-accent-500/10 text-accent-600 border border-accent-500/20 text-xs font-black" id="heroDiscountBadge">
+                ৫০০৳ ছাড় (আজকের স্পেশাল)
+              </span>
+            </div>
+            <div class="text-xs text-emerald-700 font-bold flex items-center gap-1.5">
+              <i class="fa-solid fa-truck-fast text-emerald-600"></i>
+              <span>পণ্য হাতে পেয়ে চেক করে মূল্য পরিশোধের সুযোগ (১০০% ক্যাশ অন ডেলিভারি)</span>
+            </div>
+
+            <div class="pt-1 flex flex-col sm:flex-row gap-3">
+              <a href="#checkoutSection"
+                 class="w-full py-3.5 px-6 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-extrabold text-sm sm:text-base text-center shadow-lg shadow-emerald-600/30 transition transform active:scale-[0.99] pulse-glow flex items-center justify-center gap-2">
+                <i class="fa-solid fa-hand-point-right"></i>
+                <span>ক্যাশ অন ডেলিভারিতে অর্ডার করুন</span>
+              </a>
+              <a href="tel:01700000000"
+                 class="py-3 px-4 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold text-xs sm:text-sm text-center transition flex items-center justify-center gap-1.5 border border-slate-300 shrink-0">
+                <i class="fa-solid fa-phone text-emerald-700"></i>
+                <span class="store-phone-display font-eng">01700000000</span>
+              </a>
+            </div>
+          </div>
+
         </div>
-        <button id="modalClose" class="text-white hover:text-rose-300 text-lg w-8 h-8 flex items-center justify-center"><i class="fa-solid fa-xmark"></i></button>
+
+        <!-- Right: Real Product Images Gallery (5 Cols) -->
+        <div class="lg:col-span-5 space-y-3">
+          <!-- Main Display Image -->
+          <div class="relative rounded-3xl overflow-hidden border-4 border-white shadow-2xl aspect-square bg-slate-100">
+            <img id="mainProductImg" src="/images/omor-hero.jpg" onerror="this.src='images/hero_opt.jpg'" alt="Omor Portable USB Juicer Blender" class="w-full h-full object-cover transition duration-300" />
+            <div class="absolute top-3 left-3 bg-slate-950/85 backdrop-blur-md text-white px-3 py-1 rounded-full text-[11px] font-bold font-eng border border-white/20">
+              SUS304 6-Blade Cutter
+            </div>
+            <div class="absolute bottom-3 right-3 bg-emerald-600 text-white px-3 py-1 rounded-xl text-xs font-bold shadow-md">
+              ক্যাশ অন ডেলিভারি
+            </div>
+          </div>
+
+          <!-- Thumbnails Selector -->
+          <div class="grid grid-cols-4 gap-2">
+            <button onclick="setMainImage('/images/omor-hero.jpg', this)" class="thumb-btn rounded-xl overflow-hidden border-2 border-emerald-600 aspect-square shadow-sm transition">
+              <img src="/images/omor-hero.jpg" onerror="this.src='images/hero_opt.jpg'" class="w-full h-full object-cover" />
+            </button>
+            <button onclick="setMainImage('/images/omor-combo.jpg', this)" class="thumb-btn rounded-xl overflow-hidden border-2 border-transparent hover:border-emerald-400 aspect-square shadow-sm transition">
+              <img src="/images/omor-combo.jpg" onerror="this.src='images/combo_opt.jpg'" class="w-full h-full object-cover" />
+            </button>
+            <button onclick="setMainImage('/images/omor-lifestyle.jpg', this)" class="thumb-btn rounded-xl overflow-hidden border-2 border-transparent hover:border-emerald-400 aspect-square shadow-sm transition">
+              <img src="/images/omor-lifestyle.jpg" onerror="this.src='images/lifestyle_opt.jpg'" class="w-full h-full object-cover" />
+            </button>
+            <button onclick="setMainImage('/images/omor-blades.jpg', this)" class="thumb-btn rounded-xl overflow-hidden border-2 border-transparent hover:border-emerald-400 aspect-square shadow-sm transition">
+              <img src="/images/omor-blades.jpg" onerror="this.src='images/blades_opt.jpg'" class="w-full h-full object-cover" />
+            </button>
+          </div>
+        </div>
+
       </div>
 
-      <!-- Form Body -->
-      <div class="p-5 overflow-y-auto overscroll-contain">
-        <form id="orderForm" class="space-y-3.5" novalidate>
-          <div>
-            <label class="block text-xs font-bold text-slate-700 mb-1">আপনার নাম <span class="text-rose-500">*</span></label>
-            <input type="text" id="customerName" placeholder="উদাঃ মোঃ সাকিব আহমেদ" class="field" required />
-            <p class="field-error" data-error-for="customerName">নাম লিখুন</p>
-          </div>
+    </div>
+  </section>
 
-          <div>
-            <label class="block text-xs font-bold text-slate-700 mb-1">WhatsApp নাম্বার <span class="text-rose-500">*</span></label>
-            <input type="tel" id="phone" placeholder="01XXXXXXXXX" maxlength="11" class="field" required />
-            <p class="field-error" data-error-for="phone">সঠিক ১১ ডিজিটের মোবাইল নাম্বার দিন</p>
-          </div>
+  <!-- 4. COMPARISON: সাধারণ ব্লেন্ডার বনাম ওমর পোর্টেবল ব্লেন্ডার -->
+  <section class="py-12 sm:py-16 bg-white border-b border-slate-200/80">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 text-center">
+      
+      <span class="text-xs font-bold uppercase tracking-wider text-emerald-600 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200 font-eng">
+        Smart Lifestyle Upgrade
+      </span>
+      <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mt-2 mb-3">
+        কেন সাধারণ ভারী ব্লেন্ডারের বদলে এটি আপনার জন্য সেরা?
+      </h2>
+      <p class="text-sm text-slate-600 max-w-2xl mx-auto mb-10">
+        প্রতিদিনের ব্যস্ত জীবনে সহজে পুষ্টিকর তাজা জুস ও প্রোটিন শেক তৈরির জন্য এটি একটি যুগান্তকারী গ্যাজেট।
+      </p>
 
-          <div>
-            <label class="block text-xs font-bold text-slate-700 mb-1">প্রোডাক্টের নাম <span class="text-rose-500">*</span></label>
-            <input type="text" id="productName" placeholder="যেমন: K12 Bluetooth Speaker" class="field" required />
-            <p class="field-error" data-error-for="productName">প্রোডাক্টের নাম লিখুন</p>
-          </div>
-
-          <div>
-            <label class="block text-xs font-bold text-slate-700 mb-1">ফেসবুক পেজ / শপ লিংক <span class="text-rose-500">*</span></label>
-            <input type="text" id="pageLink" placeholder="যেমন: facebook.com/yourbrand" class="field" required />
-            <p class="field-error" data-error-for="pageLink">পেজ বা স্টোর লিংক দিন</p>
-          </div>
-
-          <!-- MULTI IMAGE UPLOAD -->
-          <div>
-            <div class="flex items-center justify-between mb-1">
-              <label class="block text-xs font-bold text-slate-700">প্রোডাক্টের ছবিসমূহ (একাধিক ছবি দিতে পারবেন)</label>
-              <span id="imgCounter" class="text-[11px] text-emerald-600 font-semibold hidden">০টি ছবি নির্বাচিত</span>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
+        <!-- Negative Card -->
+        <div class="p-6 rounded-2xl bg-rose-50/60 border border-rose-200 space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-rose-100 text-rose-600 flex items-center justify-center font-bold text-lg">
+              <i class="fa-solid fa-xmark"></i>
             </div>
-            <input type="file" id="productImagesInput" accept="image/*" multiple class="hidden" />
-            <button type="button" id="uploadBtn" class="w-full border-2 border-dashed border-emerald-400 bg-emerald-50/50 hover:bg-emerald-50 rounded-xl p-3 text-center text-xs text-slate-600 flex items-center justify-center gap-2 transition">
-              <i class="fa-solid fa-images text-emerald-600 text-base"></i>
-              <span id="uploadBtnText">গ্যালারি থেকে এক বা একাধিক ছবি সিলেক্ট করুন</span>
-            </button>
-            <div id="imagePreviewGrid" class="hidden mt-2 grid grid-cols-4 gap-2 max-h-40 overflow-y-auto p-2 bg-slate-50 border rounded-xl"></div>
+            <div>
+              <h3 class="font-black text-base text-rose-900">সাধারণ ইলেকট্রিক ব্লেন্ডার</h3>
+              <p class="text-xs text-rose-600">ঝামেলাপূর্ণ ও সীমাবদ্ধ</p>
+            </div>
           </div>
-
-          <div class="bg-slate-50 p-3 rounded-xl border text-xs space-y-1">
-            <div class="flex justify-between text-slate-600"><span>প্যাকেজ ফি:</span><span class="font-bold text-slate-900">৳৯৯৯</span></div>
-            <div class="flex justify-between text-emerald-600 font-bold"><span>এখন পরিশোধ:</span><span>৳০ (সম্পূর্ণ ফ্রি)</span></div>
-          </div>
-
-          <button type="submit" id="submitBtn" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3.5 rounded-xl shadow-lg text-sm transition">
-            <span class="btn-text">অর্ডার প্লেস করুন (৳০) 🚀</span>
-            <span class="btn-loading hidden items-center justify-center gap-2"><span class="spinner"></span> ছবি আপلود ও প্রসেসিং হচ্ছে...</span>
-          </button>
-        </form>
-
-        <div id="successView" class="hidden text-center py-6">
-          <div class="w-12 h-12 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center text-2xl mx-auto mb-2"><i class="fa-solid fa-check"></i></div>
-          <h3 class="text-lg font-bold text-slate-900">অর্ডার সফলভাবে জমা হয়েছে! 🎉</h3>
-          <p class="text-xs text-slate-600 mt-1">আমাদের টিম শীঘ্রই আপনার WhatsApp নম্বরে পেজের ডেমো পাঠাবে।</p>
-          <button id="successClose" class="mt-4 bg-emerald-600 text-white text-xs font-bold px-6 py-2 rounded-xl">ঠিক আছে</button>
+          <ul class="space-y-2.5 text-xs sm:text-sm text-slate-700">
+            <li class="flex items-start gap-2">
+              <i class="fa-solid fa-circle-xmark text-rose-500 mt-1 shrink-0"></i>
+              <span>ভারী ও বড় সাইজ, রান্নাঘরের বাইরে বহন করা অসম্ভব।</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <i class="fa-solid fa-circle-xmark text-rose-500 mt-1 shrink-0"></i>
+              <span>বিদ্যুৎ বা সকেট ছাড়া এক মুহূর্তও কাজ করে না। লোডশেডিংয়ে অচল।</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <i class="fa-solid fa-circle-xmark text-rose-500 mt-1 shrink-0"></i>
+              <span>আলাদা জগে ঢেলে ধোয়া-মোছার দীর্ঘ ক্লান্তিকর ঝামেলা।</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <i class="fa-solid fa-circle-xmark text-rose-500 mt-1 shrink-0"></i>
+              <span>জিম বা অফিসে নিয়ে ফ্রেশ জুস খাওয়ার কোনো সুযোগ নেই।</span>
+            </li>
+          </ul>
         </div>
+
+        <!-- Positive Card -->
+        <div class="p-6 rounded-2xl bg-emerald-50/80 border-2 border-emerald-500/50 shadow-md shadow-emerald-500/10 space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-emerald-600 text-white flex items-center justify-center font-bold text-lg shadow-sm">
+              <i class="fa-solid fa-check"></i>
+            </div>
+            <div>
+              <h3 class="font-black text-base text-emerald-950">ওমর রিচার্জেবল পোর্টেবল ব্লেন্ডার</h3>
+              <p class="text-xs text-emerald-700 font-bold">স্মার্ট, পোর্টেবল ও ক্যাশ অন ডেলিভারি</p>
+            </div>
+          </div>
+          <ul class="space-y-2.5 text-xs sm:text-sm text-slate-800 font-medium">
+            <li class="flex items-start gap-2">
+              <i class="fa-solid fa-circle-check text-emerald-600 mt-1 shrink-0"></i>
+              <span>কম্প্যাক্ট বোতল সাইজ — জিম ব্যাগ বা ব্যাকপ্যাকে সহজে নেওয়া যায়।</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <i class="fa-solid fa-circle-check text-emerald-600 mt-1 shrink-0"></i>
+              <span>পাওয়ার ব্যাংক, ল্যাপটপ কিংবা গাড়িতেও USB চার্জ দিয়ে চালানো যায়।</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <i class="fa-solid fa-circle-check text-emerald-600 mt-1 shrink-0"></i>
+              <span>ব্লেন্ডিং শেষে সরাসরি এই বোতল থেকেই খাওয়ার সুবিধা।</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <i class="fa-solid fa-circle-check text-emerald-600 mt-1 shrink-0"></i>
+              <span>সেলফ-ক্লিনিং সুবিধা: পানি দিয়ে সুইচ চাপলেই মাত্র ১০ সেকেন্ডে পরিষ্কার!</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 5. 4 CORE PILLARS & VISUAL DETAIL -->
+  <section class="py-12 sm:py-16 bg-slate-50 border-b border-slate-200/80">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <span class="text-xs font-bold uppercase tracking-wider text-emerald-600 bg-emerald-100/80 px-3 py-1 rounded-full border border-emerald-300 font-eng">
+          High Performance Tech
+        </span>
+        <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mt-2 mb-3">
+          পোর্টেবল ব্লেন্ডারের প্রতিটি স্পেসিফিকেশন নিখুঁত মানের
+        </h2>
+        <p class="text-sm text-slate-600">
+          প্রিমিয়াম ফুড-গ্রেড কোয়ালিটি ও আধুনিক প্রযুক্তির সমন্বয়ে তৈরি যা দীর্ঘদিন বিশ্বস্ততার সাথে সেবা দেবে।
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Feature 1 -->
+        <div class="bg-white p-5 rounded-2xl border border-slate-200/90 shadow-sm hover:shadow-md transition">
+          <div class="w-12 h-12 rounded-2xl bg-emerald-100 text-emerald-700 flex items-center justify-center text-xl mb-4">
+            <i class="fa-solid fa-fan"></i>
+          </div>
+          <h3 class="font-black text-base text-slate-900 mb-1">৬-ব্লেড 3D স্টেইনলেস স্টিল</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            SUS304 ফুড-গ্রেড ব্লেড যা ২০,০০০+ আরপিএম গতিতে ঘুরে আপেল, গাজর, কমলা ও নরম বরফ দ্রুত গুঁড়ো করে ফেলে।
+          </p>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="bg-white p-5 rounded-2xl border border-slate-200/90 shadow-sm hover:shadow-md transition">
+          <div class="w-12 h-12 rounded-2xl bg-teal-100 text-teal-700 flex items-center justify-center text-xl mb-4">
+            <i class="fa-solid fa-bolt-lightning"></i>
+          </div>
+          <h3 class="font-black text-base text-slate-900 mb-1">USB Type-C ফাস্ট চার্জ</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            স্মার্টফোনের সাধারণ চার্জার বা পাওয়ার ব্যাংকেই চার্জ করা সম্ভব। এক ফুল চার্জে ১৫ বারের বেশি ব্লেন্ড করা যায়।
+          </p>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="bg-white p-5 rounded-2xl border border-slate-200/90 shadow-sm hover:shadow-md transition">
+          <div class="w-12 h-12 rounded-2xl bg-amber-100 text-amber-700 flex items-center justify-center text-xl mb-4">
+            <i class="fa-solid fa-baby"></i>
+          </div>
+          <h3 class="font-black text-base text-slate-900 mb-1">১০০% BPA-ফ্রি ফুড গ্রেড</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            উন্নত মানের ইকো-ফ্রেন্ডলি উপাদান যা সম্পূর্ণ ক্ষতিকারক কেমিক্যালমুক্ত। বাচ্চাদের ফ্রুট পিউরি তৈরিতেও নিশ্চিন্তে ব্যবহারযোগ্য।
+          </p>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="bg-white p-5 rounded-2xl border border-slate-200/90 shadow-sm hover:shadow-md transition">
+          <div class="w-12 h-12 rounded-2xl bg-sky-100 text-sky-700 flex items-center justify-center text-xl mb-4">
+            <i class="fa-solid fa-droplet"></i>
+          </div>
+          <h3 class="font-black text-base text-slate-900 mb-1">ওয়ান-টাচ সেলফ ক্লিনিং</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            হাত কেটে যাওয়ার কোনো ভয় নেই! শুধু কিছুটা পানি দিয়ে সুইচ চেপে ধরলেই স্বয়ংক্রিয়ভাবে নিজের ভেতর পরিষ্কার করে নেয়।
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 6. TARGET AUDIENCE SHOWCASE -->
+  <section class="py-12 sm:py-16 bg-white border-b border-slate-200/80">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      
+      <div class="text-center max-w-2xl mx-auto mb-10">
+        <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mb-2">
+          যাঁদের দৈনন্দিন জীবনের জন্য এটি পারফেক্ট
+        </h2>
+        <p class="text-sm text-slate-600">
+          সুস্থ ও ফিট থাকার সহজ সঙ্গী ওমর পোর্টেবল মিনি ব্লেন্ডার।
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <div class="rounded-2xl border border-slate-200 overflow-hidden bg-slate-50 hover:shadow-md transition">
+          <div class="h-44 overflow-hidden relative">
+            <img src="/images/omor-lifestyle.jpg" onerror="this.src='images/lifestyle_opt.jpg'" alt="Gym fitness smoothie" class="w-full h-full object-cover" />
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 to-transparent flex items-end p-4">
+              <span class="text-white font-black text-base">🏋️ জিম ও ফিটনেসপ্রেমী</span>
+            </div>
+          </div>
+          <div class="p-4 text-xs sm:text-sm text-slate-600">
+            ওয়ার্কআউটের ঠিক পরেই তাজা প্রোটিন শেক বা ফ্রুট স্মুদি খাওয়ার জন্য জিমে সাথে নিয়ে যান অনায়াসে।
+          </div>
+        </div>
+
+        <div class="rounded-2xl border border-slate-200 overflow-hidden bg-slate-50 hover:shadow-md transition">
+          <div class="h-44 overflow-hidden relative">
+            <img src="/images/omor-hero.jpg" onerror="this.src='images/hero_opt.jpg'" alt="Office juice blender" class="w-full h-full object-cover" />
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 to-transparent flex items-end p-4">
+              <span class="text-white font-black text-base">💼 অফিস ও কর্মব্যস্ত জীবন</span>
+            </div>
+          </div>
+          <div class="p-4 text-xs sm:text-sm text-slate-600">
+            অফিসের কাজের ফাঁকে চিনিযুক্ত অস্বাস্থ্যকর জুস না খেয়ে নিজের টেবিলেই ব্লেন্ড করুন টাটকা ফলের ফ্রেশ জুস।
+          </div>
+        </div>
+
+        <div class="rounded-2xl border border-slate-200 overflow-hidden bg-slate-50 hover:shadow-md transition">
+          <div class="h-44 overflow-hidden relative">
+            <img src="/images/omor-combo.jpg" onerror="this.src='images/combo_opt.jpg'" alt="Family combo set" class="w-full h-full object-cover" />
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 to-transparent flex items-end p-4">
+              <span class="text-white font-black text-base">🍼 পরিবার ও শিশু খাদ্য</span>
+            </div>
+          </div>
+          <div class="p-4 text-xs sm:text-sm text-slate-600">
+            শিশুর জন্য সহজে ও ঝটপট কলা, আপেল বা পেঁপের পিউরি এবং পুষ্টিকর ফুড পেস্ট তৈরির সবচেয়ে নিরাপদ গ্যাজেট।
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 7. REAL CUSTOMER REVIEWS -->
+  <section class="py-12 sm:py-16 bg-slate-50 border-b border-slate-200/80">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-10">
+        <div class="flex items-center justify-center gap-1 text-amber-400 text-lg mb-1">
+          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+        </div>
+        <h2 class="text-2xl sm:text-3xl font-black text-slate-900">সম্মানিত গ্রাহকদের বাস্তব অভিজ্ঞতা</h2>
+        <p class="text-xs sm:text-sm text-slate-600 mt-1">সারা বাংলাদেশ থেকে শত শত সন্তুষ্ট ক্রেতার প্রশংসিত পছন্দ</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
+        
+        <div class="bg-white p-5 rounded-2xl border border-slate-200/80 shadow-xs space-y-3">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-2">
+              <div class="w-8 h-8 rounded-full bg-emerald-100 text-emerald-700 font-bold flex items-center justify-center text-xs">
+                তানভীর
+              </div>
+              <div>
+                <h4 class="font-bold text-xs text-slate-900">তানভীর আহমেদ</h4>
+                <p class="text-[10px] text-slate-400">উত্তরা, ঢাকা (Verified Buyer)</p>
+              </div>
+            </div>
+            <span class="text-amber-400 text-xs"><i class="fa-solid fa-star"></i> 5.0</span>
+          </div>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            "জিমে নেওয়ার জন্য নিয়েছিলাম। সত্যি বলতে এটার মোটর স্পিড অসাধারণ! কলা আর দুধ দিয়ে ৩০ সেকেন্ডেই প্রোটিন শেক তৈরি হয়ে যায়। ব্যাটারি ব্যাকআপ দারুণ।"
+          </p>
+        </div>
+
+        <div class="bg-white p-5 rounded-2xl border border-slate-200/80 shadow-xs space-y-3">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-2">
+              <div class="w-8 h-8 rounded-full bg-emerald-100 text-emerald-700 font-bold flex items-center justify-center text-xs">
+                নুসরাত
+              </div>
+              <div>
+                <h4 class="font-bold text-xs text-slate-900">নুসরাত জাহান</h4>
+                <p class="text-[10px] text-slate-400">ধানমন্ডি, ঢাকা (Verified Buyer)</p>
+              </div>
+            </div>
+            <span class="text-amber-400 text-xs"><i class="fa-solid fa-star"></i> 5.0</span>
+          </div>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            "আমার ১ বছরের বাচ্চার ফ্রুট পিউরি বানানোর জন্য খুব কাজে দিচ্ছে। সবচেয়ে ভালো লাগে ওয়াশ করা খুব ইজি, আর বিপিএ ফ্রি হওয়ায় কোনো দুর্গন্ধ বা ক্ষতিকারক ভয় নেই।"
+          </p>
+        </div>
+
+        <div class="bg-white p-5 rounded-2xl border border-slate-200/80 shadow-xs space-y-3">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-2">
+              <div class="w-8 h-8 rounded-full bg-emerald-100 text-emerald-700 font-bold flex items-center justify-center text-xs">
+                ইমরান
+              </div>
+              <div>
+                <h4 class="font-bold text-xs text-slate-900">ইমরান হোসেন</h4>
+                <p class="text-[10px] text-slate-400">চট্টগ্রাম (Verified Buyer)</p>
+              </div>
+            </div>
+            <span class="text-amber-400 text-xs"><i class="fa-solid fa-star"></i> 5.0</span>
+          </div>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            "অফিসের জন্য ২ পিস কম্বো নিয়েছিলাম। ডেলিভারি ম্যানের সামনে খুলে চেক করে টাকা দিয়েছি। ৬ ব্লেডের কাটিং পাওয়ার জাস্ট জোস! ১০০% রেকমেন্ডেড।"
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. CHECKOUT SECTION & DYNAMIC PACKAGES -->
+  <section id="checkoutSection" class="py-12 sm:py-16 bg-white border-t border-slate-200">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      
+      <div class="text-center mb-8 sm:mb-10">
+        <span class="text-xs font-bold uppercase tracking-wider text-emerald-600 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200 font-eng">
+          Cash On Delivery Checkout
+        </span>
+        <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mt-2">
+          অর্ডার করতে নিচের ফর্মটি সঠিকভাবে পূরণ করুন
+        </h2>
+        <p class="text-xs sm:text-sm text-slate-600 mt-1">
+          কোনো অগ্রিম পেমেন্টের প্রয়োজন নেই। পণ্য হাতে পেয়ে সম্পূর্ণ মূল্য পরিশোধ করবেন।
+        </p>
+      </div>
+
+      <form id="orderForm" onsubmit="submitOmorOrder(event)" class="space-y-8">
+
+        <!-- Step 1: Select Package -->
+        <div class="space-y-3">
+          <label class="block font-black text-base text-slate-900 flex items-center gap-2">
+            <span class="w-6 h-6 rounded-full bg-emerald-600 text-white flex items-center justify-center text-xs font-bold font-eng">১</span>
+            <span>পছন্দের প্যাকেজটি নির্বাচন করুন:</span>
+          </label>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+            
+            <!-- Package 1: Single Pack -->
+            <label class="relative cursor-pointer block select-none">
+              <input type="radio" name="pkgOption" id="pkgRadio1" value="pkg1"
+                     data-price="1150" data-regular="1650" data-title="১ পিস পোর্টেবল ব্লেন্ডার"
+                     class="pkg-radio sr-only" onchange="calculateOrderTotal()" />
+              <div class="p-4 rounded-2xl border-2 border-slate-200 bg-white transition hover:border-emerald-300 h-full flex flex-col justify-between">
+                <div>
+                  <div class="flex items-center justify-between mb-2">
+                    <span class="text-xs font-bold px-2 py-0.5 rounded bg-slate-100 text-slate-700">সিঙ্গেল প্যাক</span>
+                    <div class="check-indicator w-5 h-5 rounded-full border-2 border-slate-300 flex items-center justify-center text-white text-[10px]">
+                      <i class="fa-solid fa-check hidden"></i>
+                    </div>
+                  </div>
+                  <h4 class="font-black text-slate-900 text-sm" id="pkgTitle1Display">১ পিস পোর্টেবল ব্লেন্ডার</h4>
+                  <p class="text-[11px] text-slate-500 mt-0.5" id="pkgSub1Display">স্ট্যান্ডার্ড সিঙ্গেল সেট</p>
+                </div>
+                <div class="pt-3 border-t border-slate-100 mt-3 flex items-baseline gap-2">
+                  <span class="font-black text-lg text-emerald-700 font-eng" id="pkgPrice1Display">৳১,১৫০</span>
+                  <span class="text-xs text-slate-400 line-through font-eng" id="pkgReg1Display">৳১,৬৫০</span>
+                </div>
+              </div>
+            </label>
+
+            <!-- Package 2: Family Combo (500 TK OFF) - DEFAULT CHECKED -->
+            <label class="relative cursor-pointer block select-none">
+              <input type="radio" name="pkgOption" id="pkgRadio2" value="pkg2" checked
+                     data-price="2150" data-regular="3300" data-title="২ পিস ফ্যামিলি কম্বো (৫০০ টাকা ছাড়!)"
+                     class="pkg-radio sr-only" onchange="calculateOrderTotal()" />
+              <div class="p-4 rounded-2xl border-2 border-emerald-500 bg-emerald-50/50 transition hover:border-emerald-600 h-full flex flex-col justify-between relative shadow-sm">
+                <span class="absolute -top-3 right-4 px-2 py-0.5 rounded-full bg-accent-500 text-white font-extrabold text-[10px] tracking-wide shadow-xs">
+                  সেরা অফার (৫০০৳ ছাড়)
+                </span>
+                <div>
+                  <div class="flex items-center justify-between mb-2">
+                    <span class="text-xs font-bold px-2 py-0.5 rounded bg-emerald-100 text-emerald-800">ফ্যামিলি কম্বো</span>
+                    <div class="check-indicator w-5 h-5 rounded-full border-2 border-emerald-600 bg-emerald-600 flex items-center justify-center text-white text-[10px]">
+                      <i class="fa-solid fa-check"></i>
+                    </div>
+                  </div>
+                  <h4 class="font-black text-slate-900 text-sm" id="pkgTitle2Display">২ পিস ফ্যামিলি কম্বো</h4>
+                  <p class="text-[11px] text-slate-600 mt-0.5" id="pkgSub2Display">২টি ব্লেন্ডার বোতল একসাথে</p>
+                </div>
+                <div class="pt-3 border-t border-emerald-200 mt-3 flex items-baseline gap-2">
+                  <span class="font-black text-lg text-emerald-800 font-eng" id="pkgPrice2Display">৳২,১৫০</span>
+                  <span class="text-xs text-slate-400 line-through font-eng" id="pkgReg2Display">৳৩,৩০০</span>
+                </div>
+              </div>
+            </label>
+
+            <!-- Package 3: Blender + Travel Jar VIP -->
+            <label class="relative cursor-pointer block select-none">
+              <input type="radio" name="pkgOption" id="pkgRadio3" value="pkg3"
+                     data-price="1450" data-regular="1950" data-title="১ পিস ব্লেন্ডার + এক্সট্রা ট্রাভেল জার"
+                     class="pkg-radio sr-only" onchange="calculateOrderTotal()" />
+              <div class="p-4 rounded-2xl border-2 border-slate-200 bg-white transition hover:border-emerald-300 h-full flex flex-col justify-between">
+                <div>
+                  <div class="flex items-center justify-between mb-2">
+                    <span class="text-xs font-bold px-2 py-0.5 rounded bg-teal-100 text-teal-800">ভিআইপি সেট</span>
+                    <div class="check-indicator w-5 h-5 rounded-full border-2 border-slate-300 flex items-center justify-center text-white text-[10px]">
+                      <i class="fa-solid fa-check hidden"></i>
+                    </div>
+                  </div>
+                  <h4 class="font-black text-slate-900 text-sm" id="pkgTitle3Display">ব্লেন্ডার + ট্রাভেল জার</h4>
+                  <p class="text-[11px] text-slate-500 mt-0.5" id="pkgSub3Display">১ ব্লেন্ডার + ১ স্পোর্টস জার</p>
+                </div>
+                <div class="pt-3 border-t border-slate-100 mt-3 flex items-baseline gap-2">
+                  <span class="font-black text-lg text-emerald-700 font-eng" id="pkgPrice3Display">৳১,৪৫০</span>
+                  <span class="text-xs text-slate-400 line-through font-eng" id="pkgReg3Display">৳১,৯৫০</span>
+                </div>
+              </div>
+            </label>
+
+          </div>
+        </div>
+
+        <!-- Step 2: Delivery Area Selection -->
+        <div class="space-y-3">
+          <label class="block font-black text-base text-slate-900 flex items-center gap-2">
+            <span class="w-6 h-6 rounded-full bg-emerald-600 text-white flex items-center justify-center text-xs font-bold font-eng">২</span>
+            <span>ডেলিভারি এরিয়া নির্বাচন করুন:</span>
+          </label>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <label class="cursor-pointer block select-none">
+              <input type="radio" name="deliveryArea" id="deliveryRadioInside" value="inside" data-cost="60" checked
+                     class="pkg-radio sr-only" onchange="calculateOrderTotal()" />
+              <div class="p-3.5 rounded-xl border-2 border-emerald-500 bg-emerald-50/40 flex items-center justify-between">
+                <div class="flex items-center gap-2.5">
+                  <i class="fa-solid fa-city text-emerald-600 text-base"></i>
+                  <div>
+                    <span class="font-bold text-xs sm:text-sm text-slate-900 block" id="deliveryInsideLabelDisplay">ঢাকার ভিতরে</span>
+                    <span class="text-[11px] text-slate-500">হোম ডেলিভারি</span>
+                  </div>
+                </div>
+                <span class="font-black text-emerald-700 font-eng text-sm" id="deliveryFeeInsideDisplay">৳৬০</span>
+              </div>
+            </label>
+
+            <label class="cursor-pointer block select-none">
+              <input type="radio" name="deliveryArea" id="deliveryRadioOutside" value="outside" data-cost="120"
+                     class="pkg-radio sr-only" onchange="calculateOrderTotal()" />
+              <div class="p-3.5 rounded-xl border-2 border-slate-200 bg-white flex items-center justify-between">
+                <div class="flex items-center gap-2.5">
+                  <i class="fa-solid fa-map-location-dot text-emerald-600 text-base"></i>
+                  <div>
+                    <span class="font-bold text-xs sm:text-sm text-slate-900 block" id="deliveryOutsideLabelDisplay">ঢাকার বাইরে</span>
+                    <span class="text-[11px] text-slate-500">সারা বাংলাদেশ হোম ডেলিভারি</span>
+                  </div>
+                </div>
+                <span class="font-black text-emerald-700 font-eng text-sm" id="deliveryFeeOutsideDisplay">৳১২০</span>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <!-- Step 3: Customer Information -->
+        <div class="space-y-4 bg-slate-50 p-5 sm:p-6 rounded-2xl border border-slate-200/90">
+          <label class="block font-black text-base text-slate-900 flex items-center gap-2">
+            <span class="w-6 h-6 rounded-full bg-emerald-600 text-white flex items-center justify-center text-xs font-bold font-eng">৩</span>
+            <span>আপনার ডেলিভারি তথ্য লিখুন:</span>
+          </label>
+
+          <div class="space-y-3">
+            <div>
+              <label for="custName" class="block text-xs font-bold text-slate-700 mb-1">আপনার পূর্ণ নাম *</label>
+              <input type="text" id="custName" required placeholder="যেমন: মো: রফিকুল ইসলাম"
+                     class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20 bg-white" />
+            </div>
+
+            <div>
+              <label for="custPhone" class="block text-xs font-bold text-slate-700 mb-1">১১ ডিজিটের মোবাইল নম্বর *</label>
+              <input type="tel" id="custPhone" required placeholder="যেমন: 017XXXXXXXX" maxlength="11"
+                     class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm font-eng focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20 bg-white" />
+              <p class="text-[11px] text-slate-500 mt-1">অর্ডার নিশ্চিত করতে এই নম্বরে কল করা হতে পারে।</p>
+            </div>
+
+            <div>
+              <label for="custAddress" class="block text-xs font-bold text-slate-700 mb-1">পূর্ণ ঠিকানা (বাসা/রোড/এলাকা/জেলা) *</label>
+              <textarea id="custAddress" required rows="2" placeholder="যেমন: বাসা # ১২, রোড # ৪, সেক্টর # ৭, উত্তরা, ঢাকা"
+                        class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20 bg-white"></textarea>
+            </div>
+
+            <div>
+              <label for="custNotes" class="block text-xs font-bold text-slate-700 mb-1">কোনো বিশেষ নির্দেশনা (ঐচ্ছিক)</label>
+              <input type="text" id="custNotes" placeholder="যেমন: পছন্দের রঙ বা ডেলিভারির সুবিধাজনক সময়"
+                     class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20 bg-white" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Order Summary & Total -->
+        <div class="bg-emerald-50/60 p-5 rounded-2xl border-2 border-emerald-500/30 space-y-2.5 text-xs sm:text-sm">
+          <div class="flex justify-between text-slate-600">
+            <span>নির্বাচিত প্যাকেজ:</span>
+            <span class="font-bold text-slate-800" id="billPkgTitle">২ পিস ফ্যামিলি কম্বো</span>
+          </div>
+          <div class="flex justify-between text-slate-600">
+            <span>প্যাকেজ মূল্য:</span>
+            <span class="font-bold text-slate-800 font-eng" id="billPkgPrice">৳২,১৫০</span>
+          </div>
+          <div class="flex justify-between text-slate-600">
+            <span>ডেলিভারি চার্জ:</span>
+            <span class="font-bold text-slate-800 font-eng" id="billDeliveryFee">৳৬০</span>
+          </div>
+          <div class="border-t border-emerald-200 pt-2 flex justify-between items-center text-slate-900 font-black text-base sm:text-lg">
+            <span>সর্বমোট প্রদেয় বিল:</span>
+            <span class="text-emerald-700 font-eng" id="billTotal">৳২,২১০</span>
+          </div>
+        </div>
+
+        <!-- Submit Button -->
+        <div>
+          <button type="submit" id="btnSubmitOrder"
+                  class="w-full py-4 px-6 rounded-2xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-black text-base sm:text-lg shadow-xl shadow-emerald-600/30 transition transform active:scale-[0.99] pulse-glow flex items-center justify-center gap-2">
+            <i class="fa-solid fa-lock text-sm"></i>
+            <span id="btnSubmitText">অর্ডার নিশ্চিত করুন (ক্যাশ অন ডেলিভারি)</span>
+          </button>
+          <div class="text-center mt-2.5 text-xs text-slate-500 flex items-center justify-center gap-2">
+            <i class="fa-solid fa-shield-check text-emerald-600"></i>
+            <span>১০০% নিরাপদ ডেলিভারি • কোনো অগ্রিম টাকা লাগবে না</span>
+          </div>
+        </div>
+
+      </form>
+
+    </div>
+  </section>
+
+  <!-- 9. FOOTER -->
+  <footer class="bg-slate-950 text-white py-8 border-t border-slate-800 text-center text-xs space-y-3">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="flex items-center justify-center gap-2 font-display font-black text-lg text-emerald-400">
+        <i class="fa-solid fa-blender"></i> OMOR FRESH
+      </div>
+      <p class="text-slate-400 max-w-md mx-auto text-[11px]">
+        স্বাস্থ্যসম্মত ফ্রেশ লাইফস্টাইলের জন্য আধুনিক রিচার্জেবল ব্লেন্ডার সল্যুশন।
+      </p>
+      <div class="text-slate-500 text-[10px] pt-2">
+        © 2026 Omor Fresh Juicer. All Rights Reserved. Store ID: OMOR12.
+      </div>
+    </div>
+  </footer>
+
+  <!-- 10. MOBILE STICKY BOTTOM BAR -->
+  <div class="fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-slate-200 px-4 py-2.5 sm:hidden shadow-lg flex items-center justify-between">
+    <div>
+      <span class="text-[10px] text-slate-500 block">মোট বিল (COD)</span>
+      <span class="font-black text-emerald-700 font-eng text-lg" id="mobileBarPrice">৳২,২১০</span>
+    </div>
+    <a href="#checkoutSection"
+       class="py-2.5 px-6 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 text-white font-black text-xs shadow-md shadow-emerald-600/25 flex items-center gap-1.5">
+      <i class="fa-solid fa-cart-shopping text-xs"></i>
+      <span>অর্ডার করুন</span>
+    </a>
+  </div>
+
+  <!-- 11. ORDER SUCCESS MODAL -->
+  <div id="orderSuccessModal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-slate-950/70 backdrop-blur-xs p-4">
+    <div class="bg-white rounded-3xl p-6 sm:p-8 max-w-md w-full text-center space-y-4 shadow-2xl border border-slate-100 animate-in fade-in zoom-in duration-200">
+      <div class="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto text-2xl shadow-inner">
+        <i class="fa-solid fa-circle-check"></i>
+      </div>
+      <h3 class="text-xl sm:text-2xl font-black text-slate-900">অভিনন্দন! আপনার অর্ডারটি গৃহীত হয়েছে</h3>
+      <p class="text-xs sm:text-sm text-slate-600">
+        আমাদের কাস্টমার কেয়ার টিম দ্রুতই আপনার সাথে ফোনে যোগাযোগ করে অর্ডার কনফার্ম করবে।
+      </p>
+
+      <div class="bg-slate-50 rounded-2xl p-4 border border-slate-200/80 text-left space-y-2 text-xs">
+        <div class="flex justify-between">
+          <span class="text-slate-500">অর্ডার আইডি:</span>
+          <span class="font-black text-slate-900 font-eng" id="succOrderId">OMOR12-000001</span>
+        </div>
+        <div class="flex justify-between">
+          <span class="text-slate-500">প্যাকেজ:</span>
+          <span class="font-bold text-slate-800" id="succPkgTitle">২ পিস ফ্যামিলি কম্বো</span>
+        </div>
+        <div class="flex justify-between">
+          <span class="text-slate-500">মোট মূল্য:</span>
+          <span class="font-black text-emerald-700 font-eng" id="succTotal">৳২,২১০</span>
+        </div>
+      </div>
+
+      <div class="space-y-2 pt-2">
+        <a id="succWaBtn" href="#" target="_blank"
+           class="w-full py-3 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs sm:text-sm flex items-center justify-center gap-2 shadow-md transition">
+          <i class="fa-brands fa-whatsapp text-base"></i>
+          <span>হোয়াটসঅ্যাপে যোগাযোগ করুন</span>
+        </a>
+        <button onclick="document.getElementById('orderSuccessModal').classList.add('hidden')"
+                class="w-full py-2.5 px-4 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs transition">
+          বন্ধ করুন
+        </button>
       </div>
     </div>
   </div>
 
-  <!-- SCRIPT -->
+  <!-- 12. CLIENT ENGINE SCRIPT: Calculations, Hydration & Submission -->
   <script>
-    const CONFIG = {
-      WORKER_URL: 'https://steep-rain-e346.azwadahshafhossain.workers.dev', 
-      STORE_CODE: 'LP',
-      STORE_NAME: 'Landing Page Development'
-    };
-
-    const $ = (s, r = document) => r.querySelector(s);     const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
-
-    const modal = $('#orderModal'), form = $('#orderForm'), submitBtn = $('#submitBtn');     let uploadedImages = [];      function openModal() { modal.classList.add('open'); document.body.style.overflow = 'hidden'; }     function closeModal() { modal.classList.remove('open'); document.body.style.overflow = ''; }      $$('[data-open-order]').forEach(b => b.addEventListener('click', (e) => { e.preventDefault(); openModal(); }));$('#modalClose').addEventListener('click', closeModal);
-    $('#modalBackdrop').addEventListener('click', closeModal);
-
-    $('#uploadBtn').addEventListener('click', () => $('#productImagesInput').click());
-
-    // Multi-Image Handler with Compression
-    $('#productImagesInput').addEventListener('change', async (e) => {
-      const files = Array.from(e.target.files);
-      for (const file of files) {
-        const base64 = await compressImage(file);
-        uploadedImages.push(base64);
-      }
-      fileInputClear();
-      renderPreviews();
-    });
-
-    function fileInputClear() { $('#productImagesInput').value = ''; }
-
-    function compressImage(file) {
-      return new Promise((resolve) => {
-        const reader = new FileReader();
-        reader.onload = (event) => {
-          const img = new Image();
-          img.src = event.target.result;
-          img.onload = () => {
-            const canvas = document.createElement('canvas');
-            const max = 800;
-            let w = img.width, h = img.height;
-            if (w > h && w > max) { h = Math.round((h * max) / w); w = max; }
-            else if (h > max) { w = Math.round((w * max) / h); h = max; }
-            canvas.width = w; canvas.height = h;
-            canvas.getContext('2d').drawImage(img, 0, 0, w, h);
-            resolve(canvas.toDataURL('image/jpeg', 0.65));
-          };
-        };
-        reader.readAsDataURL(file);
+    function setMainImage(src, btnEl) {
+      const img = document.getElementById('mainProductImg');
+      if (img) img.src = src;
+      document.querySelectorAll('.thumb-btn').forEach(b => {
+        b.classList.remove('border-emerald-600');
+        b.classList.add('border-transparent');
       });
+      if (btnEl) {
+        btnEl.classList.add('border-emerald-600');
+        btnEl.classList.remove('border-transparent');
+      }
     }
 
-    function renderPreviews() {
-      const grid = $('#imagePreviewGrid');
-      const counter = $('#imgCounter');
-      grid.innerHTML = '';
-      if (!uploadedImages.length) {
-        grid.classList.add('hidden');
-        counter.classList.add('hidden');
-        $('#uploadBtnText').textContent = 'গ্যালারি থেকে ছবি সিলেক্ট করুন';
+    function calculateOrderTotal() {
+      const pkgRadio = document.querySelector('input[name="pkgOption"]:checked');
+      if (!pkgRadio) return;
+
+      const price = parseInt(pkgRadio.getAttribute('data-price'), 10) || 1150;
+      const title = pkgRadio.getAttribute('data-title') || '১ পিস পোর্টেবল ব্লেন্ডার';
+
+      const areaRadio = document.querySelector('input[name="deliveryArea"]:checked');
+      const deliveryCost = areaRadio ? (parseInt(areaRadio.getAttribute('data-cost'), 10) || 0) : 60;
+      const grandTotal = price + deliveryCost;
+
+      safeSetText('billPkgTitle', title);
+      safeSetText('billPkgPrice', '৳' + toBengaliNum(price));
+      safeSetText('billDeliveryFee', deliveryCost > 0 ? ('৳' + toBengaliNum(deliveryCost)) : 'ফ্রি (৳০)');
+      safeSetText('billTotal', '৳' + toBengaliNum(grandTotal));
+      safeSetText('mobileBarPrice', '৳' + toBengaliNum(grandTotal));
+    }
+
+    async function submitOmorOrder(e) {
+      e.preventDefault();
+
+      const name = document.getElementById('custName').value.trim();
+      const phone = document.getElementById('custPhone').value.trim();
+      const address = document.getElementById('custAddress').value.trim();
+      const notes = document.getElementById('custNotes').value.trim();
+
+      if (!name || !phone || !address) {
+        alert('দয়া করে আপনার নাম, মোবাইল নম্বর এবং পূর্ণ ঠিকানা দিন।');
         return;
       }
-      grid.classList.remove('hidden');
-      counter.classList.remove('hidden');
-      counter.textContent = `${uploadedImages.length}টি ছবি নির্বাচিত`;
-      $('#uploadBtnText').textContent = '+ আরও ছবি যোগ করুন';
 
-      uploadedImages.forEach((imgSrc, idx) => {
-        const div = document.createElement('div');
-        div.className = 'relative aspect-square rounded-lg overflow-hidden border bg-white';
-        div.innerHTML = `<img src="${imgSrc}" class="w-full h-full object-cover" /><button type="button" onclick="removeImg(${idx})" class="absolute top-1 right-1 bg-rose-600 text-white rounded-full w-4 h-4 text-[10px] flex items-center justify-center"><i class="fa-solid fa-xmark"></i></button>`;
-        grid.appendChild(div);
-      });
-    }
+      if (phone.length !== 11 || !phone.startsWith('01')) {
+        alert('অনুগ্রহ করে সঠিক ১১ ডিজিটের মোবাইল নম্বর লিখুন (যেমন: 01XXXXXXXXX)।');
+        return;
+      }
 
-    window.removeImg = (idx) => { uploadedImages.splice(idx, 1); renderPreviews(); };
+      const pkgRadio = document.querySelector('input[name="pkgOption"]:checked');
+      const areaRadio = document.querySelector('input[name="deliveryArea"]:checked');
 
-    $$('.field', form).forEach(f => f.addEventListener('input', () => {
-      f.classList.remove('error');
-      $(`[data-error-for="${f.id}"]`)?.classList.remove('show');
-    }));
+      const pkgTitle = pkgRadio.getAttribute('data-title') || 'পোর্টেবল ব্লেন্ডার';
+      const pkgPrice = parseInt(pkgRadio.getAttribute('data-price'), 10) || 1150;
+      const deliveryCost = areaRadio ? (parseInt(areaRadio.getAttribute('data-cost'), 10) || 0) : 60;
+      const grandTotal = pkgPrice + deliveryCost;
+      const deliveryAreaName = areaRadio.value === 'inside'
+        ? ('ঢাকার ভিতরে' + (deliveryCost > 0 ? ` (৳${toBengaliNum(deliveryCost)})` : ' (ফ্রি)'))
+        : ('ঢাকার বাইরে' + (deliveryCost > 0 ? ` (৳${toBengaliNum(deliveryCost)})` : ' (ফ্রি)'));
 
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const name = $('#customerName').value.trim();
-      const phone = $('#phone').value.trim();
-      const product = $('#productName').value.trim();
-      const pageLink = $('#pageLink').value.trim();
+      const btn = document.getElementById('btnSubmitOrder');
+      const btnText = document.getElementById('btnSubmitText');
+      btn.disabled = true;
+      btnText.innerText = 'অর্ডার প্রসেস হচ্ছে...';
 
-      let valid = true;
-      if (name.length < 2) { $('#customerName').classList.add('error'); $('[data-error-for="customerName"]').classList.add('show'); valid = false; }
-      if (!/^01[3-9]\d{8}$/.test(phone)) { $('#phone').classList.add('error'); $('[data-error-for="phone"]').classList.add('show'); valid = false; }
-      if (product.length < 2) { $('#productName').classList.add('error'); $('[data-error-for="productName"]').classList.add('show'); valid = false; }
-      if (pageLink.length < 3) { $('#pageLink').classList.add('error'); $('[data-error-for="pageLink"]').classList.add('show'); valid = false; }
-      if (!valid) return;
+      const storeId = (window.STORE_CONFIG && window.STORE_CONFIG.STORE_ID) ? window.STORE_CONFIG.STORE_ID : 'OMOR12';
+      const apiUrl = (window.STORE_CONFIG && window.STORE_CONFIG.API_URL) ? window.STORE_CONFIG.API_URL : '';
 
-      submitBtn.disabled = true;
-      $('.btn-text', submitBtn).classList.add('hidden');
-      const loadingEl = $('.btn-loading', submitBtn);
-      loadingEl.classList.remove('hidden');
-      loadingEl.classList.add('inline-flex');
-
-      const payload = {
-        store_code: CONFIG.STORE_CODE,
-        store_name: CONFIG.STORE_NAME,
-        name,
-        phone,
-        product,
-        pageLink,
-        images: uploadedImages, 
-        total: '৳০ (বাকি ৳৯৯৯ কাজ শেষে)',
-        time: new Date().toLocaleString('bn-BD', { timeZone: 'Asia/Dhaka' })
+      const orderPayload = {
+        storeId: storeId,
+        name: name,
+        phone: phone,
+        address: address,
+        notes: notes,
+        packageTitle: pkgTitle,
+        packagePrice: pkgPrice,
+        deliveryArea: deliveryAreaName,
+        deliveryCost: deliveryCost,
+        totalAmount: grandTotal
       };
 
       try {
-        await fetch(`${CONFIG.WORKER_URL}/order`, {
+        const response = await fetch(`${apiUrl}/api/order`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(payload)
+          body: JSON.stringify(orderPayload)
         });
-      } catch(e) {
-        console.warn('Worker Request Error:', e);
+
+        const result = await response.json();
+
+        if (result.success) {
+          safeSetText('succOrderId', result.orderId);
+          safeSetText('succPkgTitle', pkgTitle);
+          safeSetText('succTotal', '৳' + toBengaliNum(grandTotal));
+
+          const waNumber = (window.PAGE_CONFIG && window.PAGE_CONFIG.brand && window.PAGE_CONFIG.brand.whatsapp) ? window.PAGE_CONFIG.brand.whatsapp : '01700000000';
+          const waClean = waNumber.replace(/^0/, '880');
+          const waText = encodeURIComponent(`আসসালামু আলাইকুম Omor Support,\nআমি রিচার্জেবল পোর্টেবল ব্লেন্ডার অর্ডার করেছি।\nঅর্ডার আইডি: ${result.orderId}\nপ্যাকেজ: ${pkgTitle}\nমোট প্রদেয় বিল: ৳${grandTotal}`);
+          document.getElementById('succWaBtn').href = `https://wa.me/${waClean}?text=${waText}`;
+
+          document.getElementById('orderSuccessModal').classList.remove('hidden');
+        } else {
+          alert('অর্ডার সম্পন্ন করা যায়নি: ' + (result.message || 'দয়া করে আবার চেষ্টা করুন।'));
+        }
+      } catch (err) {
+        alert('সার্ভারের সাথে যোগাযোগ করা যায়নি। আপনার ইন্টারনেট কানেকশন চেক করুন।');
+      } finally {
+        btn.disabled = false;
+        btnText.innerText = 'অর্ডার নিশ্চিত করুন (ক্যাশ অন ডেলিভারি)';
+      }
+    }
+
+    // Dynamic Live Store Pricing Hydration
+    async function loadLivePricing() {
+      const storeId = (window.STORE_CONFIG && window.STORE_CONFIG.STORE_ID) ? window.STORE_CONFIG.STORE_ID : 'OMOR12';
+      const apiUrl = (window.STORE_CONFIG && window.STORE_CONFIG.API_URL) ? window.STORE_CONFIG.API_URL : '';
+      if (!apiUrl) return;
+
+      try {
+        const res = await fetch(`${apiUrl}/api/store-config?store_id=${encodeURIComponent(storeId)}`);
+        if (!res.ok) return;
+        const data = await res.json();
+        if (!data || !data.config || !data.config.pricing) return;
+        applyPricingConfig(data.config);
+      } catch (err) {
+        console.warn('Live pricing hydration note:', err);
+      }
+    }
+
+    function applyPricingConfig(cfg) {
+      if (!cfg || !cfg.pricing) return;
+      const p = cfg.pricing;
+      const storeId = (window.STORE_CONFIG && window.STORE_CONFIG.STORE_ID) ? window.STORE_CONFIG.STORE_ID : 'OMOR12';
+      try {
+        localStorage.setItem('omor_store_cfg_' + storeId, JSON.stringify(cfg));
+      } catch(e) {}
+
+      // Pkg 1
+      const p1 = p.pkg1 || p.pkg10;
+      if (p1 && p1.price !== undefined) {
+        const r1 = document.getElementById('pkgRadio1');
+        if (r1) {
+          r1.setAttribute('data-price', p1.price);
+          if (p1.title) r1.setAttribute('data-title', p1.title);
+        }
+        if (p1.title) safeSetText('pkgTitle1Display', p1.title);
+        safeSetText('pkgPrice1Display', '৳' + toBengaliNum(p1.price));
+        if (p1.regular) safeSetText('pkgReg1Display', '৳' + toBengaliNum(p1.regular));
+        if (p1.subtitle) safeSetText('pkgSub1Display', p1.subtitle);
       }
 
-      form.classList.add('hidden');
-      $('#successView').classList.remove('hidden');
+      // Pkg 2
+      const p2 = p.pkg2 || p.pkg20;
+      if (p2 && p2.price !== undefined) {
+        const r2 = document.getElementById('pkgRadio2');
+        if (r2) {
+          r2.setAttribute('data-price', p2.price);
+          if (p2.title) r2.setAttribute('data-title', p2.title);
+        }
+        if (p2.title) safeSetText('pkgTitle2Display', p2.title);
+        safeSetText('pkgPrice2Display', '৳' + toBengaliNum(p2.price));
+        if (p2.regular) safeSetText('pkgReg2Display', '৳' + toBengaliNum(p2.regular));
+        if (p2.subtitle) safeSetText('pkgSub2Display', p2.subtitle);
+        safeSetText('heroPriceDisplay', '৳' + toBengaliNum(p2.price));
+        if (p2.regular) safeSetText('heroRegDisplay', '৳' + toBengaliNum(p2.regular));
+      }
+
+      // Pkg 3
+      const p3 = p.pkg3 || p.pkg30;
+      if (p3 && p3.price !== undefined) {
+        const r3 = document.getElementById('pkgRadio3');
+        if (r3) {
+          r3.setAttribute('data-price', p3.price);
+          if (p3.title) r3.setAttribute('data-title', p3.title);
+        }
+        if (p3.title) safeSetText('pkgTitle3Display', p3.title);
+        safeSetText('pkgPrice3Display', '৳' + toBengaliNum(p3.price));
+        if (p3.regular) safeSetText('pkgReg3Display', '৳' + toBengaliNum(p3.regular));
+        if (p3.subtitle) safeSetText('pkgSub3Display', p3.subtitle);
+      }
+
+      // Delivery Charges
+      if (p.deliveryInside !== undefined) {
+        const dIn = document.getElementById('deliveryRadioInside');
+        if (dIn) dIn.setAttribute('data-cost', p.deliveryInside);
+        safeSetText('deliveryFeeInsideDisplay', p.deliveryInside > 0 ? ('৳' + toBengaliNum(p.deliveryInside)) : 'ফ্রি');
+        if (p.deliveryInsideLabel) {
+          safeSetText('deliveryInsideLabelDisplay', p.deliveryInsideLabel);
+        }
+      }
+      if (p.deliveryOutside !== undefined) {
+        const dOut = document.getElementById('deliveryRadioOutside');
+        if (dOut) dOut.setAttribute('data-cost', p.deliveryOutside);
+        safeSetText('deliveryFeeOutsideDisplay', p.deliveryOutside > 0 ? ('৳' + toBengaliNum(p.deliveryOutside)) : 'ফ্রি');
+        if (p.deliveryOutsideLabel) {
+          safeSetText('deliveryOutsideLabelDisplay', p.deliveryOutsideLabel);
+        }
+      }
+
+      // Brand / Phone / WhatsApp
+      if (cfg.brand && cfg.brand.phone) {
+        document.querySelectorAll('.store-phone-display').forEach(el => {
+          if (el.innerText !== cfg.brand.phone) el.innerText = cfg.brand.phone;
+        });
+      }
+
+      calculateOrderTotal();
+    }
+
+    // Real-Time Live Message Listener for Admin Iframe Preview
+    window.addEventListener('message', (event) => {
+      if (event.data && (event.data.type === 'UPDATE_PRICING' || event.data.type === 'UPDATE_PAGE_CONFIG')) {
+        applyPricingConfig(event.data.config);
+      }
     });
 
-    $('#successClose').addEventListener('click', () => {
-      closeModal();
-      setTimeout(() => {
-        form.reset();
-        uploadedImages = [];
-        renderPreviews();
-        form.classList.remove('hidden');
-        $('#successView').classList.add('hidden');
-        submitBtn.disabled = false;
-        $('.btn-text', submitBtn).classList.remove('hidden');$('.btn-loading', submitBtn).classList.add('hidden');
-      }, 300);
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Immediately hydrate from server-injected config or warm local cache with zero flicker
+      try {
+        const storeId = (window.STORE_CONFIG && window.STORE_CONFIG.STORE_ID) ? window.STORE_CONFIG.STORE_ID : 'OMOR12';
+        if (window.PAGE_CONFIG && window.PAGE_CONFIG.pricing) {
+          applyPricingConfig(window.PAGE_CONFIG);
+        } else {
+          const cached = localStorage.getItem('omor_store_cfg_' + storeId) || localStorage.getItem('store_cache_' + storeId);
+          if (cached) {
+            applyPricingConfig(JSON.parse(cached));
+          }
+        }
+      } catch(e) {}
+
+      calculateOrderTotal();
+      loadLivePricing();
     });
   </script>
+
 </body>
 </html>
