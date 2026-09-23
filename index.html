@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>Aluminium Zip Lock Food Storage Bag | প্রিমিয়াম ফুড স্টোরেজ সল্যুশন</title>
-  <meta name="description" content="ফ্রিজে মাছ ও মাংসের গন্ধহীন ও দীর্ঘমেয়াদী সতেজ সংরক্ষণে প্রিমিয়াম অ্যালুমিনিয়াম জিপলক ফুড স্টোরেজ ব্যাগ। ওয়াশেবল ও বারবার ব্যবহারযোগ্য।">
+  <meta name="description" content="ফ্রিজে মাছ ও মাংসের গন্ধহীন ও দীর্ঘমেয়াদী সতেজ সংরক্ষণে প্রিমিয়াম অ্যালুমিনিয়াম জিপলক ফুড স্টোরেজ ব্যাগ। ওয়াশেবল ও বারবার ব্যবহারযোগ্য।">
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -49,7 +49,6 @@
     .font-eng { font-family: 'Inter', sans-serif; }
     .font-display { font-family: 'Outfit', sans-serif; }
     
-    /* Clean Shopify Style subtle pulse */
     @keyframes subtlePulse {
       0%, 100% { transform: scale(1); }
       50% { transform: scale(1.02); }
@@ -58,38 +57,32 @@
       animation: subtlePulse 2.5s infinite ease-in-out;
     }
     
-    /* Custom scrollbar */
     ::-webkit-scrollbar { width: 6px; }
     ::-webkit-scrollbar-track { background: #f8fafc; }
     ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 9999px; }
   </style>
 
-  <!-- Meta Pixel Code Placeholder (Populated by Cloudflare Worker) -->
+  <!-- Meta Pixel Code Placeholder -->
   <!-- __FB_PIXEL_CODE__ -->
   <!-- Dynamic Page Configuration Injection -->
   <!-- __PAGE_CONFIG_INJECTION__ -->
 </head>
 <body class="bg-white text-slate-900 antialiased pb-20 sm:pb-0 select-text">
 
-  <!-- ========================================================================= -->
-  <!-- 1. TOP ANNOUNCEMENT BAR (SHOPIFY STYLE)                                    -->
-  <!-- ========================================================================= -->
+  <!-- 1. TOP ANNOUNCEMENT BAR -->
   <div class="bg-slate-900 text-white text-xs sm:text-sm py-2 px-3 text-center font-medium shadow-xs border-b border-slate-800">
     <div class="max-w-6xl mx-auto flex items-center justify-center gap-2 flex-wrap">
       <span class="inline-block bg-emerald-500 text-slate-950 font-black px-2 py-0.5 rounded text-[10px] uppercase tracking-wider font-eng">
         LIMITED OFFER
       </span>
-      <span>🔥 কোনো অগ্রিম টাকা লাগবে না! পণ্য হাতে পেয়ে চেক করে সম্পূর্ণ মূল্য পরিশোধ করুন।</span>
+      <span>🔥 কোনো অগ্রিম টাকা লাগবে না! পণ্য হাতে পেয়ে চেক করে সম্পূর্ণ মূল্য পরিশোধ করুন।</span>
     </div>
   </div>
 
-  <!-- ========================================================================= -->
-  <!-- 2. NAVBAR / BRAND HEADER                                                  -->
-  <!-- ========================================================================= -->
+  <!-- 2. NAVBAR / BRAND HEADER -->
   <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200/80 shadow-xs">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-3">
       
-      <!-- Brand Logo & Title -->
       <a href="#" class="flex items-center gap-2.5 shrink-0">
         <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-600 to-teal-700 text-white flex items-center justify-center text-xl shadow-md shadow-emerald-600/20">
           <i class="fa-solid fa-box-open"></i>
@@ -104,13 +97,12 @@
         </div>
       </a>
 
-      <!-- Quick Action Buttons -->
       <div class="flex items-center gap-2">
         <a href="tel:01700000000" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-slate-200 text-xs font-bold text-slate-700 hover:bg-slate-50 transition">
           <i class="fa-solid fa-phone text-emerald-600"></i>
           <span class="store-phone-display font-eng">01700000000</span>
         </a>
-        <a href="#orderSection" class="px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 active:bg-emerald-800 text-white text-xs font-black shadow-sm shadow-emerald-600/25 flex items-center gap-1.5 transition">
+        <a href="#orderSection" onclick="handleAddToCartClick()" class="px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 active:bg-emerald-800 text-white text-xs font-black shadow-sm shadow-emerald-600/25 flex items-center gap-1.5 transition">
           <i class="fa-solid fa-cart-shopping text-xs"></i>
           <span>অর্ডার করুন</span>
         </a>
@@ -119,30 +111,26 @@
     </div>
   </header>
 
-  <!-- ========================================================================= -->
-  <!-- 3. HERO PRODUCT SHOWCASE (CLEAN SHOPIFY THEME STYLE)                      -->
-  <!-- ========================================================================= -->
+  <!-- 3. HERO PRODUCT SHOWCASE -->
   <section class="max-w-6xl mx-auto px-4 sm:px-6 py-6 sm:py-10">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
       
       <!-- Left: Interactive Gallery -->
       <div class="lg:col-span-6 space-y-3">
-        <!-- Main Featured Image -->
-        <div class="relative rounded-3xl overflow-hidden border border-slate-200/90 shadow-sm bg-slate-50 aspect-square flex items-center justify-center group">
+        <div class="relative rounded-3xl overflow-hidden border border-slate-200/90 shadow-sm bg-slate-50 aspect-square flex items-center justify-center group cursor-pointer" onclick="handleImageClick('images/ziplock-hero.jpg')">
           <img id="mainGalleryImage" src="images/ziplock-hero.jpg" alt="Aluminium Zip Lock Food Storage Bag" class="w-full h-full object-cover transition-all duration-300 group-hover:scale-105">
           
-          <!-- Badges on image -->
           <div class="absolute top-3 left-3 flex flex-col gap-1.5">
             <span class="px-3 py-1 rounded-full bg-emerald-600 text-white text-[11px] font-black uppercase tracking-wider shadow-md">
               ফ্রি হোম ডেলিভারি
             </span>
             <span class="px-3 py-1 rounded-full bg-rose-600 text-white text-[11px] font-black uppercase tracking-wider shadow-md">
-              ৩৫% ছাড়
+              ৩৫% ছাড়
             </span>
           </div>
 
           <div class="absolute bottom-3 right-3 px-3 py-1 rounded-full bg-slate-900/80 backdrop-blur-md text-white text-[10px] font-bold">
-            ১০০% প্রিমিয়াম কোয়ালিটি
+            ১০০% প্রিমিয়াম কোয়ালিটি
           </div>
         </div>
 
@@ -166,7 +154,6 @@
       <!-- Right: Product Details & Key Benefits -->
       <div class="lg:col-span-6 space-y-4">
         
-        <!-- Star Rating & Stock Pill -->
         <div class="flex items-center justify-between flex-wrap gap-2">
           <div class="flex items-center gap-1.5 text-amber-400 text-xs">
             <i class="fa-solid fa-star"></i>
@@ -182,13 +169,12 @@
           </span>
         </div>
 
-        <!-- Main Title -->
         <div>
           <h1 class="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-900 leading-tight">
             অ্যালুমিনিয়াম জিপ লক ফুড স্টোরেজ ব্যাগ
           </h1>
           <p class="text-xs sm:text-sm text-slate-600 mt-1.5 leading-relaxed">
-            ফ্রিজে মাছ ও মাংসের তীব্র গন্ধ ছড়ানো পুরোপুরি বন্ধ করুন! খাবার মাসের পর মাস থাকবে ১০০% সতেজ, টাটকা এবং বরফ জমে নষ্ট হবে না।
+            ফ্রিজে মাছ ও মাংসের তীব্র গন্ধ ছড়ানো পুরোপুরি বন্ধ করুন! খাবার মাসের পর মাস থাকবে ১০০% সতেজ, টাটকা এবং বরফ জমে নষ্ট হবে না।
           </p>
         </div>
 
@@ -203,7 +189,7 @@
           </div>
           <div class="text-right">
             <span class="inline-block px-3 py-1 rounded-xl bg-emerald-600 text-white text-xs font-black shadow-xs">
-              Save ৳৫৬০ (৪৫% ছাড়)
+              Save ৳৫৬০ (৪৫% ছাড়)
             </span>
             <span class="block text-[10px] text-emerald-800 font-bold mt-1">
               <i class="fa-solid fa-truck text-[9px]"></i> ফ্রি হোম ডেলিভারি
@@ -211,9 +197,8 @@
           </div>
         </div>
 
-        <!-- Bullet Highlights (Addressing User's Exact Needs) -->
+        <!-- Bullet Highlights -->
         <div class="space-y-2.5 py-1">
-          
           <div class="flex items-start gap-2.5 p-2.5 rounded-xl bg-white border border-slate-100 hover:border-slate-200 transition shadow-2xs">
             <div class="w-6 h-6 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center text-xs shrink-0 mt-0.5">
               <i class="fa-solid fa-shield-virus"></i>
@@ -230,7 +215,7 @@
             </div>
             <div class="text-xs text-slate-800 leading-normal">
               <strong class="font-bold text-slate-900 block">প্রতি ব্যাগে ২ থেকে ২.৫ কেজি ধারণক্ষমতা:</strong>
-              পর্যাপ্ত বড় সাইজের ব্যাগ, অনায়াসে বড় মাছ বা প্রচুর মাংস এক ব্যাগে সুন্দরভাবে এটে যায়।
+              পর্যাপ্ত বড় সাইজের ব্যাগ, অনায়াসে বড় মাছ বা প্রচুর মাংস এক ব্যাগে সুন্দরভাবে এটে যায়।
             </div>
           </div>
 
@@ -239,8 +224,8 @@
               <i class="fa-solid fa-recycle"></i>
             </div>
             <div class="text-xs text-slate-800 leading-normal">
-              <strong class="font-bold text-slate-900 block">ওয়াশেবল ও বারবার ব্যবহারযোগ্য (Reusable):</strong>
-              ব্যবহারের পর পানি দিয়ে ধুয়ে শুকিয়ে নিলেই আবার নতুনের মতো ব্যবহার করা যায়। পলিথিনের অপচয় বন্ধ!
+              <strong class="font-bold text-slate-900 block">ওয়াশেবল ও বারবার ব্যবহারযোগ্য (Reusable):</strong>
+              ব্যবহারের পর পানি দিয়ে ধুয়ে শুকিয়ে নিলেই আবার নতুনের মতো ব্যবহার করা যায়। পলিথিনের অপচয় বন্ধ!
             </div>
           </div>
 
@@ -250,15 +235,14 @@
             </div>
             <div class="text-xs text-slate-800 leading-normal">
               <strong class="font-bold text-slate-900 block">তারিখ ও খাবারের নাম লেখার লেবেল:</strong>
-              ব্যাগের গায়ে ডেডিকেটেড সাদা লেবেলে মার্কার দিয়ে সহজে তারিখ ও খাবারের নাম লিখে রাখা যায়।
+              ব্যাগের গায়ে ডেডিকেটেড সাদা লেবেলে মার্কার দিয়ে সহজে তারিখ ও খাবারের নাম লিখে রাখা যায়।
             </div>
           </div>
-
         </div>
 
         <!-- 1-Click Order Button -->
         <div class="pt-2">
-          <a href="#orderSection" class="w-full py-4 px-6 rounded-2xl bg-gradient-to-r from-emerald-600 to-teal-700 hover:from-emerald-500 hover:to-teal-600 active:scale-[0.99] text-white font-black text-sm sm:text-base flex items-center justify-center gap-2.5 shadow-lg shadow-emerald-600/30 transition cursor-pointer btn-pulse">
+          <a href="#orderSection" onclick="handleAddToCartClick()" class="w-full py-4 px-6 rounded-2xl bg-gradient-to-r from-emerald-600 to-teal-700 hover:from-emerald-500 hover:to-teal-600 active:scale-[0.99] text-white font-black text-sm sm:text-base flex items-center justify-center gap-2.5 shadow-lg shadow-emerald-600/30 transition cursor-pointer btn-pulse">
             <i class="fa-solid fa-cart-shopping text-base"></i>
             <span>অর্ডার করতে এখানে ক্লিক করুন (ক্যাশ অন ডেলিভারি)</span>
           </a>
@@ -274,12 +258,9 @@
     </div>
   </section>
 
-  <!-- ========================================================================= -->
-  <!-- 4. REELS FORMAT VIDEO SHOWCASE (YOUTUBE SHORTS 9:16 VERTICAL PLAYER)      -->
-  <!-- ========================================================================= -->
+  <!-- 4. REELS FORMAT VIDEO SHOWCASE -->
   <section class="py-10 sm:py-14 bg-slate-50 border-y border-slate-200/80">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-      
       <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-rose-50 border border-rose-200 text-rose-700 font-bold text-xs uppercase tracking-wider font-eng mb-2">
         <i class="fa-solid fa-play text-rose-600 text-[10px]"></i> Reels Video Demo
       </span>
@@ -291,16 +272,12 @@
         কীভাবে এটি মাছ-মাংসের দুর্গন্ধ লক করে এবং ডিপ ফ্রিজকে একদম পরিপাটি রাখে তা ১ মিনিটে রিলস ভিডিওতে দেখে নিন।
       </p>
 
-      <!-- Vertical 9:16 Reels Frame -->
       <div class="mt-6 relative mx-auto w-full max-w-[320px] sm:max-w-[340px] aspect-[9/16] rounded-[2.5rem] bg-slate-950 p-2 sm:p-2.5 shadow-2xl border-4 border-slate-800 ring-2 ring-emerald-500/20 overflow-hidden">
-        
-        <!-- Phone Top Notch -->
         <div class="absolute top-3 inset-x-0 mx-auto w-24 h-4 bg-slate-900 rounded-full z-20 flex items-center justify-center pointer-events-none">
           <span class="w-2.5 h-2.5 rounded-full bg-slate-800 border border-slate-700 mr-2"></span>
           <span class="w-8 h-1 bg-slate-800 rounded-full"></span>
         </div>
 
-        <!-- Video Iframe Container -->
         <div class="w-full h-full rounded-[2rem] overflow-hidden relative bg-black">
           <iframe 
             id="reelsIframe" 
@@ -311,7 +288,6 @@
             allowfullscreen>
           </iframe>
 
-          <!-- Sound Button & Unmute Controller (Meets user auto-sound request) -->
           <div id="reelsSoundOverlay" onclick="unmuteReelsVideo()" class="absolute bottom-3 inset-x-3 cursor-pointer flex items-center justify-between text-xs text-white bg-slate-900/90 hover:bg-slate-900 backdrop-blur-md px-3.5 py-2 rounded-xl z-20 transition shadow-lg border border-white/10 active:scale-95">
             <span class="flex items-center gap-1.5 font-bold">
               <i class="fa-solid fa-volume-high text-amber-400"></i>
@@ -322,15 +298,12 @@
             </span>
           </div>
         </div>
-
       </div>
 
     </div>
   </section>
 
-  <!-- ========================================================================= -->
-  <!-- 5. 4-CARD VISUAL HIGHLIGHTS GRID (UPLOADED USER IMAGES)                   -->
-  <!-- ========================================================================= -->
+  <!-- 5. 4-CARD VISUAL HIGHLIGHTS GRID -->
   <section class="max-w-6xl mx-auto px-4 sm:px-6 py-10 sm:py-14">
     <div class="text-center max-w-2xl mx-auto mb-8">
       <span class="text-emerald-700 text-xs font-black uppercase tracking-wider font-eng">SMART REFRIGERATOR SOLUTION</span>
@@ -338,14 +311,13 @@
         কেন সাধারণ পলিথিনের বদলে জিপ লক ব্যাগ ব্যবহার করবেন?
       </h2>
       <p class="text-xs sm:text-sm text-slate-600 mt-1">
-        সাধারণ পলিথিন পাতলা হওয়ায় গন্ধ ছড়ায় এবং সহজে ছিঁড়ে যায়। প্রিমিয়াম অ্যালুমিনিয়াম ব্যাগ আপনার খাবারের সুরক্ষা নিশ্চিত করে।
+        সাধারণ পলিথিন পাতলা হওয়ায় গন্ধ ছড়ায় এবং সহজে ছিঁড়ে যায়। প্রিমিয়াম অ্যালুমিনিয়াম ব্যাগ আপনার খাবারের সুরক্ষা নিশ্চিত করে।
       </p>
     </div>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-      
-      <!-- Card 1: Fridge Organization -->
-      <div class="p-4 rounded-3xl bg-white border border-slate-200/90 shadow-2xs hover:shadow-md transition space-y-3 flex flex-col justify-between">
+      <!-- Card 1 -->
+      <div class="p-4 rounded-3xl bg-white border border-slate-200/90 shadow-2xs hover:shadow-md transition space-y-3 flex flex-col justify-between cursor-pointer" onclick="handleImageClick('images/ziplock-fridge.jpg')">
         <div>
           <div class="rounded-2xl overflow-hidden aspect-video bg-slate-50 mb-3 border border-slate-100">
             <img src="images/ziplock-fridge.jpg" alt="Fridge Storage" class="w-full h-full object-cover">
@@ -355,7 +327,7 @@
             <span>ফ্রিজে মাছ-মাংসের গন্ধহীন সংরক্ষণ</span>
           </h3>
           <p class="text-xs text-slate-500 mt-1 leading-relaxed">
-            এক খাবারের তীব্র গন্ধ অন্য খাবারে ছড়াবে না। ডিপ ফ্রিজ থাকবে ১০০% গন্ধমুক্ত ও পরিপাটি।
+            এক খাবারের তীব্র গন্ধ অন্য খাবারে ছড়াবে না। ডিপ ফ্রিজ থাকবে ১০০% গন্ধমুক্ত ও পরিপাটি।
           </p>
         </div>
         <span class="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-md inline-block w-fit">
@@ -363,18 +335,18 @@
         </span>
       </div>
 
-      <!-- Card 2: Washable & Reusable -->
-      <div class="p-4 rounded-3xl bg-white border border-slate-200/90 shadow-2xs hover:shadow-md transition space-y-3 flex flex-col justify-between">
+      <!-- Card 2 -->
+      <div class="p-4 rounded-3xl bg-white border border-slate-200/90 shadow-2xs hover:shadow-md transition space-y-3 flex flex-col justify-between cursor-pointer" onclick="handleImageClick('images/ziplock-washable.jpg')">
         <div>
           <div class="rounded-2xl overflow-hidden aspect-video bg-slate-50 mb-3 border border-slate-100">
             <img src="images/ziplock-washable.jpg" alt="Washable" class="w-full h-full object-cover">
           </div>
           <h3 class="text-sm font-bold text-slate-900 flex items-center gap-1.5">
             <i class="fa-solid fa-droplet text-emerald-600"></i>
-            <span>বারবার ধুয়ে ব্যবহারযোগ্য</span>
+            <span>বারবার ধুয়ে ব্যবহারযোগ্য</span>
           </h3>
           <p class="text-xs text-slate-500 mt-1 leading-relaxed">
-            পানি দিয়ে ধুয়ে শুকিয়ে নিলেই আবার নতুনের মতো ব্যবহার করা যায়। বারবার নতুন পলিথিন কিনতে হয় না।
+            পানি দিয়ে ধুয়ে শুকিয়ে নিলেই আবার নতুনের মতো ব্যবহার করা যায়। বারবার নতুন পলিথিন কিনতে হয় না।
           </p>
         </div>
         <span class="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-md inline-block w-fit">
@@ -382,8 +354,8 @@
         </span>
       </div>
 
-      <!-- Card 3: Marker Label Space -->
-      <div class="p-4 rounded-3xl bg-white border border-slate-200/90 shadow-2xs hover:shadow-md transition space-y-3 flex flex-col justify-between">
+      <!-- Card 3 -->
+      <div class="p-4 rounded-3xl bg-white border border-slate-200/90 shadow-2xs hover:shadow-md transition space-y-3 flex flex-col justify-between cursor-pointer" onclick="handleImageClick('images/ziplock-marker.jpg')">
         <div>
           <div class="rounded-2xl overflow-hidden aspect-video bg-slate-50 mb-3 border border-slate-100">
             <img src="images/ziplock-marker.jpg" alt="Label with marker" class="w-full h-full object-cover">
@@ -393,7 +365,7 @@
             <span>তারিখ ও নাম লেখার লেবেল</span>
           </h3>
           <p class="text-xs text-slate-500 mt-1 leading-relaxed">
-            কোন ব্যাগে কী খাবার এবং কবে ফ্রিজে রেখেছেন তা সহজে মার্কার দিয়ে লিখে মনে রাখা যায়।
+            কোন ব্যাগে কী খাবার এবং কবে ফ্রিজে রেখেছেন তা সহজে মার্কার দিয়ে লিখে মনে রাখা যায়।
           </p>
         </div>
         <span class="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-md inline-block w-fit">
@@ -401,35 +373,31 @@
         </span>
       </div>
 
-      <!-- Card 4: Heavy Duty 2.5 KG & 0.13mm -->
-      <div class="p-4 rounded-3xl bg-white border border-slate-200/90 shadow-2xs hover:shadow-md transition space-y-3 flex flex-col justify-between">
+      <!-- Card 4 -->
+      <div class="p-4 rounded-3xl bg-white border border-slate-200/90 shadow-2xs hover:shadow-md transition space-y-3 flex flex-col justify-between cursor-pointer" onclick="handleImageClick('images/ziplock-hero.jpg')">
         <div>
           <div class="rounded-2xl overflow-hidden aspect-video bg-slate-50 mb-3 border border-slate-100">
             <img src="images/ziplock-hero.jpg" alt="Heavy Duty Foil" class="w-full h-full object-cover">
           </div>
           <h3 class="text-sm font-bold text-slate-900 flex items-center gap-1.5">
             <i class="fa-solid fa-shield-halved text-emerald-600"></i>
-            <span>২.৫ কেজি ধারণক্ষমতা ও ০.১৩ মিমি ফয়েল</span>
+            <span>২.৫ কেজি ধারণক্ষমতা ও ০.১৩ মিমি ফয়েল</span>
           </h3>
           <p class="text-xs text-slate-500 mt-1 leading-relaxed">
-            পুরু ও মজবুত অ্যালুমিনিয়াম ফয়েল উপাদান, যা বরফে শক্ত হয়ে ভেঙে যায় না বা ফেটে যায় না।
+            পুরু ও মজবুত অ্যালুমিনিয়াম ফয়েল উপাদান, যা বরফে শক্ত হয়ে ভেঙে যায় না বা ফেটে যায় না।
           </p>
         </div>
         <span class="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-md inline-block w-fit">
           2 - 2.5 KG Capacity
         </span>
       </div>
-
     </div>
   </section>
 
-  <!-- ========================================================================= -->
-  <!-- 6. PACKAGE SELECTION & CHECKOUT SECTION (DIRECTLY BELOW DETAILS!)        -->
-  <!-- ========================================================================= -->
+  <!-- 6. PACKAGE SELECTION & CHECKOUT SECTION -->
   <section id="orderSection" class="max-w-4xl mx-auto px-4 sm:px-6 py-10 sm:py-14 scroll-mt-16">
     <div class="bg-white rounded-3xl border-2 border-emerald-600/30 p-5 sm:p-8 shadow-xl space-y-8">
       
-      <!-- Section Header -->
       <div class="text-center space-y-2 border-b border-slate-100 pb-5">
         <span class="px-3.5 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-black uppercase tracking-wider font-eng">
           EASY 1-PAGE CHECKOUT
@@ -438,13 +406,13 @@
           প্যাকেজ পছন্দ করুন এবং অর্ডার ফর্ম পূরণ করুন
         </h2>
         <p class="text-xs sm:text-sm text-slate-500">
-          নিচের যেকোনো একটি প্যাকেজ সিলেক্ট করে নাম, ফোন নম্বর ও ঠিকানা দিয়ে অর্ডার কনফার্ম করুন।
+          নিচের যেকোনো একটি প্যাকেজ সিলেক্ট করে নাম, ফোন নম্বর ও ঠিকানা দিয়ে অর্ডার কনফার্ম করুন।
         </p>
       </div>
 
       <form id="orderForm" onsubmit="handleOrderSubmit(event)" class="space-y-6">
         
-        <!-- STEP 1: SELECT PACKAGE (10 PCS / 20 PCS / 30 PCS) -->
+        <!-- STEP 1: SELECT PACKAGE -->
         <div class="space-y-3">
           <label class="block text-xs font-bold text-slate-800 uppercase tracking-wider">
             ধাপ ১: আপনার প্যাকেজটি সিলেক্ট করুন
@@ -452,7 +420,7 @@
 
           <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
             
-            <!-- Package 1: 10 Pcs (৳490) -->
+            <!-- Package 1: 10 Pcs -->
             <label class="pkg-card cursor-pointer border-2 border-slate-200 rounded-2xl p-4 flex flex-col justify-between transition relative hover:border-emerald-400 bg-white" onclick="selectPackage(1, 490, 750, '১০ পিস জিপ লক ব্যাগ (Trial Pack)')">
               <input type="radio" name="pkgOption" id="pkgRadio1" value="1" data-price="490" data-regular="750" data-title="১০ পিস জিপ লক ব্যাগ (Trial Pack)" class="sr-only">
               <div>
@@ -460,7 +428,7 @@
                   <span class="w-4 h-4 rounded-full border-2 border-slate-300 pkg-dot"></span>
                   <span class="text-[10px] font-bold text-slate-500 uppercase font-eng">১০ পিস</span>
                 </div>
-                <h4 class="font-extrabold text-sm text-slate-900 mt-1" id="pkgTitle1Display">১০ পিস ট্রায়াল প্যাক</h4>
+                <h4 class="font-extrabold text-sm text-slate-900 mt-1" id="pkgTitle1Display">১০ পিস ট্রায়াল প্যাক</h4>
                 <p class="text-[11px] text-slate-500 mt-0.5" id="pkgSub1Display">ছোট পরিবারের জন্য ট্রায়াল সেট</p>
               </div>
               <div class="pt-3 border-t border-slate-100 mt-2 flex items-baseline justify-between">
@@ -469,7 +437,7 @@
               </div>
             </label>
 
-            <!-- Package 2: 20 Pcs (৳690) [BEST VALUE - SELECTED BY DEFAULT] -->
+            <!-- Package 2: 20 Pcs (DEFAULT) -->
             <label class="pkg-card cursor-pointer border-2 border-emerald-600 rounded-2xl p-4 flex flex-col justify-between transition relative bg-emerald-50/40 ring-2 ring-emerald-600/20 shadow-xs" onclick="selectPackage(2, 690, 1250, '২০ পিস জিপ লক ব্যাগ (Value Pack)')">
               <input type="radio" name="pkgOption" id="pkgRadio2" value="2" data-price="690" data-regular="1250" data-title="২০ পিস জিপ লক ব্যাগ (Value Pack)" checked class="sr-only">
               
@@ -485,7 +453,7 @@
                   <span class="text-[10px] font-black text-emerald-700 uppercase font-eng">২০ পিস</span>
                 </div>
                 <h4 class="font-extrabold text-sm text-slate-900 mt-1" id="pkgTitle2Display">২০ পিস ভ্যালু প্যাক</h4>
-                <p class="text-[11px] text-slate-600 mt-0.5" id="pkgSub2Display">মাছ ও মাংস সংরক্ষণে সবচেয়ে বেশি বিক্রিত</p>
+                <p class="text-[11px] text-slate-600 mt-0.5" id="pkgSub2Display">মাছ ও মাংস সংরক্ষণে সবচেয়ে বেশি বিক্রিত</p>
               </div>
               <div class="pt-3 border-t border-emerald-100 mt-2 flex items-baseline justify-between">
                 <span class="text-xl font-black text-emerald-700 font-eng" id="pkgPrice2Display">৳৬৯০</span>
@@ -493,7 +461,7 @@
               </div>
             </label>
 
-            <!-- Package 3: 30 Pcs (৳990) -->
+            <!-- Package 3: 30 Pcs -->
             <label class="pkg-card cursor-pointer border-2 border-slate-200 rounded-2xl p-4 flex flex-col justify-between transition relative hover:border-emerald-400 bg-white" onclick="selectPackage(3, 990, 1850, '৩০ পিস জিপ লক ব্যাগ (Mega Pack)')">
               <input type="radio" name="pkgOption" id="pkgRadio3" value="3" data-price="990" data-regular="1850" data-title="৩০ পিস জিপ লক ব্যাগ (Mega Pack)" class="sr-only">
               
@@ -518,7 +486,7 @@
           </div>
         </div>
 
-        <!-- STEP 2: DELIVERY AREA (FREE DELIVERY INCLUDED) -->
+        <!-- STEP 2: DELIVERY AREA -->
         <div class="space-y-3">
           <label class="block text-xs font-bold text-slate-800 uppercase tracking-wider">
             ধাপ ২: ডেলিভারি এলাকা সিলেক্ট করুন
@@ -593,7 +561,7 @@
             <span class="font-bold text-emerald-700 font-eng" id="billDelivery">ফ্রি</span>
           </div>
           <div class="pt-2 border-t border-slate-200 flex justify-between items-center text-sm font-black text-slate-900">
-            <span>সর্বমোট প্রদেয় বিল (COD):</span>
+            <span>সর্বমোট প্রদেয় বিল (COD):</span>
             <span class="text-2xl text-emerald-700 font-eng" id="billTotal">৳৬৯০</span>
           </div>
         </div>
@@ -606,16 +574,14 @@
         </button>
 
         <p class="text-center text-[11px] text-slate-500">
-          🔒 আপনার তথ্য সম্পূর্ণ নিরাপদ। কোনো অগ্রিম টাকা নেওয়া হয় না।
+          🔒 আপনার তথ্য সম্পূর্ণ নিরাপদ। কোনো অগ্রিম টাকা নেওয়া হয় না।
         </p>
 
       </form>
     </div>
   </section>
 
-  <!-- ========================================================================= -->
-  <!-- 7. FOOTER                                                                 -->
-  <!-- ========================================================================= -->
+  <!-- 7. FOOTER -->
   <footer class="bg-slate-900 text-white py-8 border-t border-slate-800">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 text-center space-y-3">
       <div class="flex items-center justify-center gap-2">
@@ -623,7 +589,7 @@
         <span class="text-xs text-slate-400">| Aluminium Zip Lock Bag</span>
       </div>
       <p class="text-xs text-slate-400 max-w-md mx-auto">
-        স্বাস্থ্যসম্মত উপায়ে ফ্রিজে খাবার ও মাছ-মাংস সতেজ ও গন্ধমুক্ত রাখার আধুনিক সল্যুশন।
+        স্বাস্থ্যসম্মত উপায়ে ফ্রিজে খাবার ও মাছ-মাংস সতেজ ও গন্ধমুক্ত রাখার আধুনিক সল্যুশন।
       </p>
       <div class="text-[11px] text-slate-500 pt-2 font-eng">
         © 2026 FoodShield Store. Store ID: ROHAN128. All Rights Reserved.
@@ -631,23 +597,19 @@
     </div>
   </footer>
 
-  <!-- ========================================================================= -->
-  <!-- 8. MOBILE FLOATING BOTTOM BAR                                             -->
-  <!-- ========================================================================= -->
+  <!-- 8. MOBILE FLOATING BOTTOM BAR -->
   <div class="sm:hidden fixed bottom-0 inset-x-0 z-40 bg-white/95 backdrop-blur-md border-t border-slate-200 px-4 py-2.5 shadow-lg flex items-center justify-between safe-bottom">
     <div>
       <span class="text-[10px] text-slate-500 block leading-none">সর্বমোট বিল</span>
       <span class="text-xl font-black text-emerald-700 font-eng" id="mobileBottomPrice">৳৬৯০</span>
     </div>
-    <a href="#orderSection" class="px-5 py-2.5 rounded-xl bg-emerald-600 text-white font-black text-xs shadow-md shadow-emerald-600/30 flex items-center gap-1.5 active:scale-95 transition">
+    <a href="#orderSection" onclick="handleAddToCartClick()" class="px-5 py-2.5 rounded-xl bg-emerald-600 text-white font-black text-xs shadow-md shadow-emerald-600/30 flex items-center gap-1.5 active:scale-95 transition">
       <i class="fa-solid fa-cart-shopping text-xs"></i>
       <span>অর্ডার করুন</span>
     </a>
   </div>
 
-  <!-- ========================================================================= -->
-  <!-- 9. ORDER SUCCESS MODAL                                                    -->
-  <!-- ========================================================================= -->
+  <!-- 9. ORDER SUCCESS MODAL -->
   <div id="orderSuccessModal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-slate-900/70 backdrop-blur-xs p-4">
     <div class="bg-white rounded-3xl p-6 sm:p-8 max-w-md w-full text-center space-y-4 shadow-2xl border border-slate-100 animate-in fade-in zoom-in duration-200">
       <div class="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto text-3xl shadow-inner">
@@ -655,7 +617,7 @@
       </div>
       <h3 class="text-xl sm:text-2xl font-black text-slate-900">অভিনন্দন! আপনার অর্ডারটি গৃহীত হয়েছে</h3>
       <p class="text-xs sm:text-sm text-slate-600">
-        আমাদের কাস্টমার সাপোর্ট টিম অতি দ্রুত আপনার দেওয়া নম্বরে ফোন করে অর্ডারটি কনফার্ম করবে।
+        আমাদের কাস্টমার সাপোর্ট টিম অতি দ্রুত আপনার দেওয়া নম্বরে ফোন করে অর্ডারটি কনফার্ম করবে।
       </p>
 
       <div class="bg-slate-50 rounded-2xl p-4 border border-slate-200 text-left space-y-2 text-xs">
@@ -687,13 +649,18 @@
     </div>
   </div>
 
-  <!-- ========================================================================= -->
-  <!-- 10. JAVASCRIPT APPLICATION LOGIC & DYNAMIC META PIXEL TRACKING            -->
-  <!-- ========================================================================= -->
+  <!-- 10. JAVASCRIPT APPLICATION LOGIC & DYNAMIC META PIXEL TRACKING -->
   <script>
     const STORE_ID = 'ROHAN128';
 
-    // Zero-Flicker Bengali Numeral Helper
+    // Tracking state flags to prevent duplicate triggers
+    let hasInitiatedCheckout = false;
+    let hasViewedContent = false;
+
+    let SELECTED_PRICE = 690;
+    let SELECTED_REGULAR = 1250;
+    let SELECTED_TITLE = '২০ পিস জিপ লক ব্যাগ (Value Pack)';
+
     function toBengaliNum(num) {
       if (num === null || num === undefined) return '';
       const bn = ['০', '১', '২', '৩', '৪', '৫', '৬', '৭', '৮', '৯'];
@@ -705,9 +672,7 @@
       if (el) el.innerText = text;
     }
 
-    // =========================================================================
-    // DYNAMIC META PIXEL & SERVER CAPI ENGINE (1000% EXPERT SOLUTION)
-    // =========================================================================
+    // Dynamic Meta Pixel Engine
     let CURRENT_PIXEL_ID = '';
     
     function initMetaPixel(pixelId) {
@@ -732,7 +697,7 @@
       console.log('✅ [Meta Pixel] Initialized dynamically for Store ' + STORE_ID + ' with Pixel ID:', pixelId);
     }
 
-    // Unified Client + Server CAPI Tracker with Event ID Deduplication
+    // Unified Client + Server CAPI Tracker
     async function trackMetaEvent(eventName, customData = {}, userData = {}) {
       const eventId = 'evt_' + STORE_ID + '_' + Date.now() + '_' + Math.floor(Math.random() * 1000000);
 
@@ -768,8 +733,22 @@
       return eventId;
     }
 
+    // ViewContent Triggered ONLY when user interacts with image/gallery
+    function handleImageClick(imageSrc) {
+      if (!hasViewedContent) {
+        trackMetaEvent('ViewContent', {
+          content_name: SELECTED_TITLE,
+          content_type: 'product',
+          value: SELECTED_PRICE,
+          currency: 'BDT'
+        });
+        hasViewedContent = true;
+      }
+    }
+
     // Interactive Image Gallery Switcher
     function changeGalleryImage(src, btn) {
+      handleImageClick(src);
       const main = document.getElementById('mainGalleryImage');
       if (main) main.src = src;
       document.querySelectorAll('.gallery-thumb-btn').forEach(b => {
@@ -780,8 +759,32 @@
       }
     }
 
+    // Add to Cart handler (Called ONLY when user clicks Order Buttons)
+    function handleAddToCartClick() {
+      trackMetaEvent('AddToCart', {
+        content_name: SELECTED_TITLE,
+        value: SELECTED_PRICE,
+        currency: 'BDT'
+      });
+      
+      // Auto-trigger InitiateCheckout if they reach checkout
+      triggerInitiateCheckout();
+    }
+
+    // Single-time Initiate Checkout Trigger
+    function triggerInitiateCheckout() {
+      if (!hasInitiatedCheckout) {
+        trackMetaEvent('InitiateCheckout', {
+          content_name: SELECTED_TITLE,
+          value: SELECTED_PRICE,
+          currency: 'BDT',
+          num_items: 1
+        });
+        hasInitiatedCheckout = true;
+      }
+    }
+
     // YouTube Reels Unmute & Sound Controller
-    let reelsPlayer = null;
     let isReelsUnmuted = false;
 
     function unmuteReelsVideo() {
@@ -790,7 +793,6 @@
       const overlay = document.getElementById('reelsSoundOverlay');
       
       if (!isReelsUnmuted) {
-        // Send postMessage to YouTube IFrame API to unmute
         if (iframe && iframe.contentWindow) {
           iframe.contentWindow.postMessage('{"event":"command","func":"unMute","args":""}', '*');
           iframe.contentWindow.postMessage('{"event":"command","func":"setVolume","args":[100]}', '*');
@@ -810,26 +812,19 @@
       }
     }
 
-    // Automatic sound unmuting on first touch/interaction on the page
     document.addEventListener('click', () => {
       if (!isReelsUnmuted) unmuteReelsVideo();
     }, { once: true });
 
-    // Package Selection Handler
-    let SELECTED_PRICE = 690;
-    let SELECTED_REGULAR = 1250;
-    let SELECTED_TITLE = '২০ পিস জিপ লক ব্যাগ (Value Pack)';
-
+    // Package Selection Handler (NO duplicate AddToCart here)
     function selectPackage(pkgNum, price, reg, title) {
       SELECTED_PRICE = price;
       SELECTED_REGULAR = reg;
       SELECTED_TITLE = title;
 
-      // Update Radio
       const radio = document.getElementById('pkgRadio' + pkgNum);
       if (radio) radio.checked = true;
 
-      // Update Cards Styling
       document.querySelectorAll('.pkg-card').forEach((card, idx) => {
         const dot = card.querySelector('.pkg-dot');
         if (idx === pkgNum - 1) {
@@ -847,18 +842,13 @@
         }
       });
 
-      // Update Hero display price
       safeSetText('heroPriceDisplay', '৳' + toBengaliNum(price));
       safeSetText('heroRegularPriceDisplay', '৳' + toBengaliNum(reg));
 
       calculateOrderTotal();
 
-      // Track Meta AddToCart
-      trackMetaEvent('AddToCart', {
-        content_name: title,
-        value: price,
-        currency: 'BDT'
-      });
+      // Trigger InitiateCheckout once when customer starts interacting with package selection
+      triggerInitiateCheckout();
     }
 
     // Delivery Area Selection Handler
@@ -876,6 +866,7 @@
       }
 
       calculateOrderTotal();
+      triggerInitiateCheckout();
     }
 
     function calculateOrderTotal() {
@@ -889,7 +880,17 @@
       safeSetText('mobileBottomPrice', '৳' + toBengaliNum(grandTotal));
     }
 
-    // Form Submit & Order Processing
+    // Form Focus triggers InitiateCheckout if not already triggered
+    ['custName', 'custPhone', 'custAddress'].forEach(id => {
+      const inputEl = document.getElementById(id);
+      if (inputEl) {
+        inputEl.addEventListener('focus', () => {
+          triggerInitiateCheckout();
+        }, { once: true });
+      }
+    });
+
+    // Form Submit & Order Processing (Purchase Event)
     async function handleOrderSubmit(e) {
       e.preventDefault();
 
@@ -898,7 +899,7 @@
       const address = document.getElementById('custAddress').value.trim();
 
       if (!name || !phone || !address) {
-        alert('দয়া করে আপনার নাম, মোবাইল নম্বর এবং সম্পূর্ণ ঠিকানা লিখুন।');
+        alert('দয়া করে আপনার নাম, মোবাইল নম্বর এবং সম্পূর্ণ ঠিকানা লিখুন।');
         return;
       }
 
@@ -926,7 +927,7 @@
 
       const eventId = 'order_' + STORE_ID + '_' + Date.now() + '_' + Math.floor(Math.random() * 100000);
 
-      // Client-side Meta Pixel Purchase event with matching eventID
+      // Meta Pixel Purchase event with matching eventID
       if (typeof fbq === 'function') {
         try {
           fbq('track', 'Purchase', {
@@ -968,16 +969,16 @@
           safeSetText('succPkgTitle', SELECTED_TITLE);
           safeSetText('succTotal', '৳' + toBengaliNum(grandTotal));
 
-          const waText = encodeURIComponent(`আসসালামু আলাইকুম FoodShield Support,\nআমি অ্যালুমিনিয়াম জিপলক ফুড স্টোরেজ ব্যাগ অর্ডার করেছি।\nঅর্ডার আইডি: ${result.orderId}\nপ্যাকেজ: ${SELECTED_TITLE}\nমোট প্রদেয় বিল: ৳${grandTotal}`);
+          const waText = encodeURIComponent(`আসসালামু আলাইকুম FoodShield Support,\nআমি অ্যালুমিনিয়াম জিপলক ফুড স্টোরেজ ব্যাগ অর্ডার করেছি।\nঅর্ডার আইডি: ${result.orderId}\nপ্যাকেজ: ${SELECTED_TITLE}\nমোট প্রদেয় বিল: ৳${grandTotal}`);
           const waBtn = document.getElementById('succWaBtn');
           if (waBtn) waBtn.href = `https://wa.me/8801700000000?text=${waText}`;
 
           document.getElementById('orderSuccessModal').classList.remove('hidden');
         } else {
-          alert('অর্ডার সম্পন্ন করা যায়নি: ' + (result.message || 'দয়া করে আবার চেষ্টা করুন।'));
+          alert('অর্ডার সম্পন্ন করা যায়নি: ' + (result.message || 'দয়া করে আবার চেষ্টা করুন।'));
         }
       } catch (err) {
-        alert('সার্ভারের সাথে যোগাযোগ করা যায়নি। ইন্টারনেট সংযোগ চেক করুন।');
+        alert('সার্ভারের সাথে যোগাযোগ করা যায়নি। ইন্টারনেট সংযোগ চেক করুন।');
       } finally {
         btn.disabled = false;
         btnText.innerText = 'অর্ডার নিশ্চিত করুন (ক্যাশ অন ডেলিভারি)';
@@ -996,12 +997,10 @@
         if (!res.ok) return;
         const data = await res.json();
         
-        // 1. Dynamic Meta Pixel Hydration
         if (data.pixelId) {
           initMetaPixel(data.pixelId);
         }
 
-        // 2. Dynamic Pricing Hydration
         if (data.config && data.config.pricing) {
           applyPricingConfig(data.config);
         }
@@ -1083,29 +1082,17 @@
 
     // Initialize on DOM load
     document.addEventListener('DOMContentLoaded', () => {
-      // 1. Check server-injected Pixel ID
       if (window.STORE_PIXEL_ID) {
         initMetaPixel(window.STORE_PIXEL_ID);
       }
 
-      // 2. Check server-injected page config
       if (window.PAGE_CONFIG) {
         applyPricingConfig(window.PAGE_CONFIG);
       }
 
-      // 3. Hydrate live config & dynamic Pixel from server
       loadLiveStoreConfig();
-
-      // 4. Initial calculations
       calculateOrderTotal();
-
-      // 5. Fire initial ViewContent event
-      trackMetaEvent('ViewContent', {
-        content_name: 'Aluminium Zip Lock Food Storage Bag',
-        content_type: 'product',
-        value: 690,
-        currency: 'BDT'
-      });
+      // Notice: ViewContent on page load has been removed.
     });
   </script>
 
